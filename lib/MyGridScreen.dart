@@ -20,7 +20,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
             Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-              image: AssetImage("assets/Stitch.png"),
+              image: AssetImage("assets/Fondo.JPG"),
               fit: BoxFit.cover,
             ))),
             Center(

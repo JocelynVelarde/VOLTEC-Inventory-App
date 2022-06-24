@@ -28,9 +28,9 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 180,
+                width: 190,
                 height: 20,
-                color: Colors.white.withOpacity(0.5),
+                color: Colors.white.withOpacity(0.6),
                 child: Text(
                   "Herramientas",
                   textAlign: TextAlign.center,
@@ -49,9 +49,9 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 180,
+                width: 190,
                 height: 20,
-                color: Colors.white.withOpacity(0.5),
+                color: Colors.white.withOpacity(0.6),
                 child: Text(
                   "Refacciones",
                   textAlign: TextAlign.center,
@@ -70,9 +70,9 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 180,
+                width: 190,
                 height: 20,
-                color: Colors.white.withOpacity(0.5),
+                color: Colors.white.withOpacity(0.6),
                 child: Text(
                   "Mecanica",
                   textAlign: TextAlign.center,
@@ -90,9 +90,9 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 180,
+                width: 190,
                 height: 20,
-                color: Colors.white.withOpacity(0.5),
+                color: Colors.white.withOpacity(0.6),
                 child: Text(
                   "Electrica y Neumatica",
                   textAlign: TextAlign.center,
@@ -110,9 +110,9 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 180,
+                width: 190,
                 height: 20,
-                color: Colors.white.withOpacity(0.5),
+                color: Colors.white.withOpacity(0.6),
                 child: Text(
                   "Lego Mindstorms",
                   textAlign: TextAlign.center,
@@ -130,9 +130,9 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 180,
+                width: 190,
                 height: 20,
-                color: Colors.white.withOpacity(0.5),
+                color: Colors.white.withOpacity(0.6),
                 child: Text(
                   "Otros",
                   textAlign: TextAlign.center,
@@ -142,7 +142,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
             ]),
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+                  image: AssetImage("assets/Otros.jpeg"), fit: BoxFit.cover),
             ),
           ),
         ],

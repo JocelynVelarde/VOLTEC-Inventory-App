@@ -20,7 +20,11 @@ class _MyGridScreenState extends State<MyGridScreen> {
             Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-              image: AssetImage("assets/Fondo.JPG"),
+              colorFilter: ColorFilter.mode(
+                  Colors.blue.withOpacity(0.5), BlendMode.srcOver),
+              image: AssetImage(
+                "assets/Fondo.JPG",
+              ),
               fit: BoxFit.cover,
             ))),
             Center(
@@ -156,7 +160,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                   ]),
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("assets/Otros.jpeg"),
+                        image: AssetImage("assets/Viajes.jpeg"),
                         fit: BoxFit.cover),
                   ),
                 ),

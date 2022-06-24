@@ -12,7 +12,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter GridView Demo"),
+        title: Text("VOLTEC App Inventario"),
         backgroundColor: Colors.blue,
       ),
       body: Center(
@@ -24,39 +24,100 @@ class _MyGridScreenState extends State<MyGridScreen> {
         maxCrossAxisExtent: 200.0,
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.all(8),
-            child: Column(
-              children: [Text("uno")],
-            ),
+            padding:
+                const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
+            child: Stack(children: [
+              Container(
+                width: 50,
+                height: 20,
+                color: Colors.white.withOpacity(0.5),
+                child: Text("Herramientas"),
+              )
+            ]),
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Second', style: TextStyle(fontSize: 20)),
-            color: Colors.blue,
+            padding:
+                const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
+            child: Stack(children: [
+              Container(
+                width: 50,
+                height: 20,
+                color: Colors.white.withOpacity(0.5),
+                child: Text("Refacciones"),
+              )
+            ]),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+            ),
           ),
           Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Third', style: TextStyle(fontSize: 20)),
-            color: Colors.blue,
+            padding:
+                const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
+            child: Stack(children: [
+              Container(
+                width: 50,
+                height: 20,
+                color: Colors.white.withOpacity(0.5),
+                child: Text("Mecanica"),
+              )
+            ]),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+            ),
           ),
           Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Four', style: TextStyle(fontSize: 20)),
-            color: Colors.blue,
+            padding:
+                const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
+            child: Stack(children: [
+              Container(
+                width: 50,
+                height: 20,
+                color: Colors.white.withOpacity(0.5),
+                child: Text("Herramientas"),
+              )
+            ]),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+            ),
           ),
           Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Fifth', style: TextStyle(fontSize: 20)),
-            color: Colors.blue,
+            padding:
+                const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
+            child: Stack(children: [
+              Container(
+                width: 50,
+                height: 20,
+                color: Colors.white.withOpacity(0.5),
+                child: Text("Herramientas"),
+              )
+            ]),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+            ),
           ),
           Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Fifth', style: TextStyle(fontSize: 20)),
-            color: Colors.blue,
+            padding:
+                const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
+            child: Stack(children: [
+              Container(
+                width: 50,
+                height: 20,
+                color: Colors.white.withOpacity(0.5),
+                child: Text("Herramientas"),
+              )
+            ]),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+            ),
           ),
         ],
       )),

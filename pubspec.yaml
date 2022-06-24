@@ -67,6 +67,10 @@ flutter:
   assets:
       - assets/Stitch.png
       - assets/Herramientas.jpeg
+      - assets/Refacciones.jpeg
+      - assets/Lego.jpeg
+      - assets/Electrica.jpg
+      - assets/Mecanica.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

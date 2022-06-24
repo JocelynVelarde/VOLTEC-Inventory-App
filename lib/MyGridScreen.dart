@@ -28,12 +28,13 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 150,
+                width: 180,
                 height: 20,
                 color: Colors.white.withOpacity(0.5),
                 child: Text(
                   "Herramientas",
                   textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
                 ),
               )
             ]),
@@ -48,15 +49,20 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 50,
+                width: 180,
                 height: 20,
                 color: Colors.white.withOpacity(0.5),
-                child: Text("Refacciones"),
+                child: Text(
+                  "Refacciones",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
+                ),
               )
             ]),
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+                  image: AssetImage("assets/Refacciones.jpeg"),
+                  fit: BoxFit.cover),
             ),
           ),
           Container(
@@ -64,15 +70,19 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 50,
+                width: 180,
                 height: 20,
                 color: Colors.white.withOpacity(0.5),
-                child: Text("Mecanica"),
+                child: Text(
+                  "Mecanica",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
+                ),
               )
             ]),
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+                  image: AssetImage("assets/Mecanica.jpg"), fit: BoxFit.cover),
             ),
           ),
           Container(
@@ -80,15 +90,19 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 50,
+                width: 180,
                 height: 20,
                 color: Colors.white.withOpacity(0.5),
-                child: Text("Electrica y Neumatica"),
+                child: Text(
+                  "Electrica y Neumatica",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
+                ),
               )
             ]),
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+                  image: AssetImage("assets/Electrica.jpg"), fit: BoxFit.cover),
             ),
           ),
           Container(
@@ -96,15 +110,19 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 50,
+                width: 180,
                 height: 20,
                 color: Colors.white.withOpacity(0.5),
-                child: Text("Lego Mindstorms"),
+                child: Text(
+                  "Lego Mindstorms",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
+                ),
               )
             ]),
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover),
+                  image: AssetImage("assets/Lego.jpeg"), fit: BoxFit.cover),
             ),
           ),
           Container(
@@ -112,10 +130,14 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
             child: Stack(children: [
               Container(
-                width: 50,
+                width: 180,
                 height: 20,
                 color: Colors.white.withOpacity(0.5),
-                child: Text("Otros"),
+                child: Text(
+                  "Otros",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
+                ),
               )
             ]),
             decoration: BoxDecoration(

@@ -1,3 +1,4 @@
+import 'package:app_la_buena/Home.dart';
 import 'package:flutter/material.dart';
 
 class MyGridScreen extends StatefulWidget {
@@ -16,7 +17,9 @@ class _MyGridScreenState extends State<MyGridScreen> {
           actions: [
             IconButton(
               icon: Icon(Icons.account_box_rounded),
-              onPressed: () {},
+              onPressed: () {
+                Home();
+              },
             ),
           ],
           backgroundColor: const Color.fromARGB(255, 12, 107, 185),

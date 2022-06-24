@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class MyGridScreen extends StatefulWidget {
   const MyGridScreen({Key? key}) : super(key: key);
 
@@ -21,7 +22,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 decoration: BoxDecoration(
                     image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                  Colors.blue.withOpacity(0.5), BlendMode.srcOver),
+                  Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
               image: AssetImage(
                 "assets/Fondo.JPG",
               ),
@@ -45,7 +46,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     Container(
                       width: 190,
                       height: 20,
-                      color: Colors.white.withOpacity(0.6),
+                      color: Color(#1e224f).withOpacity(0.6),
                       child: Text(
                         "Herramientas",
                         textAlign: TextAlign.center,
@@ -160,7 +161,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                   ]),
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("assets/Viajes.jpeg"),
+                        image: AssetImage("assets/Viajes.JPG"),
                         fit: BoxFit.cover),
                   ),
                 ),

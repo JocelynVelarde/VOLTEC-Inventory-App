@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class MyGridScreen extends StatefulWidget {
   const MyGridScreen({Key? key}) : super(key: key);
 
@@ -14,7 +13,13 @@ class _MyGridScreenState extends State<MyGridScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text("VOLTEC App Inventario"),
-          backgroundColor: Colors.blue,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.account_box_rounded),
+              onPressed: () {},
+            ),
+          ],
+          backgroundColor: const Color.fromARGB(255, 12, 107, 185),
         ),
         body: Stack(
           children: [
@@ -46,7 +51,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     Container(
                       width: 190,
                       height: 20,
-                      color: Color(#1e224f).withOpacity(0.6),
+                      color: Colors.white.withOpacity(0.6),
                       child: Text(
                         "Herramientas",
                         textAlign: TextAlign.center,
@@ -55,8 +60,11 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     )
                   ]),
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(14.0)),
                     image: DecorationImage(
-                        image: AssetImage("assets/Herramientas.jpeg"),
+                        image: AssetImage(
+                          "assets/Herramientas.jpeg",
+                        ),
                         fit: BoxFit.cover),
                   ),
                 ),
@@ -76,6 +84,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     )
                   ]),
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(14.0)),
                     image: DecorationImage(
                         image: AssetImage("assets/Refacciones.jpeg"),
                         fit: BoxFit.cover),
@@ -97,6 +106,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     )
                   ]),
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(14.0)),
                     image: DecorationImage(
                         image: AssetImage("assets/Mecanica.jpg"),
                         fit: BoxFit.cover),
@@ -118,6 +128,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     )
                   ]),
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(14.0)),
                     image: DecorationImage(
                         image: AssetImage("assets/Electrica.jpg"),
                         fit: BoxFit.cover),
@@ -139,6 +150,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     )
                   ]),
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(14.0)),
                     image: DecorationImage(
                         image: AssetImage("assets/Lego.jpeg"),
                         fit: BoxFit.cover),
@@ -160,6 +172,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     )
                   ]),
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(14.0)),
                     image: DecorationImage(
                         image: AssetImage("assets/Viajes.JPG"),
                         fit: BoxFit.cover),

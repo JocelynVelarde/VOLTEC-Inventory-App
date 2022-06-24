@@ -28,3 +28,13 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+@override
+Widget build(BuildContext context) {
+  return Container(
+    constraints: const BoxConstraints.expand(),
+    decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage("assets/Stitch.png"), fit: BoxFit.cover)),
+  );
+}

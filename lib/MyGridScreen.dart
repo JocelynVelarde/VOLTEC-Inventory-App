@@ -46,11 +46,6 @@ class _MyGridScreenState extends State<MyGridScreen> {
             child: const Text('Fifth', style: TextStyle(fontSize: 20)),
             color: Colors.yellow,
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Six', style: TextStyle(fontSize: 20)),
-            color: Colors.blue,
-          ),
         ],
       )),
     );

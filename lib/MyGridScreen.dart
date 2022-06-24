@@ -53,7 +53,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 height: 20,
                 color: Colors.white.withOpacity(0.6),
                 child: Text(
-                  "Refacciones",
+                  "Consumibles",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 18),
                 ),
@@ -134,7 +134,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 height: 20,
                 color: Colors.white.withOpacity(0.6),
                 child: Text(
-                  "Otros",
+                  "Viajes",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 18),
                 ),

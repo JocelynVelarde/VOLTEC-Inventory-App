@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'VOLTEC App Inventario',
         theme: ThemeData(
           // This is the theme of your application.
           //
@@ -30,7 +30,10 @@ class MyApp extends StatelessWidget {
             title: Text("VOLTEC App Inventario"),
             actions: [
               IconButton(
-                  icon: Icon(Icons.account_box_rounded), onPressed: () {}),
+                  icon: Icon(Icons.account_box_rounded),
+                  onPressed: () {
+                    print("icon");
+                  }),
             ],
             backgroundColor: const Color.fromARGB(255, 12, 107, 185),
           ),

@@ -88,90 +88,111 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 ),
               ),
             ),
-            Container(
-              padding:
-                  const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
-              child: Stack(children: [
-                Container(
-                  width: 190,
-                  height: 20,
-                  color: Colors.white.withOpacity(0.6),
-                  child: Text(
-                    "Mecanica",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18),
-                  ),
-                )
-              ]),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                image: DecorationImage(
-                    image: AssetImage("assets/Mecanica.jpg"),
-                    fit: BoxFit.cover),
+            GestureDetector(
+              onTap: () {
+                print("jojo");
+              },
+              child: Container(
+                padding: const EdgeInsets.only(
+                    top: 140, bottom: 0, left: 0, right: 0),
+                child: Stack(children: [
+                  Container(
+                    width: 190,
+                    height: 20,
+                    color: Colors.white.withOpacity(0.6),
+                    child: Text(
+                      "Mecanica",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  )
+                ]),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(14.0)),
+                  image: DecorationImage(
+                      image: AssetImage("assets/Mecanica.jpg"),
+                      fit: BoxFit.cover),
+                ),
               ),
             ),
-            Container(
-              padding:
-                  const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
-              child: Stack(children: [
-                Container(
-                  width: 190,
-                  height: 20,
-                  color: Colors.white.withOpacity(0.6),
-                  child: Text(
-                    "Electrica y Neumatica",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18),
-                  ),
-                )
-              ]),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                image: DecorationImage(
-                    image: AssetImage("assets/Electrica.jpg"),
-                    fit: BoxFit.cover),
+            GestureDetector(
+              onTap: () {
+                print("hol");
+              },
+              child: Container(
+                padding: const EdgeInsets.only(
+                    top: 140, bottom: 0, left: 0, right: 0),
+                child: Stack(children: [
+                  Container(
+                    width: 190,
+                    height: 20,
+                    color: Colors.white.withOpacity(0.6),
+                    child: Text(
+                      "Electrica y Neumatica",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  )
+                ]),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(14.0)),
+                  image: DecorationImage(
+                      image: AssetImage("assets/Electrica.jpg"),
+                      fit: BoxFit.cover),
+                ),
               ),
             ),
-            Container(
-              padding:
-                  const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
-              child: Stack(children: [
-                Container(
-                  width: 190,
-                  height: 20,
-                  color: Colors.white.withOpacity(0.6),
-                  child: Text(
-                    "Lego Mindstorms",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18),
-                  ),
-                )
-              ]),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                image: DecorationImage(
-                    image: AssetImage("assets/Lego.jpeg"), fit: BoxFit.cover),
+            GestureDetector(
+              onTap: () {
+                print("holiwi");
+              },
+              child: Container(
+                padding: const EdgeInsets.only(
+                    top: 140, bottom: 0, left: 0, right: 0),
+                child: Stack(children: [
+                  Container(
+                    width: 190,
+                    height: 20,
+                    color: Colors.white.withOpacity(0.6),
+                    child: Text(
+                      "Lego Mindstorms",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  )
+                ]),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(14.0)),
+                  image: DecorationImage(
+                      image: AssetImage("assets/Lego.jpeg"), fit: BoxFit.cover),
+                ),
               ),
             ),
-            Container(
-              padding:
-                  const EdgeInsets.only(top: 140, bottom: 0, left: 0, right: 0),
-              child: Stack(children: [
-                Container(
-                  width: 190,
-                  height: 20,
-                  color: Colors.white.withOpacity(0.6),
-                  child: Text(
-                    "Viajes",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18),
-                  ),
-                )
-              ]),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                image: DecorationImage(
-                    image: AssetImage("assets/Viajes.JPG"), fit: BoxFit.cover),
+            GestureDetector(
+              onTap: () {
+                print("Hjwijdas");
+              },
+              child: Container(
+                padding: const EdgeInsets.only(
+                    top: 140, bottom: 0, left: 0, right: 0),
+                child: Stack(children: [
+                  Container(
+                    width: 190,
+                    height: 20,
+                    color: Colors.white.withOpacity(0.6),
+                    child: Text(
+                      "Viajes",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  )
+                ]),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(14.0)),
+                  image: DecorationImage(
+                      image: AssetImage("assets/Viajes.JPG"),
+                      fit: BoxFit.cover),
+                ),
               ),
             ),
           ],

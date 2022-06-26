@@ -23,48 +23,61 @@ class MyApp extends StatelessWidget {
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
 
-          primarySwatch: Colors.pink,
+          primarySwatch: Colors.blue,
         ),
         home: Scaffold(
           drawer: Drawer(
-            child: Container(
-              color: Color.fromARGB(255, 109, 166, 213),
-              child: Column(
-                children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    margin: const EdgeInsets.only(top: 50, bottom: 20),
-                    child: Image.asset("assets/Stitch.png"),
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                UserAccountsDrawerHeader(
+                  accountName: Text(
+                    'Jocelyn Velarde',
+                    style: TextStyle(color: Colors.black),
                   ),
-                  const Text(
-                    "Jocelyn Velarde",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  accountEmail: Text(
+                    'a01285780@tec.mx',
+                    style: TextStyle(color: Colors.black),
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 30),
-                    padding: const EdgeInsets.all(20),
-                    width: double.infinity,
-                    color: Colors.white.withOpacity(0.6),
-                    child: const Text("Home"),
+                  currentAccountPicture: CircleAvatar(
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/Stitch.png',
+                        fit: BoxFit.cover,
+                        width: 90,
+                        height: 90,
+                      ),
+                    ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    padding: const EdgeInsets.all(20),
-                    width: double.infinity,
-                    color: Colors.white.withOpacity(0.6),
-                    child: const Text("Login"),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage('assets/Fondo.JPG')),
                   ),
-                  Expanded(child: Container()),
-                  Container(
-                    margin: const EdgeInsets.only(top: 2),
-                    padding: const EdgeInsets.all(20),
-                    width: double.infinity,
-                    color: Colors.white.withOpacity(0.6),
-                    child: const Text("Logout"),
-                  ),
-                ],
-              ),
+                ),
+                ListTile(
+                  leading: Icon(Icons.home),
+                  title: Text('Home'),
+                  onTap: () => null,
+                ),
+                ListTile(
+                  leading: Icon(Icons.login),
+                  title: Text('Login'),
+                  onTap: () => null,
+                ),
+                ListTile(
+                  leading: Icon(Icons.share),
+                  title: Text('Screen'),
+                  onTap: () => null,
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('Logout'),
+                  leading: Icon(Icons.logout),
+                  onTap: () => null,
+                ),
+              ],
             ),
           ),
           appBar: AppBar(

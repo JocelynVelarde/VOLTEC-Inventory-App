@@ -33,7 +33,8 @@ class MyApp extends StatelessWidget {
                 UserAccountsDrawerHeader(
                   accountName: Text(
                     'Jocelyn Velarde',
-                    style: TextStyle(color: Colors.black),
+                    style:
+                        TextStyle(color: Colors.black, fontFamily: 'Raleway'),
                   ),
                   accountEmail: Text(
                     'a01285780@tec.mx',

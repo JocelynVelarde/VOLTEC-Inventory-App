@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Lego extends StatefulWidget {
-  const Lego({Key? key}) : super(key: key);
+class Herramientas extends StatefulWidget {
+  const Herramientas({Key? key}) : super(key: key);
 
   @override
-  _Lego createState() => _Lego();
+  _Herramientas createState() => _Herramientas();
 }
 
-class _Lego extends State<Lego> {
+class _Herramientas extends State<Herramientas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -154,7 +154,7 @@ class _Lego extends State<Lego> {
                     height: 20,
                     color: Colors.white.withOpacity(0.6),
                     child: Text(
-                      "Lego Mindstorms",
+                      "Herramientas Mindstorms",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 18),
                     ),
@@ -163,7 +163,8 @@ class _Lego extends State<Lego> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(14.0)),
                   image: DecorationImage(
-                      image: AssetImage("assets/Lego.jpeg"), fit: BoxFit.cover),
+                      image: AssetImage("assets/Herramientas.jpeg"),
+                      fit: BoxFit.cover),
                 ),
               ),
             ),

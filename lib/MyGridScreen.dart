@@ -63,7 +63,8 @@ class _MyGridScreenState extends State<MyGridScreen> {
             ),
             GestureDetector(
               onTap: () {
-                print("hola");
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const _Herramientas()));
               },
               child: Container(
                 padding: const EdgeInsets.only(

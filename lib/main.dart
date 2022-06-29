@@ -86,7 +86,7 @@ class MyApp extends StatelessWidget {
               IconButton(
                   icon: Icon(Icons.account_box_rounded),
                   onPressed: () {
-                    Navigator.pop(context);
+                    //Navigator.pop(context);
                   }),
             ],
             backgroundColor: const Color.fromARGB(255, 12, 107, 185),

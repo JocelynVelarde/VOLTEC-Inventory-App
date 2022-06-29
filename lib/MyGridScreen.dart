@@ -5,6 +5,7 @@ import 'package:app_la_buena/Refacciones.dart';
 import 'package:flutter/material.dart';
 
 import 'Herramientas.dart';
+import 'Viajes.dart';
 
 class MyGridScreen extends StatefulWidget {
   const MyGridScreen({Key? key}) : super(key: key);
@@ -68,7 +69,10 @@ class _MyGridScreenState extends State<MyGridScreen> {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Refacciones()));
+              },
               child: Container(
                 padding: const EdgeInsets.only(
                     top: 140, bottom: 0, left: 0, right: 0),
@@ -94,8 +98,8 @@ class _MyGridScreenState extends State<MyGridScreen> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const Refacciones()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Mecanica()));
               },
               child: Container(
                 padding: const EdgeInsets.only(
@@ -123,7 +127,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Mecanica()));
+                    MaterialPageRoute(builder: (context) => const Electrica()));
               },
               child: Container(
                 padding: const EdgeInsets.only(
@@ -151,7 +155,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Electrica()));
+                    MaterialPageRoute(builder: (context) => const Lego()));
               },
               child: Container(
                 padding: const EdgeInsets.only(
@@ -178,7 +182,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Lego()));
+                    MaterialPageRoute(builder: (context) => const Viajes()));
               },
               child: Container(
                 padding: const EdgeInsets.only(

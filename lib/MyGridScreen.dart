@@ -1,5 +1,6 @@
-import 'package:app_la_buena/Home.dart';
 import 'package:flutter/material.dart';
+
+import 'Herramientas.dart';
 
 class MyGridScreen extends StatefulWidget {
   const MyGridScreen({Key? key}) : super(key: key);
@@ -34,7 +35,8 @@ class _MyGridScreenState extends State<MyGridScreen> {
           children: <Widget>[
             GestureDetector(
               onTap: () {
-                print("hi");
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Herramientas()));
               },
               child: Container(
                 padding: const EdgeInsets.only(
@@ -62,10 +64,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
               ),
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const _Herramientas()));
-              },
+              onTap: () {},
               child: Container(
                 padding: const EdgeInsets.only(
                     top: 140, bottom: 0, left: 0, right: 0),

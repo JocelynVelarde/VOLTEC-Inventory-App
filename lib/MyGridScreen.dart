@@ -1,3 +1,7 @@
+import 'package:app_la_buena/Electrica.dart';
+import 'package:app_la_buena/Lego.dart';
+import 'package:app_la_buena/Mecanica.dart';
+import 'package:app_la_buena/Refacciones.dart';
 import 'package:flutter/material.dart';
 
 import 'Herramientas.dart';
@@ -90,7 +94,8 @@ class _MyGridScreenState extends State<MyGridScreen> {
             ),
             GestureDetector(
               onTap: () {
-                print("jojo");
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Refacciones()));
               },
               child: Container(
                 padding: const EdgeInsets.only(
@@ -117,7 +122,8 @@ class _MyGridScreenState extends State<MyGridScreen> {
             ),
             GestureDetector(
               onTap: () {
-                print("hol");
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Mecanica()));
               },
               child: Container(
                 padding: const EdgeInsets.only(
@@ -144,7 +150,8 @@ class _MyGridScreenState extends State<MyGridScreen> {
             ),
             GestureDetector(
               onTap: () {
-                print("holiwi");
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Electrica()));
               },
               child: Container(
                 padding: const EdgeInsets.only(
@@ -170,7 +177,8 @@ class _MyGridScreenState extends State<MyGridScreen> {
             ),
             GestureDetector(
               onTap: () {
-                print("Hjwijdas");
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const Lego()));
               },
               child: Container(
                 padding: const EdgeInsets.only(

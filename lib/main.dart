@@ -1,4 +1,5 @@
 import 'package:app_la_buena/MyGridScreen.dart';
+import 'package:app_la_buena/run.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -91,7 +92,7 @@ class MyApp extends StatelessWidget {
             ],
             backgroundColor: const Color.fromARGB(255, 12, 107, 185),
           ),
-          body: const MyGridScreen(),
+          body: const run(),
         ));
   }
 }

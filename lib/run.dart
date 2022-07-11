@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:app_la_buena/form.dart';
 import 'package:app_la_buena/form_controller.dart';
 
+import 'feedback_list.dart';
+
 class run extends StatefulWidget {
   const run({Key? key}) : super(key: key);
 
@@ -123,6 +125,16 @@ class _run extends State<run> {
               onPressed: _submitForm,
               child: Text('Submit Feedback'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FeedbackListScreen(),
+                    ));
+              },
+              child: Text('View Feedback'),
+            )
           ],
         ),
       ),

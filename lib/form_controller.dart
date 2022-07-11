@@ -8,7 +8,7 @@ import 'package:app_la_buena/form.dart';
 class FormController {
   // Google App Script Web URL.
   static const String URL =
-      "https://script.google.com/macros/s/AKfycbz0KJf2FO1jR-CPrVvStDyP36P3RMNxNKnfmbSIGZyyRtOSVEWMTmcKQdgvEREJJUEwOA/exec";
+      "https://script.google.com/macros/s/AKfycbzyRQ3RemKaaqCCHX-UX23yH93m73Ey2o9xg-tBEHk-WIBHVYRkxZEohrbFbFEs1aB3oQ/exec";
 
   // Success Status Message
   static const STATUS_SUCCESS = "SUCCESS";
@@ -31,5 +31,12 @@ class FormController {
     } catch (e) {
       print(e);
     }
+  }
+
+  Future<List<FeedbackForm>> getFeedbackList() async {
+    return await http.get(URL).then((response) {
+      var jsonFeedback = convert.jsonDecode(response.body) as List;
+      return jsonFeedback.map((json) => FeedbackForm.fromJson(json)).toList();
+    });
   }
 }

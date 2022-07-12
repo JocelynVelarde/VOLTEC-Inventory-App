@@ -1,3 +1,5 @@
+import 'package:app_la_buena/Herramientas.dart';
+import 'package:app_la_buena/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:app_la_buena/form.dart';
 import 'package:app_la_buena/form_controller.dart';
@@ -33,17 +35,17 @@ class _run extends State<run> {
 
       FormController formController = FormController();
 
-      _showSnackbar("Submitting Feedback");
+      _showSnackbar("Enviando herramienta al inventario...");
 
       // Submit 'feedbackForm' and save it in Google Sheets.
       formController.submitForm(feedbackForm, (String response) {
         print("Response: $response");
         if (response == FormController.STATUS_SUCCESS) {
           // Feedback is saved succesfully in Google Sheets.
-          _showSnackbar("Feedback Submitted");
+          _showSnackbar("Herramienta enviada");
         } else {
           // Error Occurred while saving data in Google Sheets.
-          _showSnackbar("Error Occurred!");
+          _showSnackbar("Ocurrio un error");
         }
       });
     }
@@ -58,10 +60,18 @@ class _run extends State<run> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       appBar: AppBar(
-        title: Text("widget.title"),
+        title: const Text("VOLTEC App Inventario"),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.account_box_rounded),
+              onPressed: () {
+                //Navigator.pop(context);
+              }),
+        ],
+        backgroundColor: const Color.fromARGB(255, 12, 107, 185),
       ),
+      key: _scaffoldKey,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -77,63 +87,64 @@ class _run extends State<run> {
                         controller: nameController,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Enter Valid Name';
+                            return 'Ingresa un nombre de herramienta valido';
                           }
                           return null;
                         },
-                        decoration: InputDecoration(labelText: 'Name'),
+                        decoration: InputDecoration(labelText: 'Herramienta'),
                       ),
                       TextFormField(
                         controller: emailController,
                         validator: (value) {
-                          if (!value!.contains("@")) {
-                            return 'Enter Valid Email';
+                          if (value!.isEmpty) {
+                            return 'Ingresa un numero';
                           }
                           return null;
                         },
                         keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(labelText: 'Email'),
+                        decoration:
+                            InputDecoration(labelText: 'Cantidad por agregar'),
                       ),
                       TextFormField(
                         controller: mobileNoController,
                         validator: (value) {
-                          if (value!.trim().length != 10) {
-                            return 'Enter 10 Digit Mobile Number';
+                          if (value!.isEmpty) {
+                            return 'Ingresa un URL o nombre de la tienda';
                           }
                           return null;
                         },
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
-                          labelText: 'Mobile Number',
+                          labelText: 'Donde se compro',
                         ),
                       ),
                       TextFormField(
                         controller: feedbackController,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Enter Valid Feedback';
+                            return 'Sube una foto';
                           }
                           return null;
                         },
                         keyboardType: TextInputType.multiline,
-                        decoration: InputDecoration(labelText: 'Feedback'),
+                        decoration: InputDecoration(labelText: 'Foto'),
                       ),
                     ],
                   ),
                 )),
             ElevatedButton(
               onPressed: _submitForm,
-              child: Text('Submit Feedback'),
+              child: Text('Enviar a inventario'),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => FeedbackListScreen(),
+                      builder: (context) => Home(),
                     ));
               },
-              child: Text('View Feedback'),
+              child: Text('Ver inventario actualizado'),
             )
           ],
         ),

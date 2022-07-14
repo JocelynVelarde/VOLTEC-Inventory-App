@@ -46,6 +46,18 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
 
   @override
   Widget build(BuildContext context) {
+    IconButton(
+      icon: const Icon(Icons.add),
+      color: Colors.white,
+      highlightColor: Colors.black,
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => run(),
+            ));
+      },
+    );
     return Scaffold(
         appBar: AppBar(
           title: const Text("Inventario de Herramientas"),
@@ -67,18 +79,6 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
             child: CircleAvatar(
               radius: 25,
               backgroundColor: Colors.blue,
-              child: IconButton(
-                icon: const Icon(Icons.add),
-                color: Colors.white,
-                highlightColor: Colors.black,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => run(),
-                      ));
-                },
-              ),
             ),
           ),
           Center(
@@ -88,42 +88,32 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                   mainAxisSpacing: 1 / 2,
                   crossAxisSpacing: 1 / 2,
                 ),
+                padding: const EdgeInsets.all(16),
                 itemCount: feedbackItems.length,
                 itemBuilder: (context, index) {
-                  return GridView.extent(
-                    primary: false,
-                    padding: const EdgeInsets.all(16),
-                    mainAxisSpacing: 1 / 2,
-                    crossAxisSpacing: 1 / 2,
-                    maxCrossAxisExtent: 250.0,
-                    children: <Widget>[
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(14.0)),
+                      image: DecorationImage(
+                          image:
+                              NetworkImage("${feedbackItems[index].feedback}"),
+                          fit: BoxFit.cover),
+                    ),
+                    padding: const EdgeInsets.only(
+                        top: 140, bottom: 0, left: 0, right: 0),
+                    child: Stack(children: [
                       Container(
-                        padding: const EdgeInsets.only(
-                            top: 140, bottom: 0, left: 0, right: 0),
-                        child: Stack(children: [
-                          Container(
-                            width: 190,
-                            height: 20,
-                            color: Colors.white.withOpacity(0.6),
-                            child: Text(
-                              "${feedbackItems[index].name} (${feedbackItems[index].email})",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 18),
-                            ),
-                          )
-                        ]),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                          image: DecorationImage(
-                              image: AssetImage(
-                                "assets/Herramientas.jpeg",
-                              ),
-                              fit: BoxFit.cover),
+                        width: 190,
+                        height: 20,
+                        color: Colors.white.withOpacity(0.6),
+                        child: Text(
+                          "${feedbackItems[index].name}",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 10),
                         ),
                       )
-                    ],
+                    ]),
                   );
-                  /**/
                 }),
           ),
         ]));

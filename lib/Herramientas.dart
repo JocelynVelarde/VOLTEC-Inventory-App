@@ -85,13 +85,31 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
             child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 250,
-                  mainAxisSpacing: 1 / 2,
-                  crossAxisSpacing: 1 / 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
                 ),
                 padding: const EdgeInsets.all(16),
                 itemCount: feedbackItems.length,
                 itemBuilder: (context, index) {
                   return Container(
+                    padding: const EdgeInsets.only(
+                        top: 140, bottom: 0, left: 0, right: 0),
+                    child: Stack(children: [
+                      Container(
+                        alignment: Alignment(0.0, 0.0),
+                        width: 192,
+                        height: 27,
+                        color: Color.fromARGB(255, 91, 91, 91).withOpacity(0.6),
+                        child: Text(
+                          "${feedbackItems[index].email}",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                          maxLines: 2,
+                        ),
+                      ),
+                    ]),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(14.0)),
                       image: DecorationImage(
@@ -99,20 +117,6 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                               NetworkImage("${feedbackItems[index].feedback}"),
                           fit: BoxFit.cover),
                     ),
-                    padding: const EdgeInsets.only(
-                        top: 140, bottom: 0, left: 0, right: 0),
-                    child: Stack(children: [
-                      Container(
-                        width: 190,
-                        height: 20,
-                        color: Colors.white.withOpacity(0.6),
-                        child: Text(
-                          "${feedbackItems[index].name}",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 10),
-                        ),
-                      )
-                    ]),
                   );
                 }),
           ),

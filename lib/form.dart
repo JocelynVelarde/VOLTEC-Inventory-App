@@ -4,12 +4,14 @@ class FeedbackForm {
   String email;
   String mobileNo;
   String feedback;
+  String comprar;
 
-  FeedbackForm(this.name, this.email, this.mobileNo, this.feedback);
+  FeedbackForm(
+      this.name, this.email, this.mobileNo, this.feedback, this.comprar);
 
   factory FeedbackForm.fromJson(dynamic json) {
     return FeedbackForm("${json['name']}", "${json['email']}",
-        "${json['mobileNo']}", "${json['feedback']}");
+        "${json['mobileNo']}", "${json['feedback']}", "${json['comprar']}");
   }
 
   // Method to make GET parameters.
@@ -17,6 +19,7 @@ class FeedbackForm {
         'name': name,
         'email': email,
         'mobileNo': mobileNo,
-        'feedback': feedback
+        'feedback': feedback,
+        'comprar': comprar
       };
 }

@@ -21,7 +21,7 @@ class _run extends State<run> {
   TextEditingController emailController = TextEditingController();
   TextEditingController mobileNoController = TextEditingController();
   TextEditingController feedbackController = TextEditingController();
-
+  TextEditingController comprarController = TextEditingController();
   void _submitForm() {
     // Validate returns true if the form is valid, or false
     // otherwise.
@@ -31,7 +31,8 @@ class _run extends State<run> {
           nameController.text,
           emailController.text,
           mobileNoController.text,
-          feedbackController.text);
+          feedbackController.text,
+          comprarController.text);
 
       FormController formController = FormController();
 

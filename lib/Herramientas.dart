@@ -58,6 +58,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
             ));
       },
     );
+
     return Scaffold(
         appBar: AppBar(
           title: const Text("Inventario de Herramientas"),
@@ -91,31 +92,70 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                 padding: const EdgeInsets.all(16),
                 itemCount: feedbackItems.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    padding: const EdgeInsets.only(
-                        top: 140, bottom: 0, left: 0, right: 0),
-                    child: Stack(children: [
-                      Container(
-                        alignment: Alignment(0.0, 0.0),
-                        width: 192,
-                        height: 27,
-                        color: Color.fromARGB(255, 91, 91, 91).withOpacity(0.6),
-                        child: Text(
-                          "${feedbackItems[index].email}",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 12,
+                  Widget _buildPopupDialog(BuildContext context) {
+                    return AlertDialog(
+                      title: Text("${feedbackItems[index].email}",
+                          style: const TextStyle(fontWeight: FontWeight.bold)),
+                      content: new Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Image.network(
+                            '${feedbackItems[index].feedback}',
+                            height: 200,
+                            width: 200,
+                            alignment: Alignment(0.0, 0.0),
                           ),
-                          maxLines: 2,
-                        ),
+                          Text("Clave: ${feedbackItems[index].name}"),
+                          Text("Cantidad: " +
+                              "${feedbackItems[index].mobileNo}".toString()),
+                          Text("Comprar: ")
+                        ],
                       ),
-                    ]),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          image:
-                              NetworkImage("${feedbackItems[index].feedback}"),
-                          fit: BoxFit.cover),
+                      actions: <Widget>[
+                        // ignore: unnecessary_new
+                        new TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text('Cerrar'),
+                        ),
+                      ],
+                    );
+                  }
+
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => _buildPopupDialog(context)));
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.only(
+                          top: 140, bottom: 0, left: 0, right: 0),
+                      child: Stack(children: [
+                        Container(
+                          alignment: Alignment(0.0, 0.0),
+                          width: 192,
+                          height: 27,
+                          color: Colors.black.withOpacity(0.6),
+                          child: Text(
+                            "${feedbackItems[index].email}",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                            maxLines: 2,
+                          ),
+                        ),
+                      ]),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(14.0)),
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                "${feedbackItems[index].feedback}"),
+                            fit: BoxFit.cover),
+                      ),
                     ),
                   );
                 }),

@@ -1,8 +1,9 @@
 import 'package:app_la_buena/Herramientas.dart';
+import 'package:app_la_buena/Herramientas_controller.dart';
 import 'package:app_la_buena/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:app_la_buena/Herramientas_form.dart';
-import 'package:app_la_buena/Herramientas_controller.dart';
+import 'package:app_la_buena/Herramientas_formulario.dart';
 
 class run extends StatefulWidget {
   const run({Key? key}) : super(key: key);
@@ -83,7 +84,7 @@ class _run extends State<run> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       TextFormField(
-                        controller: nameController,
+                        controller: emailController,
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Ingresa un nombre de herramienta valido';
@@ -93,7 +94,7 @@ class _run extends State<run> {
                         decoration: InputDecoration(labelText: 'Herramienta'),
                       ),
                       TextFormField(
-                        controller: emailController,
+                        controller: mobileNoController,
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Ingresa un numero';
@@ -105,7 +106,7 @@ class _run extends State<run> {
                             InputDecoration(labelText: 'Cantidad por agregar'),
                       ),
                       TextFormField(
-                        controller: mobileNoController,
+                        controller: feedbackController,
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Ingresa un URL o nombre de la tienda';
@@ -118,7 +119,7 @@ class _run extends State<run> {
                         ),
                       ),
                       TextFormField(
-                        controller: feedbackController,
+                        controller: comprarController,
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Sube una foto';

@@ -8,10 +8,10 @@ import 'package:app_la_buena/Herramientas_form.dart';
 class FormController {
   // Google App Script Web URL.
   static const String URL =
-      "https://script.google.com/macros/s/AKfycbzyRQ3RemKaaqCCHX-UX23yH93m73Ey2o9xg-tBEHk-WIBHVYRkxZEohrbFbFEs1aB3oQ/exec";
+      "https://script.google.com/macros/s/AKfycbziPGTgbIrJERzjMLk2xUhMwz7xexl-BQAaFaHnRp4obJhyS59LGnfoeEqE2jr_U-jeNw/exec";
 
   // Success Status Message
-  static const STATUS_SUCCESS = "EXITOSO";
+  static const STATUS_SUCCESS = "SUCCESS";
 
   /// Async function which saves feedback, parses [feedbackForm] parameters
   /// and sends HTTP GET request on [URL]. On successful response, [callback] is called.

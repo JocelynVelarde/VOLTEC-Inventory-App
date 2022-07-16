@@ -11,7 +11,7 @@ class FormController {
       "https://script.google.com/macros/s/AKfycbzyRQ3RemKaaqCCHX-UX23yH93m73Ey2o9xg-tBEHk-WIBHVYRkxZEohrbFbFEs1aB3oQ/exec";
 
   // Success Status Message
-  static const STATUS_SUCCESS = "SUCCESS";
+  static const STATUS_SUCCESS = "EXITOSO";
 
   /// Async function which saves feedback, parses [feedbackForm] parameters
   /// and sends HTTP GET request on [URL]. On successful response, [callback] is called.

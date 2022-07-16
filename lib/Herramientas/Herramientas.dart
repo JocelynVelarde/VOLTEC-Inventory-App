@@ -1,7 +1,7 @@
-import 'package:app_la_buena/Herramientas_controller.dart';
-import 'package:app_la_buena/Herramientas_formulario.dart';
+import 'package:app_la_buena/Herramientas/Herramientas_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:app_la_buena/Herramientas_form.dart';
+import 'package:app_la_buena/Herramientas/Herramientas_form.dart';
+import 'package:app_la_buena/Herramientas/Herramientas_formulario.dart';
 
 import 'Herramientas_form.dart';
 
@@ -39,7 +39,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
 
     FormController().getFeedbackList().then((feedbackItems) {
       setState(() {
-        this.feedbackItems = feedbackItems;
+        this.feedbackItems = feedbackItems.cast<FeedbackForm>();
       });
     });
   }

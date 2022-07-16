@@ -2,8 +2,6 @@ import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:app_la_buena/Herramientas_formulario.dart';
 import 'package:flutter/material.dart';
 
-import 'feedback_list.dart';
-
 void main() {
   runApp(MyApp());
 }

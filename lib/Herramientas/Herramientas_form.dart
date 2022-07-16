@@ -18,7 +18,7 @@ class FeedbackForm {
   Map toJson() => {
         'clave': clave,
         'herramienta': herramienta,
-        'cantidad': cantidad.toString(),
+        'cantidad': cantidad,
         'imagenUrl': imagenUrl,
         'tienda': tienda
       };

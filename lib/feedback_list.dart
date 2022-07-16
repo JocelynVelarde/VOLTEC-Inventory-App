@@ -1,8 +1,8 @@
 import 'package:app_la_buena/form_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:app_la_buena/form.dart';
+import 'package:app_la_buena/Herramientas_form.dart';
 
-import 'form.dart';
+import 'Herramientas_form.dart';
 
 class FeedbackListScreen extends StatelessWidget {
   @override
@@ -57,7 +57,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                 Icon(Icons.build),
                 Expanded(
                   child: Text(
-                      "${feedbackItems[index].name} (${feedbackItems[index].email})"),
+                      "${feedbackItems[index].clave} (${feedbackItems[index].herramienta})"),
                 )
               ],
             ),
@@ -65,7 +65,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
               children: <Widget>[
                 Icon(Icons.message),
                 Expanded(
-                  child: Text(feedbackItems[index].feedback),
+                  child: Text(feedbackItems[index].imagenUrl),
                 )
               ],
             ),

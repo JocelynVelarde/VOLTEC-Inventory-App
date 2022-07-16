@@ -1,9 +1,9 @@
 import 'package:app_la_buena/form_controller.dart';
-import 'package:app_la_buena/run.dart';
+import 'package:app_la_buena/Herramientas_formulario.dart';
 import 'package:flutter/material.dart';
-import 'package:app_la_buena/form.dart';
+import 'package:app_la_buena/Herramientas_form.dart';
 
-import 'form.dart';
+import 'Herramientas_form.dart';
 
 class FeedbackListScreen extends StatelessWidget {
   @override
@@ -94,22 +94,22 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                 itemBuilder: (context, index) {
                   Widget _buildPopupDialog(BuildContext context) {
                     return AlertDialog(
-                      title: Text("${feedbackItems[index].email}",
+                      title: Text("${feedbackItems[index].herramienta}",
                           style: const TextStyle(fontWeight: FontWeight.bold)),
                       content: new Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Image.network(
-                            '${feedbackItems[index].feedback}',
+                            '${feedbackItems[index].imagenUrl}',
                             height: 200,
                             width: 200,
                             alignment: Alignment(0.0, 0.0),
                           ),
-                          Text("Clave: ${feedbackItems[index].name}"),
+                          Text("Clave: ${feedbackItems[index].clave}"),
                           Text("Cantidad: " +
-                              "${feedbackItems[index].mobileNo}".toString()),
-                          Text("Comprar: ")
+                              "${feedbackItems[index].cantidad}".toString()),
+                          Text("Comprar: ${feedbackItems[index].tienda}")
                         ],
                       ),
                       actions: <Widget>[
@@ -139,7 +139,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                           height: 27,
                           color: Colors.black.withOpacity(0.6),
                           child: Text(
-                            "${feedbackItems[index].email}",
+                            "${feedbackItems[index].herramienta}",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
@@ -153,7 +153,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                         borderRadius: BorderRadius.all(Radius.circular(14.0)),
                         image: DecorationImage(
                             image: NetworkImage(
-                                "${feedbackItems[index].feedback}"),
+                                "${feedbackItems[index].imagenUrl}"),
                             fit: BoxFit.cover),
                       ),
                     ),

@@ -47,22 +47,20 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
 
   @override
   Widget build(BuildContext context) {
-    IconButton(
-      icon: const Icon(Icons.add),
-      color: Colors.white,
-      highlightColor: Colors.black,
-      onPressed: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => run(),
-            ));
-      },
-    );
-
     return Scaffold(
         appBar: AppBar(
           title: const Text("Inventario de Herramientas"),
+          actions: [
+            IconButton(
+                icon: Icon(Icons.add),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => run(),
+                      ));
+                }),
+          ],
         ),
         body: Stack(children: [
           Container(
@@ -76,12 +74,6 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
               fit: BoxFit.cover,
             )),
             height: 700,
-            alignment: Alignment.bottomRight,
-            padding: const EdgeInsets.all(20),
-            child: CircleAvatar(
-              radius: 25,
-              backgroundColor: Colors.blue,
-            ),
           ),
           Center(
             child: GridView.builder(
@@ -106,6 +98,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                             height: 200,
                             width: 200,
                             alignment: Alignment(0.0, 0.0),
+                            fit: BoxFit.cover,
                           ),
                           Text("Clave: ${feedbackItems[index].name}"),
                           Text("Cantidad: ${feedbackItems[index].mobileNo}"),
@@ -152,6 +145,9 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(14.0)),
                         image: DecorationImage(
+                            colorFilter: ColorFilter.mode(
+                                Colors.blueGrey.withOpacity(0.2),
+                                BlendMode.srcOver),
                             image: NetworkImage(
                                 "${feedbackItems[index].feedback}"),
                             fit: BoxFit.cover),

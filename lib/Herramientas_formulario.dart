@@ -60,95 +60,248 @@ class _run extends State<run> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("VOLTEC App Inventario"),
-        actions: [
-          IconButton(
-              icon: Icon(Icons.account_box_rounded),
-              onPressed: () {
-                //Navigator.pop(context);
-              }),
-        ],
-        backgroundColor: const Color.fromARGB(255, 12, 107, 185),
-      ),
-      key: _scaffoldKey,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Form(
-                key: _formKey,
-                child: Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      TextFormField(
-                        controller: emailController,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Ingresa un nombre de herramienta valido';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(labelText: 'Herramienta'),
-                      ),
-                      TextFormField(
-                        controller: mobileNoController,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Ingresa un numero';
-                          }
-                          return null;
-                        },
-                        keyboardType: TextInputType.emailAddress,
-                        decoration:
-                            InputDecoration(labelText: 'Cantidad por agregar'),
-                      ),
-                      TextFormField(
-                        controller: feedbackController,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Ingresa un URL o nombre de la tienda';
-                          }
-                          return null;
-                        },
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          labelText: 'Donde se compro',
-                        ),
-                      ),
-                      TextFormField(
-                        controller: comprarController,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Sube una foto';
-                          }
-                          return null;
-                        },
-                        keyboardType: TextInputType.multiline,
-                        decoration: InputDecoration(labelText: 'Foto'),
-                      ),
-                    ],
-                  ),
-                )),
-            ElevatedButton(
-              onPressed: _submitForm,
-              child: Text('Enviar a inventario'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Home(),
-                    ));
-              },
-              child: Text('Ver inventario actualizado'),
-            )
+        appBar: AppBar(
+          title: const Text("VOLTEC App Inventario"),
+          actions: [
+            IconButton(icon: Icon(Icons.account_box_rounded), onPressed: () {}),
           ],
+          backgroundColor: const Color.fromARGB(255, 12, 107, 185),
         ),
-      ),
-    );
+        key: _scaffoldKey,
+        body: Stack(children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                    Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
+                image: AssetImage(
+                  "assets/Herramientas.jpeg",
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+            height: 700,
+          ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Form(
+                    key: _formKey,
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          TextFormField(
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            controller: emailController,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Ingresa un nombre de herramienta valido';
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                              labelText: 'Herramienta',
+                              focusColor: Colors.white,
+                              //add prefix icon
+                              prefixIcon: Icon(
+                                Icons.build,
+                                color: Colors.black,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Colors.black, width: 1.0),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              fillColor: Colors.white, filled: true,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            controller: nameController,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Ingresa una clave valida';
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                              labelText: 'Clave',
+                              focusColor: Colors.white,
+                              //add prefix icon
+                              prefixIcon: Icon(
+                                Icons.key,
+                                color: Colors.black,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Colors.black, width: 1.0),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              fillColor: Colors.white, filled: true,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            controller: mobileNoController,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Ingresa un numero';
+                              }
+                              return null;
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                              labelText: 'Cantidad por agregar',
+                              focusColor: Colors.white,
+                              //add prefix icon
+                              prefixIcon: Icon(
+                                Icons.post_add,
+                                color: Colors.black,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Colors.black, width: 1.0),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              fillColor: Colors.white, filled: true,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            controller: comprarController,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Ingresa un URL o nombre de la tienda';
+                              }
+                              return null;
+                            },
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelText: 'Donde se compro',
+                              focusColor: Colors.white,
+                              //add prefix icon
+                              prefixIcon: Icon(
+                                Icons.store,
+                                color: Colors.black,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Colors.black, width: 1.0),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              fillColor: Colors.white, filled: true,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          TextFormField(
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            controller: feedbackController,
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Sube una link para la foto';
+                              }
+                              return null;
+                            },
+                            keyboardType: TextInputType.multiline,
+                            decoration: InputDecoration(
+                              labelText: 'Foto (link)',
+                              focusColor: Colors.white,
+                              //add prefix icon
+                              prefixIcon: Icon(
+                                Icons.add_link,
+                                color: Colors.black,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: Colors.black, width: 1.0),
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              fillColor: Colors.white, filled: true,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                        ],
+                      ),
+                    )),
+                ElevatedButton(
+                    onPressed: _submitForm,
+                    child: Text('Enviar al inventario'),
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40)),
+                        primary: Colors.black,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 75, vertical: 20),
+                        textStyle: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ))),
+                SizedBox(height: 10),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FeedbackListPage(
+                              title: '',
+                            ),
+                          ));
+                    },
+                    child: Text('Ver el inventario actualizado'),
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40)),
+                        primary: Colors.black,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                        textStyle: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ))),
+              ],
+            ),
+          )
+        ]));
   }
 }

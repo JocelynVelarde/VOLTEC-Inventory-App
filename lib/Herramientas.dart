@@ -1,5 +1,6 @@
 import 'package:app_la_buena/Herramientas_controller.dart';
 import 'package:app_la_buena/Herramientas_controller.dart';
+import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:app_la_buena/Herramientas_form.dart';
 import 'package:app_la_buena/Herramientas_formulario.dart';
@@ -49,17 +50,30 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Inventario de Herramientas"),
-          actions: [
-            IconButton(
-                icon: Icon(Icons.add),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => run(),
-                      ));
-                }),
+          backgroundColor: Color.fromARGB(255, 0, 173, 238),
+          title: Text("Inventario Herramientas"),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => MyGridScreen()));
+            },
+            child: Icon(
+              Icons.arrow_back, // add custom icons also
+            ),
+          ),
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => run()));
+                  },
+                  child: Icon(
+                    Icons.add,
+                    size: 26.0,
+                  ),
+                )),
           ],
         ),
         body: Stack(children: [
@@ -146,7 +160,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                         borderRadius: BorderRadius.all(Radius.circular(14.0)),
                         image: DecorationImage(
                             colorFilter: ColorFilter.mode(
-                                Colors.blueGrey.withOpacity(0.2),
+                                Colors.blueGrey.withOpacity(0.3),
                                 BlendMode.srcOver),
                             image: NetworkImage(
                                 "${feedbackItems[index].feedback}"),

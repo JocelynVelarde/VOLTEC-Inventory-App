@@ -65,7 +65,7 @@ class _run extends State<run> {
           actions: [
             IconButton(icon: Icon(Icons.account_box_rounded), onPressed: () {}),
           ],
-          backgroundColor: const Color.fromARGB(255, 12, 107, 185),
+          backgroundColor: const Color.fromARGB(255, 0, 173, 238),
         ),
         key: _scaffoldKey,
         body: Stack(children: [
@@ -270,7 +270,7 @@ class _run extends State<run> {
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40)),
-                        primary: Colors.black,
+                        primary: Color.fromARGB(255, 30, 34, 79),
                         padding:
                             EdgeInsets.symmetric(horizontal: 75, vertical: 20),
                         textStyle: TextStyle(
@@ -292,7 +292,7 @@ class _run extends State<run> {
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40)),
-                        primary: Colors.black,
+                        primary: Color.fromARGB(255, 30, 34, 79),
                         padding:
                             EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                         textStyle: TextStyle(

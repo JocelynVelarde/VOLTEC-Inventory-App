@@ -1,10 +1,10 @@
 import 'package:app_la_buena/Herramientas_controller.dart';
-import 'package:app_la_buena/feedback_list.dart';
 import 'package:flutter/material.dart';
 import 'package:app_la_buena/Herramientas_form.dart';
 
 import 'Herramientas_form.dart';
 
+// ignore: use_key_in_widget_constructors
 class FeedbackListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class FeedbackListScreen extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: FeedbackListPage(title: "Responses"));
+        home: const FeedbackListPage(title: "Responses"));
   }
 }
 
@@ -23,6 +23,7 @@ class FeedbackListPage extends StatefulWidget {
   final String title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _FeedbackListPageState createState() => _FeedbackListPageState();
 }
 
@@ -55,7 +56,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
           return ListTile(
             title: Row(
               children: <Widget>[
-                Icon(Icons.build),
+                const Icon(Icons.build),
                 Expanded(
                   child: Text(
                       "${feedbackItems[index].name} (${feedbackItems[index].email})"),
@@ -64,8 +65,9 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
             ),
             subtitle: Row(
               children: <Widget>[
-                Icon(Icons.message),
+                const Icon(Icons.message),
                 Expanded(
+                  // ignore: unnecessary_string_interpolations
                   child: Text("${feedbackItems[index].name}"),
                 )
               ],

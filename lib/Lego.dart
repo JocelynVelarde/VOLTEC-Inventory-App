@@ -1,9 +1,11 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 class Lego extends StatefulWidget {
   const Lego({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _Lego createState() => _Lego();
 }
 
@@ -15,7 +17,7 @@ class _Lego extends State<Lego> {
         title: const Text("VOLTEC App Inventario"),
         actions: [
           IconButton(
-              icon: Icon(Icons.account_box_rounded),
+              icon: const Icon(Icons.account_box_rounded),
               onPressed: () {
                 //Navigator.pop(context);
               }),

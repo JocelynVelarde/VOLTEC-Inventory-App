@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:app_la_buena/Electrica.dart';
 import 'package:app_la_buena/Lego.dart';
 import 'package:app_la_buena/Mecanica.dart';
@@ -11,6 +12,7 @@ class MyGridScreen extends StatefulWidget {
   const MyGridScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyGridScreenState createState() => _MyGridScreenState();
 }
 
@@ -23,11 +25,11 @@ class _MyGridScreenState extends State<MyGridScreen> {
             padding: EdgeInsets.zero,
             children: [
               UserAccountsDrawerHeader(
-                accountName: Text(
+                accountName: const Text(
                   'Jocelyn Velarde',
                   style: TextStyle(color: Colors.black),
                 ),
-                accountEmail: Text(
+                accountEmail: const Text(
                   'a01285780@tec.mx',
                   style: TextStyle(color: Colors.black),
                 ),
@@ -41,31 +43,35 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     ),
                   ),
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.blue,
                   image: DecorationImage(
                       fit: BoxFit.fill, image: AssetImage('assets/Fondo.JPG')),
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.home),
-                title: Text('Home'),
+                leading: const Icon(Icons.home),
+                title: const Text('Home'),
+                // ignore: avoid_returning_null_for_void
                 onTap: () => null,
               ),
               ListTile(
-                leading: Icon(Icons.login),
-                title: Text('Login'),
+                leading: const Icon(Icons.login),
+                title: const Text('Login'),
+                // ignore: avoid_returning_null_for_void
                 onTap: () => null,
               ),
               ListTile(
-                leading: Icon(Icons.share),
-                title: Text('Screen'),
+                leading: const Icon(Icons.share),
+                title: const Text('Screen'),
+                // ignore: avoid_returning_null_for_void
                 onTap: () => null,
               ),
-              Divider(),
+              const Divider(),
               ListTile(
-                title: Text('Logout'),
-                leading: Icon(Icons.logout),
+                title: const Text('Logout'),
+                leading: const Icon(Icons.logout),
+                // ignore: avoid_returning_null_for_void
                 onTap: () => null,
               ),
             ],
@@ -75,7 +81,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
           title: const Text("VOLTEC App Inventario"),
           actions: [
             IconButton(
-                icon: Icon(Icons.account_box_rounded),
+                icon: const Icon(Icons.account_box_rounded),
                 onPressed: () {
                   //Navigator.pop(context);
                 }),
@@ -89,7 +95,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                     image: DecorationImage(
               colorFilter: ColorFilter.mode(
                   Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
-              image: AssetImage(
+              image: const AssetImage(
                 "assets/Fondo.JPG",
               ),
               fit: BoxFit.cover,
@@ -110,12 +116,24 @@ class _MyGridScreenState extends State<MyGridScreen> {
                   child: Container(
                     padding: const EdgeInsets.only(
                         top: 140, bottom: 0, left: 0, right: 0),
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(14.0)),
+                      image: DecorationImage(
+                          colorFilter: ColorFilter.mode(
+                              Colors.blueGrey.withOpacity(0.04),
+                              BlendMode.srcOver),
+                          image: const AssetImage(
+                            "assets/Herramientas.jpeg",
+                          ),
+                          fit: BoxFit.cover),
+                    ),
                     child: Stack(children: [
                       Container(
                         width: 194,
                         height: 25,
                         color: Colors.white.withOpacity(0.6),
-                        child: Text(
+                        child: const Text(
                           "Herramientas",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -123,17 +141,6 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         ),
                       )
                     ]),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: AssetImage(
-                            "assets/Herramientas.jpeg",
-                          ),
-                          fit: BoxFit.cover),
-                    ),
                   ),
                 ),
                 GestureDetector(
@@ -144,12 +151,22 @@ class _MyGridScreenState extends State<MyGridScreen> {
                   child: Container(
                     padding: const EdgeInsets.only(
                         top: 140, bottom: 0, left: 0, right: 0),
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(14.0)),
+                      image: DecorationImage(
+                          colorFilter: ColorFilter.mode(
+                              Colors.blueGrey.withOpacity(0.04),
+                              BlendMode.srcOver),
+                          image: const AssetImage("assets/Refacciones.jpeg"),
+                          fit: BoxFit.cover),
+                    ),
                     child: Stack(children: [
                       Container(
                         width: 194,
                         height: 25,
                         color: Colors.white.withOpacity(0.6),
-                        child: Text(
+                        child: const Text(
                           "Consumibles",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -157,15 +174,6 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         ),
                       )
                     ]),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: AssetImage("assets/Refacciones.jpeg"),
-                          fit: BoxFit.cover),
-                    ),
                   ),
                 ),
                 GestureDetector(
@@ -176,12 +184,22 @@ class _MyGridScreenState extends State<MyGridScreen> {
                   child: Container(
                     padding: const EdgeInsets.only(
                         top: 140, bottom: 0, left: 0, right: 0),
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(14.0)),
+                      image: DecorationImage(
+                          colorFilter: ColorFilter.mode(
+                              Colors.blueGrey.withOpacity(0.04),
+                              BlendMode.srcOver),
+                          image: const AssetImage("assets/Mecanica.jpg"),
+                          fit: BoxFit.cover),
+                    ),
                     child: Stack(children: [
                       Container(
                         width: 194,
                         height: 25,
                         color: Colors.white.withOpacity(0.6),
-                        child: Text(
+                        child: const Text(
                           "Mecanica",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -189,15 +207,6 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         ),
                       )
                     ]),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: AssetImage("assets/Mecanica.jpg"),
-                          fit: BoxFit.cover),
-                    ),
                   ),
                 ),
                 GestureDetector(
@@ -208,12 +217,22 @@ class _MyGridScreenState extends State<MyGridScreen> {
                   child: Container(
                     padding: const EdgeInsets.only(
                         top: 140, bottom: 0, left: 0, right: 0),
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(14.0)),
+                      image: DecorationImage(
+                          colorFilter: ColorFilter.mode(
+                              Colors.blueGrey.withOpacity(0.04),
+                              BlendMode.srcOver),
+                          image: const AssetImage("assets/Electrica.jpg"),
+                          fit: BoxFit.cover),
+                    ),
                     child: Stack(children: [
                       Container(
                         width: 194,
                         height: 25,
                         color: Colors.white.withOpacity(0.6),
-                        child: Text(
+                        child: const Text(
                           "Electrica y Neumatica",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -221,15 +240,6 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         ),
                       )
                     ]),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: AssetImage("assets/Electrica.jpg"),
-                          fit: BoxFit.cover),
-                    ),
                   ),
                 ),
                 GestureDetector(
@@ -240,12 +250,22 @@ class _MyGridScreenState extends State<MyGridScreen> {
                   child: Container(
                     padding: const EdgeInsets.only(
                         top: 140, bottom: 0, left: 0, right: 0),
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(14.0)),
+                      image: DecorationImage(
+                          colorFilter: ColorFilter.mode(
+                              Colors.blueGrey.withOpacity(0.04),
+                              BlendMode.srcOver),
+                          image: const AssetImage("assets/Lego.jpeg"),
+                          fit: BoxFit.cover),
+                    ),
                     child: Stack(children: [
                       Container(
                         width: 194,
                         height: 25,
                         color: Colors.white.withOpacity(0.6),
-                        child: Text(
+                        child: const Text(
                           "Lego Mindstorms",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -253,15 +273,6 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         ),
                       )
                     ]),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: AssetImage("assets/Lego.jpeg"),
-                          fit: BoxFit.cover),
-                    ),
                   ),
                 ),
                 GestureDetector(
@@ -272,12 +283,22 @@ class _MyGridScreenState extends State<MyGridScreen> {
                   child: Container(
                     padding: const EdgeInsets.only(
                         top: 140, bottom: 0, left: 0, right: 0),
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(14.0)),
+                      image: DecorationImage(
+                          colorFilter: ColorFilter.mode(
+                              Colors.blueGrey.withOpacity(0.04),
+                              BlendMode.srcOver),
+                          image: const AssetImage("assets/Viajes.JPG"),
+                          fit: BoxFit.cover),
+                    ),
                     child: Stack(children: [
                       Container(
                         width: 194,
                         height: 25,
                         color: Colors.white.withOpacity(0.6),
-                        child: Text(
+                        child: const Text(
                           "Viajes",
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -285,15 +306,6 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         ),
                       )
                     ]),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: AssetImage("assets/Viajes.JPG"),
-                          fit: BoxFit.cover),
-                    ),
                   ),
                 ),
               ],

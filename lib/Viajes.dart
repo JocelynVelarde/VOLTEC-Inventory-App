@@ -1,9 +1,11 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 class Viajes extends StatefulWidget {
   const Viajes({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _Viajes createState() => _Viajes();
 }
 
@@ -15,7 +17,7 @@ class _Viajes extends State<Viajes> {
         title: const Text("VOLTEC App Inventario"),
         actions: [
           IconButton(
-              icon: Icon(Icons.account_box_rounded),
+              icon: const Icon(Icons.account_box_rounded),
               onPressed: () {
                 //Navigator.pop(context);
               }),

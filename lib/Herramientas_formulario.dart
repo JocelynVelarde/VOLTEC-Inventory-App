@@ -1,17 +1,19 @@
+// ignore: file_names
 import 'package:app_la_buena/Herramientas.dart';
 import 'package:app_la_buena/Herramientas_controller.dart';
-import 'package:app_la_buena/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:app_la_buena/Herramientas_form.dart';
-import 'package:app_la_buena/Herramientas_formulario.dart';
 
+// ignore: camel_case_types
 class run extends StatefulWidget {
   const run({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _run createState() => _run();
 }
 
+// ignore: camel_case_types
 class _run extends State<run> {
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -39,6 +41,7 @@ class _run extends State<run> {
 
       // Submit 'feedbackForm' and save it in Google Sheets.
       formController.submitForm(feedbackForm, (String response) {
+        // ignore: avoid_print
         print("Response: $response");
         if (response == FormController.STATUS_SUCCESS) {
           // Feedback is saved succesfully in Google Sheets.
@@ -54,6 +57,7 @@ class _run extends State<run> {
   // Method to show snackbar with 'message'.
   _showSnackbar(String message) {
     final snackBar = SnackBar(content: Text(message));
+    // ignore: deprecated_member_use
     _scaffoldKey.currentState!.showSnackBar(snackBar);
   }
 
@@ -63,7 +67,8 @@ class _run extends State<run> {
         appBar: AppBar(
           title: const Text("VOLTEC App Inventario"),
           actions: [
-            IconButton(icon: Icon(Icons.account_box_rounded), onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.account_box_rounded), onPressed: () {}),
           ],
           backgroundColor: const Color.fromARGB(255, 0, 173, 238),
         ),
@@ -74,7 +79,7 @@ class _run extends State<run> {
               image: DecorationImage(
                 colorFilter: ColorFilter.mode(
                     Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
-                image: AssetImage(
+                image: const AssetImage(
                   "assets/Herramientas.jpeg",
                 ),
                 fit: BoxFit.cover,
@@ -89,12 +94,12 @@ class _run extends State<run> {
                 Form(
                     key: _formKey,
                     child: Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           TextFormField(
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -110,7 +115,7 @@ class _run extends State<run> {
                               labelText: 'Herramienta',
                               focusColor: Colors.white,
                               //add prefix icon
-                              prefixIcon: Icon(
+                              prefixIcon: const Icon(
                                 Icons.build,
                                 color: Colors.black,
                               ),
@@ -125,9 +130,9 @@ class _run extends State<run> {
                               fillColor: Colors.white, filled: true,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           TextFormField(
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -143,7 +148,7 @@ class _run extends State<run> {
                               labelText: 'Clave',
                               focusColor: Colors.white,
                               //add prefix icon
-                              prefixIcon: Icon(
+                              prefixIcon: const Icon(
                                 Icons.key,
                                 color: Colors.black,
                               ),
@@ -158,9 +163,9 @@ class _run extends State<run> {
                               fillColor: Colors.white, filled: true,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           TextFormField(
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -177,7 +182,7 @@ class _run extends State<run> {
                               labelText: 'Cantidad por agregar',
                               focusColor: Colors.white,
                               //add prefix icon
-                              prefixIcon: Icon(
+                              prefixIcon: const Icon(
                                 Icons.post_add,
                                 color: Colors.black,
                               ),
@@ -192,9 +197,9 @@ class _run extends State<run> {
                               fillColor: Colors.white, filled: true,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           TextFormField(
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -211,7 +216,7 @@ class _run extends State<run> {
                               labelText: 'Donde se compro',
                               focusColor: Colors.white,
                               //add prefix icon
-                              prefixIcon: Icon(
+                              prefixIcon: const Icon(
                                 Icons.store,
                                 color: Colors.black,
                               ),
@@ -226,9 +231,9 @@ class _run extends State<run> {
                               fillColor: Colors.white, filled: true,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           TextFormField(
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 20,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
@@ -245,7 +250,7 @@ class _run extends State<run> {
                               labelText: 'Foto (link)',
                               focusColor: Colors.white,
                               //add prefix icon
-                              prefixIcon: Icon(
+                              prefixIcon: const Icon(
                                 Icons.add_link,
                                 color: Colors.black,
                               ),
@@ -260,45 +265,45 @@ class _run extends State<run> {
                               fillColor: Colors.white, filled: true,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                         ],
                       ),
                     )),
                 ElevatedButton(
                     onPressed: _submitForm,
-                    child: Text('Enviar al inventario'),
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40)),
-                        primary: Color.fromARGB(255, 30, 34, 79),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 75, vertical: 20),
-                        textStyle: TextStyle(
+                        primary: const Color.fromARGB(255, 30, 34, 79),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 75, vertical: 20),
+                        textStyle: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                        ))),
-                SizedBox(height: 10),
+                        )),
+                    child: const Text('Enviar al inventario')),
+                const SizedBox(height: 10),
                 ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => FeedbackListPage(
+                            builder: (context) => const FeedbackListPage(
                               title: '',
                             ),
                           ));
                     },
-                    child: Text('Ver el inventario actualizado'),
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40)),
-                        primary: Color.fromARGB(255, 30, 34, 79),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                        textStyle: TextStyle(
+                        primary: const Color.fromARGB(255, 30, 34, 79),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 20),
+                        textStyle: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w500,
-                        ))),
+                        )),
+                    child: const Text('Ver el inventario actualizado')),
               ],
             ),
           )

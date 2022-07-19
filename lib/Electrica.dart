@@ -1,9 +1,11 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 class Electrica extends StatefulWidget {
   const Electrica({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _Electrica createState() => _Electrica();
 }
 
@@ -15,7 +17,7 @@ class _Electrica extends State<Electrica> {
         title: const Text("VOLTEC App Inventario"),
         actions: [
           IconButton(
-              icon: Icon(Icons.account_box_rounded),
+              icon: const Icon(Icons.account_box_rounded),
               onPressed: () {
                 //Navigator.pop(context);
               }),

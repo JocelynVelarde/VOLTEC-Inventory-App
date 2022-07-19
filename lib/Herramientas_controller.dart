@@ -1,5 +1,5 @@
 import 'dart:convert' as convert;
-import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:http/http.dart' as http;
 import 'package:app_la_buena/Herramientas_form.dart';
 
@@ -7,10 +7,12 @@ import 'package:app_la_buena/Herramientas_form.dart';
 /// HTTP GET request on Google App Script Web URL and parses response and sends result callback.
 class FormController {
   // Google App Script Web URL.
+  // ignore: constant_identifier_names
   static const String URL =
       "https://script.google.com/macros/s/AKfycbziPGTgbIrJERzjMLk2xUhMwz7xexl-BQAaFaHnRp4obJhyS59LGnfoeEqE2jr_U-jeNw/exec";
 
   // Success Status Message
+  // ignore: constant_identifier_names
   static const STATUS_SUCCESS = "SUCCESS";
 
   /// Async function which saves feedback, parses [feedbackForm] parameters
@@ -29,6 +31,7 @@ class FormController {
         }
       });
     } catch (e) {
+      // ignore: avoid_print
       print(e);
     }
   }

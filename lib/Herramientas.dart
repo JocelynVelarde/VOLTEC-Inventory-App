@@ -1,4 +1,6 @@
-import 'package:app_la_buena/Herramientas_controller.dart';
+// ignore: file_names
+// ignore_for_file: unnecessary_new
+
 import 'package:app_la_buena/Herramientas_controller.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +9,7 @@ import 'package:app_la_buena/Herramientas_formulario.dart';
 
 import 'Herramientas_form.dart';
 
+// ignore: use_key_in_widget_constructors
 class FeedbackListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class FeedbackListScreen extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: FeedbackListPage(title: "Inventario Herramientas"));
+        home: const FeedbackListPage(title: "Inventario Herramientas"));
   }
 }
 
@@ -26,6 +29,7 @@ class FeedbackListPage extends StatefulWidget {
   final String title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _FeedbackListPageState createState() => _FeedbackListPageState();
 }
 
@@ -50,26 +54,26 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 0, 173, 238),
-          title: Text("Inventario Herramientas"),
+          backgroundColor: const Color.fromARGB(255, 0, 173, 238),
+          title: const Text("Inventario Herramientas"),
           leading: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => MyGridScreen()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const MyGridScreen()));
             },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back, // add custom icons also
             ),
           ),
           actions: <Widget>[
             Padding(
-                padding: EdgeInsets.only(right: 20.0),
+                padding: const EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) => run()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const run()));
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.add,
                     size: 26.0,
                   ),
@@ -82,7 +86,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                 image: DecorationImage(
               colorFilter: ColorFilter.mode(
                   Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
-              image: AssetImage(
+              image: const AssetImage(
                 "assets/Fondo.JPG",
               ),
               fit: BoxFit.cover,
@@ -101,6 +105,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                 itemBuilder: (context, index) {
                   Widget _buildPopupDialog(BuildContext context) {
                     return AlertDialog(
+                      // ignore: unnecessary_string_interpolations
                       title: Text("${feedbackItems[index].email}",
                           style: const TextStyle(fontWeight: FontWeight.bold)),
                       content: new Column(
@@ -108,10 +113,11 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Image.network(
+                            // ignore: unnecessary_string_interpolations
                             '${feedbackItems[index].feedback}',
                             height: 200,
                             width: 200,
-                            alignment: Alignment(0.0, 0.0),
+                            alignment: const Alignment(0.0, 0.0),
                             fit: BoxFit.cover,
                           ),
                           Text("Clave: ${feedbackItems[index].name}"),
@@ -120,7 +126,6 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                         ],
                       ),
                       actions: <Widget>[
-                        // ignore: unnecessary_new
                         new TextButton(
                           onPressed: () {
                             Navigator.of(context).pop();
@@ -139,16 +144,29 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                     child: Container(
                       padding: const EdgeInsets.only(
                           top: 140, bottom: 0, left: 0, right: 0),
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(14.0)),
+                        image: DecorationImage(
+                            colorFilter: ColorFilter.mode(
+                                Colors.blueGrey.withOpacity(0.3),
+                                BlendMode.srcOver),
+                            image: NetworkImage(
+                                // ignore: unnecessary_string_interpolations
+                                "${feedbackItems[index].feedback}"),
+                            fit: BoxFit.cover),
+                      ),
                       child: Stack(children: [
                         Container(
-                          alignment: Alignment(0.0, 0.0),
+                          alignment: const Alignment(0.0, 0.0),
                           width: 192,
                           height: 27,
                           color: Colors.black.withOpacity(0.6),
                           child: Text(
+                            // ignore: unnecessary_string_interpolations
                             "${feedbackItems[index].email}",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 12,
                             ),
@@ -156,16 +174,6 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                           ),
                         ),
                       ]),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                        image: DecorationImage(
-                            colorFilter: ColorFilter.mode(
-                                Colors.blueGrey.withOpacity(0.3),
-                                BlendMode.srcOver),
-                            image: NetworkImage(
-                                "${feedbackItems[index].feedback}"),
-                            fit: BoxFit.cover),
-                      ),
                     ),
                   );
                 }),

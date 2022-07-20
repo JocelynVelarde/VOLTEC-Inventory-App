@@ -1,15 +1,18 @@
-import 'package:app_la_buena/Botiquin.dart';
+import 'package:app_la_buena/Electrica.dart';
+import 'package:app_la_buena/Electrica_formulario.dart';
+import 'package:app_la_buena/Neumatica.dart';
+
 import 'package:flutter/material.dart';
 
-class Refacciones extends StatefulWidget {
-  const Refacciones({Key? key}) : super(key: key);
+class ElecNum extends StatefulWidget {
+  const ElecNum({Key? key}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
-  _RefaccionesState createState() => _RefaccionesState();
+  _ElecNumState createState() => _ElecNumState();
 }
 
-class _RefaccionesState extends State<Refacciones> {
+class _ElecNumState extends State<ElecNum> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +50,7 @@ class _RefaccionesState extends State<Refacciones> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FeedbackListScreen_4()));
+                        builder: (context) => FeedbackListScreen_2()));
                   },
                   child: Container(
                     padding: const EdgeInsets.only(
@@ -68,7 +71,7 @@ class _RefaccionesState extends State<Refacciones> {
                         height: 25,
                         color: Colors.white.withOpacity(0.6),
                         child: const Text(
-                          "Botiquin",
+                          "Electrica",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500),
@@ -80,7 +83,7 @@ class _RefaccionesState extends State<Refacciones> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FeedbackListScreen_4()));
+                        builder: (context) => FeedbackListScreen_3()));
                   },
                   child: Container(
                     padding: const EdgeInsets.only(
@@ -101,7 +104,7 @@ class _RefaccionesState extends State<Refacciones> {
                         height: 25,
                         color: Colors.white.withOpacity(0.6),
                         child: const Text(
-                          "Eventos",
+                          "Neumatica",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500),

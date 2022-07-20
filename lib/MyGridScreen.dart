@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:app_la_buena/Electrica.dart';
+import 'package:app_la_buena/ElectricaNeumatica.dart';
 import 'package:app_la_buena/Electrica_formulario.dart';
 import 'package:app_la_buena/Lego.dart';
 import 'package:app_la_buena/Mecanica.dart';
@@ -212,8 +213,8 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FeedbackListScreen_2()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => ElecNum()));
                   },
                   child: Container(
                     padding: const EdgeInsets.only(

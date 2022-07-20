@@ -99,6 +99,8 @@ flutter:
       - assets/Neumatica.png
       - assets/Botiquin.jpg
       - assets/Eventos.jpg
+      - assets/NXT.jpg
+      - assets/ev3.jpeg
       
   #   - images/a_dot_ham.jpeg
 

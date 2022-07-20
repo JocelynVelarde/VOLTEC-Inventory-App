@@ -95,7 +95,7 @@ class _ElecNumState extends State<ElecNum> {
                           colorFilter: ColorFilter.mode(
                               Colors.blueGrey.withOpacity(0.04),
                               BlendMode.srcOver),
-                          image: const AssetImage("assets/Neumatica.JPG"),
+                          image: const AssetImage("assets/Neumatica.png"),
                           fit: BoxFit.cover),
                     ),
                     child: Stack(children: [

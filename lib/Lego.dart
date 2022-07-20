@@ -60,7 +60,7 @@ class _LegoState extends State<Lego> {
                           colorFilter: ColorFilter.mode(
                               Colors.blueGrey.withOpacity(0.04),
                               BlendMode.srcOver),
-                          image: const AssetImage("assets/Lego.jpeg"),
+                          image: const AssetImage("assets/ev3.jpeg"),
                           fit: BoxFit.cover),
                     ),
                     child: Stack(children: [
@@ -93,7 +93,7 @@ class _LegoState extends State<Lego> {
                           colorFilter: ColorFilter.mode(
                               Colors.blueGrey.withOpacity(0.04),
                               BlendMode.srcOver),
-                          image: const AssetImage("assets/Viajes.JPG"),
+                          image: const AssetImage("assets/NXT.jpg"),
                           fit: BoxFit.cover),
                     ),
                     child: Stack(children: [

@@ -1,14 +1,13 @@
-// ignore: file_names
-
 import 'package:app_la_buena/MyGridScreen.dart';
-import 'package:app_la_buena/Viajes_forms.dart';
-import 'package:app_la_buena/Viajes_formulario.dart';
+import 'package:app_la_buena/NXT_form.dart';
+import 'package:app_la_buena/NXT_formulario.dart';
+
 import 'package:flutter/material.dart';
 
-import 'Viajes_controller.dart';
+import 'NXT_controller.dart';
 
-// ignore: use_key_in_widget_constructors
-class FeedbackListScreen_8 extends StatelessWidget {
+// ignore: use_key_in_widget_constructors, camel_case_types
+class FeedbackListScreen_7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,23 +16,23 @@ class FeedbackListScreen_8 extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const FeedbackListPage_8(title: "Inventario Herramientas"));
+        home: const FeedbackListPage_7(title: "Inventario Herramientas"));
   }
 }
 
-class FeedbackListPage_8 extends StatefulWidget {
-  const FeedbackListPage_8({Key? key, required this.title}) : super(key: key);
+class FeedbackListPage_7 extends StatefulWidget {
+  const FeedbackListPage_7({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
   // ignore: library_private_types_in_public_api
-  _FeedbackListPageState_8 createState() => _FeedbackListPageState_8();
+  _FeedbackListPageState_7 createState() => _FeedbackListPageState_7();
 }
 
-class _FeedbackListPageState_8 extends State<FeedbackListPage_8> {
+class _FeedbackListPageState_7 extends State<FeedbackListPage_7> {
   // ignore: deprecated_member_use, prefer_collection_literals
-  List<FeedbackForm_8> feedbackItems = <FeedbackForm_8>[];
+  List<FeedbackForm_7> feedbackItems = <FeedbackForm_7>[];
 
   // Method to Submit Feedback and save it in Google Sheets
 
@@ -69,7 +68,7 @@ class _FeedbackListPageState_8 extends State<FeedbackListPage_8> {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const run_8()));
+                        MaterialPageRoute(builder: (context) => const run_7()));
                   },
                   child: const Icon(
                     Icons.add,

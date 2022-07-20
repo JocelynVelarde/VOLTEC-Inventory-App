@@ -1,14 +1,13 @@
 // ignore: file_names
 
+import 'package:app_la_buena/EV3_form.dart';
+import 'package:app_la_buena/EV3_formulario.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
-import 'package:app_la_buena/Viajes_forms.dart';
-import 'package:app_la_buena/Viajes_formulario.dart';
 import 'package:flutter/material.dart';
 
-import 'Viajes_controller.dart';
+import 'EV3_controller.dart';
 
-// ignore: use_key_in_widget_constructors
-class FeedbackListScreen_8 extends StatelessWidget {
+class FeedbackListScreen_6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,23 +16,23 @@ class FeedbackListScreen_8 extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const FeedbackListPage_8(title: "Inventario Herramientas"));
+        home: const FeedbackListPage_6(title: "Inventario Herramientas"));
   }
 }
 
-class FeedbackListPage_8 extends StatefulWidget {
-  const FeedbackListPage_8({Key? key, required this.title}) : super(key: key);
+class FeedbackListPage_6 extends StatefulWidget {
+  const FeedbackListPage_6({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
   // ignore: library_private_types_in_public_api
-  _FeedbackListPageState_8 createState() => _FeedbackListPageState_8();
+  _FeedbackListPageState_6 createState() => _FeedbackListPageState_6();
 }
 
-class _FeedbackListPageState_8 extends State<FeedbackListPage_8> {
+class _FeedbackListPageState_6 extends State<FeedbackListPage_6> {
   // ignore: deprecated_member_use, prefer_collection_literals
-  List<FeedbackForm_8> feedbackItems = <FeedbackForm_8>[];
+  List<FeedbackForm_6> feedbackItems = <FeedbackForm_6>[];
 
   // Method to Submit Feedback and save it in Google Sheets
 
@@ -69,7 +68,7 @@ class _FeedbackListPageState_8 extends State<FeedbackListPage_8> {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const run_8()));
+                        MaterialPageRoute(builder: (context) => const run_6()));
                   },
                   child: const Icon(
                     Icons.add,

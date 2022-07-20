@@ -1,4 +1,5 @@
 import 'package:app_la_buena/Botiquin.dart';
+import 'package:app_la_buena/Eventos.dart';
 import 'package:flutter/material.dart';
 
 class Refacciones extends StatefulWidget {
@@ -80,7 +81,7 @@ class _RefaccionesState extends State<Refacciones> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FeedbackListScreen_4()));
+                        builder: (context) => FeedbackListScreen_5()));
                   },
                   child: Container(
                     padding: const EdgeInsets.only(

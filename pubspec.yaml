@@ -52,6 +52,7 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/Logo_voltec.png"
+  adaptive_icon_foreground: "assets/appLogo.png"
 
   flutter_native_splash: ^2.0.1+1
 

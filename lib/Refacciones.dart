@@ -60,7 +60,7 @@ class _RefaccionesState extends State<Refacciones> {
                           colorFilter: ColorFilter.mode(
                               Colors.blueGrey.withOpacity(0.04),
                               BlendMode.srcOver),
-                          image: const AssetImage("assets/Lego.jpeg"),
+                          image: const AssetImage("assets/Botiquin.jpg"),
                           fit: BoxFit.cover),
                     ),
                     child: Stack(children: [
@@ -93,7 +93,7 @@ class _RefaccionesState extends State<Refacciones> {
                           colorFilter: ColorFilter.mode(
                               Colors.blueGrey.withOpacity(0.04),
                               BlendMode.srcOver),
-                          image: const AssetImage("assets/Viajes.JPG"),
+                          image: const AssetImage("assets/Eventos.jpg"),
                           fit: BoxFit.cover),
                     ),
                     child: Stack(children: [

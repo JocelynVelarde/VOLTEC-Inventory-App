@@ -95,6 +95,11 @@ flutter:
       - assets/Fondo.JPG
       - assets/Viajes.JPG
       - assets/Logo_voltec.png
+      - assets/FondoElec.jpg
+      - assets/Neumatica.png
+      - assets/Botiquin.jpg
+      - assets/Eventos.jpg
+      
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

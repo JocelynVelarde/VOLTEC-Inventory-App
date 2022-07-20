@@ -62,7 +62,7 @@ class _ElecNumState extends State<ElecNum> {
                           colorFilter: ColorFilter.mode(
                               Colors.blueGrey.withOpacity(0.04),
                               BlendMode.srcOver),
-                          image: const AssetImage("assets/Lego.jpeg"),
+                          image: const AssetImage("assets/FondoElec.jpg"),
                           fit: BoxFit.cover),
                     ),
                     child: Stack(children: [
@@ -95,7 +95,7 @@ class _ElecNumState extends State<ElecNum> {
                           colorFilter: ColorFilter.mode(
                               Colors.blueGrey.withOpacity(0.04),
                               BlendMode.srcOver),
-                          image: const AssetImage("assets/Viajes.JPG"),
+                          image: const AssetImage("assets/Neumatica.JPG"),
                           fit: BoxFit.cover),
                     ),
                     child: Stack(children: [

@@ -79,7 +79,7 @@ class _run_3 extends State<run_3> {
                 colorFilter: ColorFilter.mode(
                     Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
                 image: const AssetImage(
-                  "assets/Herramientas.jpeg",
+                  "assets/Neumatica.png",
                 ),
                 fit: BoxFit.cover,
               ),

@@ -259,7 +259,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           colorFilter: ColorFilter.mode(
                               Colors.blueGrey.withOpacity(0.04),
                               BlendMode.srcOver),
-                          image: const AssetImage("assets/Lego.jpeg"),
+                          image: const AssetImage("assets/LegoPiezas.jpg"),
                           fit: BoxFit.cover),
                     ),
                     child: Stack(children: [

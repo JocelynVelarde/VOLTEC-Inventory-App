@@ -79,7 +79,7 @@ class _run_4 extends State<run_4> {
                 colorFilter: ColorFilter.mode(
                     Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
                 image: const AssetImage(
-                  "assets/Herramientas.jpeg",
+                  "assets/Limpieza.jpg",
                 ),
                 fit: BoxFit.cover,
               ),

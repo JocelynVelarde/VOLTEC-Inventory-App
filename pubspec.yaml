@@ -103,6 +103,10 @@ flutter:
       - assets/ev3.jpeg
       - assets/LegoPiezas.jpg
       - assets/Viajes.JPEG
+      - assets/MecanicaForm.jpg
+      - assets/Manualidades.jpg
+      - assets/Limpieza.jpg
+      - assets/NeumaticaForm.jpg
       
   #   - images/a_dot_ham.jpeg
 

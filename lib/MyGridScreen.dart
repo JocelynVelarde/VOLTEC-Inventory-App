@@ -160,7 +160,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                           colorFilter: ColorFilter.mode(
                               Colors.blueGrey.withOpacity(0.04),
                               BlendMode.srcOver),
-                          image: const AssetImage("assets/Refacciones.jpeg"),
+                          image: const AssetImage("assets/Refacciones.JPG"),
                           fit: BoxFit.cover),
                     ),
                     child: Stack(children: [

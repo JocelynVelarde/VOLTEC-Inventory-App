@@ -15,7 +15,7 @@ class _RefaccionesState extends State<Refacciones> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("VOLTEC App Inventario"),
+          title: const Text("Inventario Consumibles"),
           actions: [
             IconButton(
                 icon: const Icon(Icons.account_box_rounded),

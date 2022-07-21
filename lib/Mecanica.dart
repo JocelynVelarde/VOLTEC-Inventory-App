@@ -11,11 +11,11 @@ class FeedbackListScreen_1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Inventario Herramientas',
+        title: 'Inventario Mecanica',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const FeedbackListPage_1(title: "Inventario Herramientas"));
+        home: const FeedbackListPage_1(title: "Inventario Mecanica"));
   }
 }
 
@@ -51,7 +51,7 @@ class _FeedbackListPageState_1 extends State<FeedbackListPage_1> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 0, 173, 238),
-          title: const Text("Inventario Herramientas"),
+          title: const Text("Inventario Mecanica"),
           leading: GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(

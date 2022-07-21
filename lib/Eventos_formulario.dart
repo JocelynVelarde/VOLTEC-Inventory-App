@@ -35,7 +35,7 @@ class _run_5 extends State<run_5> {
 
       FormController formController = FormController();
 
-      _showSnackbar("Enviando herramienta al inventario...");
+      _showSnackbar("Enviando material al inventario...");
 
       // Submit 'feedbackForm' and save it in Google Sheets.
       formController.submitForm(feedbackForm_5, (String response) {
@@ -43,7 +43,7 @@ class _run_5 extends State<run_5> {
         print("Response: $response");
         if (response == FormController.STATUS_SUCCESS) {
           // Feedback is saved succesfully in Google Sheets.
-          _showSnackbar("Herramienta enviada");
+          _showSnackbar("Material enviado");
         } else {
           // Error Occurred while saving data in Google Sheets.
           _showSnackbar("Ocurrio un error");
@@ -63,7 +63,7 @@ class _run_5 extends State<run_5> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("VOLTEC App Inventario"),
+          title: const Text("Formulario Eventos"),
           actions: [
             IconButton(
                 icon: const Icon(Icons.account_box_rounded), onPressed: () {}),
@@ -105,16 +105,16 @@ class _run_5 extends State<run_5> {
                             controller: emailController,
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Ingresa un nombre de herramienta valido';
+                                return 'Ingresa un nombre de material valido';
                               }
                               return null;
                             },
                             decoration: InputDecoration(
-                              labelText: 'Herramienta',
+                              labelText: 'Material para evento',
                               focusColor: Colors.white,
                               //add prefix icon
                               prefixIcon: const Icon(
-                                Icons.build,
+                                Icons.palette,
                                 color: Colors.black,
                               ),
                               border: OutlineInputBorder(

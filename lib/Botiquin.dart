@@ -3,6 +3,7 @@
 import 'package:app_la_buena/Botiquin_form.dart';
 import 'package:app_la_buena/Botiquin_formulario.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
+import 'package:app_la_buena/Refacciones.dart';
 import 'package:flutter/material.dart';
 
 import 'Botiquin_controller.dart';
@@ -12,11 +13,11 @@ class FeedbackListScreen_4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Inventario Herramientas',
+        title: 'Inventario Botiquin',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const FeedbackListPage_4(title: "Inventario Herramientas"));
+        home: const FeedbackListPage_4(title: "Inventario Botiquin"));
   }
 }
 
@@ -52,7 +53,7 @@ class _FeedbackListPageState_4 extends State<FeedbackListPage_4> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 0, 173, 238),
-          title: const Text("Inventario Herramientas"),
+          title: const Text("Inventario Botiquin"),
           leading: GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(

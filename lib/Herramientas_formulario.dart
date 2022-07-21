@@ -65,7 +65,7 @@ class _run extends State<run> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("VOLTEC App Inventario"),
+          title: const Text("Formulario Herramientas"),
           actions: [
             IconButton(
                 icon: const Icon(Icons.account_box_rounded), onPressed: () {}),

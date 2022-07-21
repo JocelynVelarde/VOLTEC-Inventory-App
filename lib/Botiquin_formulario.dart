@@ -36,7 +36,7 @@ class _run_4 extends State<run_4> {
 
       FormController formController = FormController();
 
-      _showSnackbar("Enviando herramienta al inventario...");
+      _showSnackbar("Enviando item al inventario...");
 
       // Submit 'feedbackForm' and save it in Google Sheets.
       formController.submitForm(feedbackForm_4, (String response) {
@@ -44,7 +44,7 @@ class _run_4 extends State<run_4> {
         print("Response: $response");
         if (response == FormController.STATUS_SUCCESS) {
           // Feedback is saved succesfully in Google Sheets.
-          _showSnackbar("Herramienta enviada");
+          _showSnackbar("Item enviado");
         } else {
           // Error Occurred while saving data in Google Sheets.
           _showSnackbar("Ocurrio un error");
@@ -64,7 +64,7 @@ class _run_4 extends State<run_4> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("VOLTEC App Inventario"),
+          title: const Text("Formulario Botiquin"),
           actions: [
             IconButton(
                 icon: const Icon(Icons.account_box_rounded), onPressed: () {}),
@@ -106,16 +106,16 @@ class _run_4 extends State<run_4> {
                             controller: emailController,
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Ingresa un nombre de herramienta valido';
+                                return 'Ingresa un nombre de item valido';
                               }
                               return null;
                             },
                             decoration: InputDecoration(
-                              labelText: 'Herramienta',
+                              labelText: 'Item Botiquin',
                               focusColor: Colors.white,
                               //add prefix icon
                               prefixIcon: const Icon(
-                                Icons.build,
+                                Icons.medical_services,
                                 color: Colors.black,
                               ),
                               border: OutlineInputBorder(

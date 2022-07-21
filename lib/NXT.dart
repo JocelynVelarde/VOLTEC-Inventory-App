@@ -1,3 +1,4 @@
+import 'package:app_la_buena/Lego.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:app_la_buena/NXT_form.dart';
 import 'package:app_la_buena/NXT_formulario.dart';
@@ -12,11 +13,11 @@ class FeedbackListScreen_7 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Inventario Herramientas',
+        title: 'Inventario NXT',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const FeedbackListPage_7(title: "Inventario Herramientas"));
+        home: const FeedbackListPage_7(title: "Inventario NXT"));
   }
 }
 
@@ -52,7 +53,7 @@ class _FeedbackListPageState_7 extends State<FeedbackListPage_7> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 0, 173, 238),
-          title: const Text("Inventario Herramientas"),
+          title: const Text("Inventario NXT"),
           leading: GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(

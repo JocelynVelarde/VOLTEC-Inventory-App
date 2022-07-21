@@ -38,7 +38,7 @@ class _run_1 extends State<run_1> {
 
       FormController formController = FormController();
 
-      _showSnackbar("Enviando herramienta al inventario...");
+      _showSnackbar("Enviando componente al inventario...");
 
       // Submit 'feedbackForm' and save it in Google Sheets.
       formController.submitForm(feedbackForm_1, (String response) {
@@ -46,7 +46,7 @@ class _run_1 extends State<run_1> {
         print("Response: $response");
         if (response == FormController.STATUS_SUCCESS) {
           // Feedback is saved succesfully in Google Sheets.
-          _showSnackbar("Herramienta enviada");
+          _showSnackbar("Componente enviado");
         } else {
           // Error Occurred while saving data in Google Sheets.
           _showSnackbar("Ocurrio un error");
@@ -66,7 +66,7 @@ class _run_1 extends State<run_1> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("VOLTEC App Inventario"),
+          title: const Text("Formulario Mecanica"),
           actions: [
             IconButton(
                 icon: const Icon(Icons.account_box_rounded), onPressed: () {}),
@@ -108,16 +108,16 @@ class _run_1 extends State<run_1> {
                             controller: emailController,
                             validator: (value) {
                               if (value!.isEmpty) {
-                                return 'Ingresa un nombre de herramienta valido';
+                                return 'Ingresa un nombre de componente valido';
                               }
                               return null;
                             },
                             decoration: InputDecoration(
-                              labelText: 'Herramienta',
+                              labelText: 'Componente Mecanico',
                               focusColor: Colors.white,
                               //add prefix icon
                               prefixIcon: const Icon(
-                                Icons.build,
+                                Icons.precision_manufacturing,
                                 color: Colors.black,
                               ),
                               border: OutlineInputBorder(

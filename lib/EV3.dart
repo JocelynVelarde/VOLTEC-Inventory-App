@@ -2,6 +2,7 @@
 
 import 'package:app_la_buena/EV3_form.dart';
 import 'package:app_la_buena/EV3_formulario.dart';
+import 'package:app_la_buena/Lego.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class FeedbackListScreen_6 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Inventario Herramientas',
+        title: 'Inventario EV3',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -52,7 +53,7 @@ class _FeedbackListPageState_6 extends State<FeedbackListPage_6> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 0, 173, 238),
-          title: const Text("Inventario Herramientas"),
+          title: const Text("Inventario EV3"),
           leading: GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(

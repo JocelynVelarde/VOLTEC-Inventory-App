@@ -1,3 +1,4 @@
+import 'package:app_la_buena/ElectricaNeumatica.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:app_la_buena/Neumatica_form.dart';
 import 'package:app_la_buena/Neumatica_formulario.dart';
@@ -11,7 +12,7 @@ class FeedbackListScreen_3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Inventario Herramientas',
+        title: 'Inventario Neumatica',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -51,7 +52,7 @@ class _FeedbackListPageState_3 extends State<FeedbackListPage_3> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 0, 173, 238),
-          title: const Text("Inventario Herramientas"),
+          title: const Text("Inventario Neumatica"),
           leading: GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(

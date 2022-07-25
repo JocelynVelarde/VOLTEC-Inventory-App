@@ -83,7 +83,7 @@ class _FeedbackListPageState_8 extends State<FeedbackListPage_8> {
             decoration: BoxDecoration(
                 image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                  Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
+                  Colors.black.withOpacity(0.6), BlendMode.srcOver),
               image: const AssetImage(
                 "assets/Fondo.JPG",
               ),

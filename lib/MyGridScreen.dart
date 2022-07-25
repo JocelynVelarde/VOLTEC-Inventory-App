@@ -29,16 +29,16 @@ class _MyGridScreenState extends State<MyGridScreen> {
               UserAccountsDrawerHeader(
                 accountName: const Text(
                   'Jocelyn Velarde',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.white),
                 ),
                 accountEmail: const Text(
                   'a01285780@tec.mx',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.white),
                 ),
                 currentAccountPicture: CircleAvatar(
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/Stitch.png',
+                      'assets/Logo_voltec.png',
                       fit: BoxFit.cover,
                       width: 90,
                       height: 90,
@@ -46,9 +46,11 @@ class _MyGridScreenState extends State<MyGridScreen> {
                   ),
                 ),
                 decoration: const BoxDecoration(
-                  color: Colors.blue,
-                  image: DecorationImage(
-                      fit: BoxFit.fill, image: AssetImage('assets/Fondo.JPG')),
+                  color: Color(0xff1e224f),
+                  /* image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage('assets/Viajes.JPEG')),
+                      https://i.imgur.com/m4siIDU.jpg */
                 ),
               ),
               ListTile(
@@ -96,7 +98,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 decoration: BoxDecoration(
                     image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                  Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
+                  Colors.black.withOpacity(0.6), BlendMode.srcOver),
               image: const AssetImage(
                 "assets/Fondo.JPG",
               ),
@@ -235,7 +237,7 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         height: 25,
                         color: Colors.white.withOpacity(0.6),
                         child: const Text(
-                          "Electrica y Neumatica",
+                          "Componentes",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500),

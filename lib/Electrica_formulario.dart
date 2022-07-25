@@ -77,7 +77,7 @@ class _run_2 extends State<run_2> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 colorFilter: ColorFilter.mode(
-                    Colors.blueGrey.withOpacity(0.5), BlendMode.srcOver),
+                    Colors.black.withOpacity(0.6), BlendMode.srcOver),
                 image: const AssetImage(
                   "assets/FondoElec.jpg",
                 ),

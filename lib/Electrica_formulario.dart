@@ -94,178 +94,180 @@ class _run_2 extends State<run_2> {
                     key: _formKey,
                     child: Padding(
                       padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          TextFormField(
-                            style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            controller: emailController,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Ingresa un nombre de componente valido';
-                              }
-                              return null;
-                            },
-                            decoration: InputDecoration(
-                              labelText: 'Componente Electronico',
-                              focusColor: Colors.white,
-                              //add prefix icon
-                              prefixIcon: const Icon(
-                                Icons.electrical_services,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            TextFormField(
+                              style: const TextStyle(
+                                fontSize: 20,
                                 color: Colors.black,
+                                fontWeight: FontWeight.bold,
                               ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
+                              controller: emailController,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Ingresa un nombre de componente valido';
+                                }
+                                return null;
+                              },
+                              decoration: InputDecoration(
+                                labelText: 'Componente Electronico',
+                                focusColor: Colors.white,
+                                //add prefix icon
+                                prefixIcon: const Icon(
+                                  Icons.electrical_services,
+                                  color: Colors.black,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.black, width: 1.0),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                fillColor: Colors.white, filled: true,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: Colors.black, width: 1.0),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              fillColor: Colors.white, filled: true,
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          TextFormField(
-                            style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            controller: nameController,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Ingresa una clave valida';
-                              }
-                              return null;
-                            },
-                            decoration: InputDecoration(
-                              labelText: 'Clave',
-                              focusColor: Colors.white,
-                              //add prefix icon
-                              prefixIcon: const Icon(
-                                Icons.key,
+                            const SizedBox(height: 10),
+                            TextFormField(
+                              style: const TextStyle(
+                                fontSize: 20,
                                 color: Colors.black,
+                                fontWeight: FontWeight.bold,
                               ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
+                              controller: nameController,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Ingresa una clave valida';
+                                }
+                                return null;
+                              },
+                              decoration: InputDecoration(
+                                labelText: 'Clave',
+                                focusColor: Colors.white,
+                                //add prefix icon
+                                prefixIcon: const Icon(
+                                  Icons.key,
+                                  color: Colors.black,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.black, width: 1.0),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                fillColor: Colors.white, filled: true,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: Colors.black, width: 1.0),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              fillColor: Colors.white, filled: true,
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          TextFormField(
-                            style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            controller: mobileNoController,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Ingresa un numero';
-                              }
-                              return null;
-                            },
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
-                              labelText: 'Cantidad por agregar',
-                              focusColor: Colors.white,
-                              //add prefix icon
-                              prefixIcon: const Icon(
-                                Icons.post_add,
+                            const SizedBox(height: 10),
+                            TextFormField(
+                              style: const TextStyle(
+                                fontSize: 20,
                                 color: Colors.black,
+                                fontWeight: FontWeight.bold,
                               ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
+                              controller: mobileNoController,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Ingresa un numero';
+                                }
+                                return null;
+                              },
+                              keyboardType: TextInputType.emailAddress,
+                              decoration: InputDecoration(
+                                labelText: 'Cantidad por agregar',
+                                focusColor: Colors.white,
+                                //add prefix icon
+                                prefixIcon: const Icon(
+                                  Icons.post_add,
+                                  color: Colors.black,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.black, width: 1.0),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                fillColor: Colors.white, filled: true,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: Colors.black, width: 1.0),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              fillColor: Colors.white, filled: true,
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          TextFormField(
-                            style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            controller: comprarController,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Ingresa un URL o nombre de la tienda';
-                              }
-                              return null;
-                            },
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                              labelText: 'Donde se compro',
-                              focusColor: Colors.white,
-                              //add prefix icon
-                              prefixIcon: const Icon(
-                                Icons.store,
+                            const SizedBox(height: 10),
+                            TextFormField(
+                              style: const TextStyle(
+                                fontSize: 20,
                                 color: Colors.black,
+                                fontWeight: FontWeight.bold,
                               ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
+                              controller: comprarController,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Ingresa un URL o nombre de la tienda';
+                                }
+                                return null;
+                              },
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                labelText: 'Donde se compro',
+                                focusColor: Colors.white,
+                                //add prefix icon
+                                prefixIcon: const Icon(
+                                  Icons.store,
+                                  color: Colors.black,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.black, width: 1.0),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                fillColor: Colors.white, filled: true,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: Colors.black, width: 1.0),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              fillColor: Colors.white, filled: true,
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                          TextFormField(
-                            style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            controller: feedbackController,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Sube una link para la foto';
-                              }
-                              return null;
-                            },
-                            keyboardType: TextInputType.multiline,
-                            decoration: InputDecoration(
-                              labelText: 'Foto (link)',
-                              focusColor: Colors.white,
-                              //add prefix icon
-                              prefixIcon: const Icon(
-                                Icons.add_link,
+                            const SizedBox(height: 10),
+                            TextFormField(
+                              style: const TextStyle(
+                                fontSize: 20,
                                 color: Colors.black,
+                                fontWeight: FontWeight.bold,
                               ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
+                              controller: feedbackController,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Sube una link para la foto';
+                                }
+                                return null;
+                              },
+                              keyboardType: TextInputType.multiline,
+                              decoration: InputDecoration(
+                                labelText: 'Foto (link)',
+                                focusColor: Colors.white,
+                                //add prefix icon
+                                prefixIcon: const Icon(
+                                  Icons.add_link,
+                                  color: Colors.black,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.black, width: 1.0),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                fillColor: Colors.white, filled: true,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: Colors.black, width: 1.0),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              fillColor: Colors.white, filled: true,
                             ),
-                          ),
-                          const SizedBox(height: 10),
-                        ],
+                            const SizedBox(height: 10),
+                          ],
+                        ),
                       ),
                     )),
                 ElevatedButton(

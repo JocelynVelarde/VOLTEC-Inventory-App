@@ -9,7 +9,7 @@ import 'Botiquin_form.dart';
 class FormController {
   // Google App Script Web URL.
   static const String URL =
-      "https://script.google.com/macros/s/AKfycbwccVicQLr7gjsTCDdOu60aDbbofF1_EE0l4CUdBnb0Ww4_1ivxaWMv5nsxqggI7hL6/exec";
+      "https://script.google.com/macros/s/AKfycbxigNcdxeByjy9A93uHhII6RSRUdg1SpxBvcrObYowS6g2ANBQLdaj1D7F2H-OwY0BY/exec";
 
   // Success Status Message
   static const STATUS_SUCCESS = "SUCCESS";

@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 class FormController {
   // Google App Script Web URL.
   static const String URL =
-      "https://script.google.com/macros/s/AKfycbyf9YR3iEk1U7GovcllVmwYTAWH6CW8JGUgITiAi_IEN09l3X-aZMOJSDo_L8PcTzwbQQ/exec";
+      "https://script.google.com/macros/s/AKfycbzNkRUz5Om-Fg-r7PeyVwzKIk_hQuBapJ_uCFITY9hpLcnGhQoZ3yfdtFLHlGJqyPETrQ/exec";
 
   // Success Status Message
   static const STATUS_SUCCESS = "SUCCESS";

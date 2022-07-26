@@ -9,7 +9,7 @@ class FormController {
   // Google App Script Web URL.
   // ignore: constant_identifier_names
   static const String URL =
-      "https://script.google.com/macros/s/AKfycbziPGTgbIrJERzjMLk2xUhMwz7xexl-BQAaFaHnRp4obJhyS59LGnfoeEqE2jr_U-jeNw/exec";
+      "https://script.google.com/macros/s/AKfycbx_ZLmRuhbLLfS01uNYD3-BdIs4SXMISgp-Br3eAjdsbA8JJoTYnknv8Ksm6u-js32cuQ/exec";
 
   // Success Status Message
   // ignore: constant_identifier_names

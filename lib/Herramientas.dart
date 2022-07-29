@@ -26,7 +26,7 @@ class FeedbackListScreen extends StatelessWidget {
 class FeedbackListPage extends StatefulWidget {
   const FeedbackListPage({Key? key, required this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -58,8 +58,8 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
           title: const Text("Inventario Herramientas"),
           leading: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const MyGridScreen()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const MyGridScreen()));
             },
             child: const Icon(
               Icons.arrow_back, // add custom icons also
@@ -70,8 +70,8 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                 padding: const EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const run()));
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => const run()));
                   },
                   child: const Icon(
                     Icons.add,

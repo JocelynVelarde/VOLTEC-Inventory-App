@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "753489550550",
+    "project_id": "voltec-app-inventario",
+    "storage_bucket": "voltec-app-inventario.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753489550550:android:eec96681e683673d3bfd77",
+        "android_client_info": {
+          "package_name": "com.example.app_la_buena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753489550550-frbm331ck5ce0q9ionj4d4v46tdok62i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_la_buena",
+            "certificate_hash": "8dffb500439edd384750ca72afb21e2c2564e634"
+          }
+        },
+        {
+          "client_id": "753489550550-04p06bbv9bp38mgg2432rma17ojoflvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVJ2-A_r2uAi21soSP7sI0Z0tD2BWKxbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753489550550-04p06bbv9bp38mgg2432rma17ojoflvo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

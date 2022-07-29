@@ -1,5 +1,4 @@
 // ignore: file_names
-import 'package:app_la_buena/ElectricaNeumatica.dart';
 import 'package:app_la_buena/Electrica_form.dart';
 import 'package:app_la_buena/Electrica_formulario.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
@@ -23,7 +22,7 @@ class FeedbackListScreen_2 extends StatelessWidget {
 class FeedbackListPage_2 extends StatefulWidget {
   const FeedbackListPage_2({Key? key, required this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -55,8 +54,8 @@ class _FeedbackListPageState_2 extends State<FeedbackListPage_2> {
           title: const Text("Inventario Electrica"),
           leading: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const MyGridScreen()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const MyGridScreen()));
             },
             child: const Icon(
               Icons.arrow_back, // add custom icons also
@@ -105,7 +104,7 @@ class _FeedbackListPageState_2 extends State<FeedbackListPage_2> {
                       // ignore: unnecessary_string_interpolations
                       title: Text("${feedbackItems[index].email}",
                           style: const TextStyle(fontWeight: FontWeight.bold)),
-                      content: new Column(
+                      content: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -122,7 +121,7 @@ class _FeedbackListPageState_2 extends State<FeedbackListPage_2> {
                         ],
                       ),
                       actions: <Widget>[
-                        new TextButton(
+                        TextButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },

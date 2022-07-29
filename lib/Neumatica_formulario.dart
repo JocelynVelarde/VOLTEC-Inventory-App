@@ -39,7 +39,7 @@ class _run_3 extends State<run_3> {
       _showSnackbar("Enviando componente al inventario...");
 
       // Submit 'feedbackForm' and save it in Google Sheets.
-      formController.submitForm(feedbackForm_3, (String response) {
+      formController.submitForm(feedbackForm_3, (String? response) {
         // ignore: avoid_print
         print("Response: $response");
         if (response == FormController.STATUS_SUCCESS) {

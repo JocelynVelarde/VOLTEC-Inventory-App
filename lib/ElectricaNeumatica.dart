@@ -1,5 +1,4 @@
 import 'package:app_la_buena/Electrica.dart';
-import 'package:app_la_buena/Electrica_formulario.dart';
 import 'package:app_la_buena/Neumatica.dart';
 
 import 'package:flutter/material.dart';

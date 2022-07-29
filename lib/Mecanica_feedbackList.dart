@@ -18,7 +18,7 @@ class FeedbackListScreen extends StatelessWidget {
 class FeedbackListPage extends StatefulWidget {
   const FeedbackListPage({Key? key, required this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -46,7 +46,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title!),
       ),
       body: ListView.builder(
         itemCount: feedbackItems.length,

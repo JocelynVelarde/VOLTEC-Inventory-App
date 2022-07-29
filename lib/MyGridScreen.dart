@@ -1,10 +1,12 @@
 // ignore: file_names
-import 'package:app_la_buena/Electrica.dart';
 import 'package:app_la_buena/ElectricaNeumatica.dart';
-import 'package:app_la_buena/Electrica_formulario.dart';
 import 'package:app_la_buena/Lego.dart';
 import 'package:app_la_buena/Mecanica.dart';
 import 'package:app_la_buena/Refacciones.dart';
+import 'package:app_la_buena/login.dart';
+import 'package:app_la_buena/userModel.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'Herramientas.dart';
@@ -19,6 +21,22 @@ class MyGridScreen extends StatefulWidget {
 }
 
 class _MyGridScreenState extends State<MyGridScreen> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +45,12 @@ class _MyGridScreenState extends State<MyGridScreen> {
             padding: EdgeInsets.zero,
             children: [
               UserAccountsDrawerHeader(
-                accountName: const Text(
-                  'Jocelyn Velarde',
+                accountName: Text(
+                  "${loggedInUser.firstName} ${loggedInUser.secondName}",
                   style: TextStyle(color: Colors.white),
                 ),
-                accountEmail: const Text(
-                  'a01285780@tec.mx',
+                accountEmail: Text(
+                  "${loggedInUser.email}",
                   style: TextStyle(color: Colors.white),
                 ),
                 currentAccountPicture: CircleAvatar(
@@ -72,12 +90,11 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 onTap: () => null,
               ),
               const Divider(),
-              ListTile(
-                title: const Text('Logout'),
-                leading: const Icon(Icons.logout),
-                // ignore: avoid_returning_null_for_void
-                onTap: () => null,
-              ),
+              ActionChip(
+                  label: const Text("Logout"),
+                  onPressed: () {
+                    logout(context);
+                  }),
             ],
           ),
         ),
@@ -215,8 +232,8 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ElecNum()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ElecNum()));
                   },
                   child: Container(
                     padding: const EdgeInsets.only(
@@ -316,5 +333,11 @@ class _MyGridScreenState extends State<MyGridScreen> {
             )),
           ],
         ));
+  }
+
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const LoginScreen()));
   }
 }

@@ -24,7 +24,7 @@ class FeedbackListScreen_8 extends StatelessWidget {
 class FeedbackListPage_8 extends StatefulWidget {
   const FeedbackListPage_8({Key? key, required this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -106,7 +106,7 @@ class _FeedbackListPageState_8 extends State<FeedbackListPage_8> {
                       // ignore: unnecessary_string_interpolations
                       title: Text("${feedbackItems[index].email}",
                           style: const TextStyle(fontWeight: FontWeight.bold)),
-                      content: new Column(
+                      content: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -123,7 +123,7 @@ class _FeedbackListPageState_8 extends State<FeedbackListPage_8> {
                         ],
                       ),
                       actions: <Widget>[
-                        new TextButton(
+                        TextButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },

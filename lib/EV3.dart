@@ -2,7 +2,6 @@
 
 import 'package:app_la_buena/EV3_form.dart';
 import 'package:app_la_buena/EV3_formulario.dart';
-import 'package:app_la_buena/Lego.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +23,7 @@ class FeedbackListScreen_6 extends StatelessWidget {
 class FeedbackListPage_6 extends StatefulWidget {
   const FeedbackListPage_6({Key? key, required this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -56,8 +55,8 @@ class _FeedbackListPageState_6 extends State<FeedbackListPage_6> {
           title: const Text("Inventario EV3"),
           leading: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const MyGridScreen()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const MyGridScreen()));
             },
             child: const Icon(
               Icons.arrow_back, // add custom icons also
@@ -106,7 +105,7 @@ class _FeedbackListPageState_6 extends State<FeedbackListPage_6> {
                       // ignore: unnecessary_string_interpolations
                       title: Text("${feedbackItems[index].email}",
                           style: const TextStyle(fontWeight: FontWeight.bold)),
-                      content: new Column(
+                      content: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -123,7 +122,7 @@ class _FeedbackListPageState_6 extends State<FeedbackListPage_6> {
                         ],
                       ),
                       actions: <Widget>[
-                        new TextButton(
+                        TextButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },

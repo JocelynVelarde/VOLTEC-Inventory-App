@@ -1,4 +1,3 @@
-import 'package:app_la_buena/Lego.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:app_la_buena/NXT_form.dart';
 import 'package:app_la_buena/NXT_formulario.dart';
@@ -24,7 +23,7 @@ class FeedbackListScreen_7 extends StatelessWidget {
 class FeedbackListPage_7 extends StatefulWidget {
   const FeedbackListPage_7({Key? key, required this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -106,7 +105,7 @@ class _FeedbackListPageState_7 extends State<FeedbackListPage_7> {
                       // ignore: unnecessary_string_interpolations
                       title: Text("${feedbackItems[index].email}",
                           style: const TextStyle(fontWeight: FontWeight.bold)),
-                      content: new Column(
+                      content: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -123,7 +122,7 @@ class _FeedbackListPageState_7 extends State<FeedbackListPage_7> {
                         ],
                       ),
                       actions: <Widget>[
-                        new TextButton(
+                        TextButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },

@@ -3,7 +3,6 @@ import 'package:app_la_buena/Mecanica_form.dart';
 import 'package:app_la_buena/Mecanica_formulario.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:app_la_buena/Mecanica_feedbackList.dart';
 
 // ignore: use_key_in_widget_constructors
 class FeedbackListScreen_1 extends StatelessWidget {
@@ -22,7 +21,7 @@ class FeedbackListScreen_1 extends StatelessWidget {
 class FeedbackListPage_1 extends StatefulWidget {
   const FeedbackListPage_1({Key? key, required this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -54,8 +53,8 @@ class _FeedbackListPageState_1 extends State<FeedbackListPage_1> {
           title: const Text("Inventario Mecanica"),
           leading: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const MyGridScreen()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const MyGridScreen()));
             },
             child: const Icon(
               Icons.arrow_back, // add custom icons also
@@ -104,7 +103,7 @@ class _FeedbackListPageState_1 extends State<FeedbackListPage_1> {
                       // ignore: unnecessary_string_interpolations
                       title: Text("${feedbackItems[index].email}",
                           style: const TextStyle(fontWeight: FontWeight.bold)),
-                      content: new Column(
+                      content: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -121,7 +120,7 @@ class _FeedbackListPageState_1 extends State<FeedbackListPage_1> {
                         ],
                       ),
                       actions: <Widget>[
-                        new TextButton(
+                        TextButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },

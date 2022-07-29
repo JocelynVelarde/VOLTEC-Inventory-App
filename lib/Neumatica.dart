@@ -1,4 +1,3 @@
-import 'package:app_la_buena/ElectricaNeumatica.dart';
 import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:app_la_buena/Neumatica_form.dart';
 import 'package:app_la_buena/Neumatica_formulario.dart';
@@ -23,7 +22,7 @@ class FeedbackListScreen_3 extends StatelessWidget {
 class FeedbackListPage_3 extends StatefulWidget {
   const FeedbackListPage_3({Key? key, required this.title}) : super(key: key);
 
-  final String title;
+  final String? title;
 
   @override
   // ignore: library_private_types_in_public_api
@@ -105,7 +104,7 @@ class _FeedbackListPageState_3 extends State<FeedbackListPage_3> {
                       // ignore: unnecessary_string_interpolations
                       title: Text("${feedbackItems[index].email}",
                           style: const TextStyle(fontWeight: FontWeight.bold)),
-                      content: new Column(
+                      content: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -122,7 +121,7 @@ class _FeedbackListPageState_3 extends State<FeedbackListPage_3> {
                         ],
                       ),
                       actions: <Widget>[
-                        new TextButton(
+                        TextButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },

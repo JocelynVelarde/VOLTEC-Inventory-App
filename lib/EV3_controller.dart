@@ -19,11 +19,11 @@ class FormController {
       FeedbackForm_6 feedbackForm_6, void Function(String?) callback) async {
     try {
       await http
-          .post(URL as Uri, body: feedbackForm_6.toJson())
+          .post(Uri.parse(URL), body: feedbackForm_6.toJson())
           .then((response) async {
         if (response.statusCode == 302) {
           var url = response.headers['location']!;
-          await http.get(url as Uri).then((response) {
+          await http.get(Uri.parse(URL)).then((response) {
             callback(convert.jsonDecode(response.body)['status']);
           });
         } else {
@@ -36,7 +36,7 @@ class FormController {
   }
 
   Future<List<FeedbackForm_6>> getFeedbackList() async {
-    return await http.get(URL as Uri).then((response) {
+    return await http.get(Uri.parse(URL)).then((response) {
       var jsonFeedback = convert.jsonDecode(response.body) as List;
       return jsonFeedback.map((json) => FeedbackForm_6.fromJson(json)).toList();
     });

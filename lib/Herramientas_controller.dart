@@ -9,7 +9,7 @@ class FormController {
   // Google App Script Web URL.
   // ignore: constant_identifier_names
   static const String URL =
-      "https://script.google.com/macros/s/AKfycbx_ZLmRuhbLLfS01uNYD3-BdIs4SXMISgp-Br3eAjdsbA8JJoTYnknv8Ksm6u-js32cuQ/exec";
+      "https://script.google.com/macros/s/AKfycbyru-7A_D0_WtfXnScgJMxUR_O-fWA_PbSXCrMlCwBwDWJNsshl1FUk0_fe_Rm9hPSEZA/exec";
 
   // Success Status Message
   // ignore: constant_identifier_names
@@ -20,10 +20,12 @@ class FormController {
   void submitForm(
       FeedbackForm feedbackForm, void Function(String?) callback) async {
     try {
-      await http.post(URL as Uri, body: feedbackForm.toJson()).then((response) async {
+      await http
+          .post(Uri.parse(URL), body: feedbackForm.toJson())
+          .then((response) async {
         if (response.statusCode == 302) {
           var url = response.headers['location']!;
-          await http.get(url as Uri).then((response) {
+          await http.get(Uri.parse(URL)).then((response) {
             callback(convert.jsonDecode(response.body)['status']);
           });
         } else {
@@ -37,7 +39,7 @@ class FormController {
   }
 
   Future<List<FeedbackForm>> getFeedbackList() async {
-    return await http.get(URL as Uri).then((response) {
+    return await http.get(Uri.parse(URL)).then((response) {
       var jsonFeedback = convert.jsonDecode(response.body) as List;
       return jsonFeedback.map((json) => FeedbackForm.fromJson(json)).toList();
     });

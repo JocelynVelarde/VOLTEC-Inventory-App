@@ -58,8 +58,8 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
           title: const Text("Inventario Herramientas"),
           leading: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const MyGridScreen()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const MyGridScreen()));
             },
             child: const Icon(
               Icons.arrow_back, // add custom icons also
@@ -70,8 +70,8 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                 padding: const EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) => const run()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const run()));
                   },
                   child: const Icon(
                     Icons.add,
@@ -164,7 +164,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                           color: Colors.black.withOpacity(0.6),
                           child: Text(
                             // ignore: unnecessary_string_interpolations
-                            "${feedbackItems[index].email}",
+                            "${feedbackItems[index].prueba}",
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                               color: Colors.white,

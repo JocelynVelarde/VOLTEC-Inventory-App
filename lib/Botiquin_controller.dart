@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'dart:convert' as convert;
 
 import 'package:http/http.dart' as http;
@@ -8,10 +9,12 @@ import 'Botiquin_form.dart';
 /// HTTP GET request on Google App Script Web URL and parses response and sends result callback.
 class FormController {
   // Google App Script Web URL.
+  // ignore: constant_identifier_names
   static const String URL =
       "https://script.google.com/macros/s/AKfycbxigNcdxeByjy9A93uHhII6RSRUdg1SpxBvcrObYowS6g2ANBQLdaj1D7F2H-OwY0BY/exec";
 
   // Success Status Message
+  // ignore: constant_identifier_names
   static const STATUS_SUCCESS = "SUCCESS";
 
   /// Async function which saves feedback, parses [feedbackForm] parameters
@@ -23,6 +26,7 @@ class FormController {
           .post(Uri.parse(URL), body: feedbackForm_4.toJson())
           .then((response) async {
         if (response.statusCode == 302) {
+          // ignore: unused_local_variable
           var url = response.headers['location']!;
           await http.get(Uri.parse(URL)).then((response) {
             callback(convert.jsonDecode(response.body)['status']);

@@ -57,7 +57,9 @@ class _run_7 extends State<run_7> {
   _showSnackbar(String message) {
     final snackBar = SnackBar(content: Text(message));
     // ignore: deprecated_member_use
-    _scaffoldKey.currentState!.showSnackBar(snackBar);
+    //_scaffoldKey.currentState!.showSnackBar(snackBar);
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override

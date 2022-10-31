@@ -42,6 +42,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
+  hidden_drawer_menu: ^3.0.1
+  video_player: ^2.2.19
   http_parser: ^4.0.0-nullsafety
   flutter_signin_button: ^2.0.0
   firebase_auth: ^3.6.1
@@ -64,13 +66,13 @@ flutter_icons:
   image_path: "assets/Logo_voltec.png"
   adaptive_icon_foreground: "assets/appLogo.png"
 
-  flutter_native_splash: ^2.0.1+1
+  flutter_native_splash: ^2.0.5
 
 
 
 flutter_native_splash: 
   color: "#1e224f" #dark blue color
-  image: assets/Logo_voltec.png
+  #image: assets/Logo_voltec.png
 
 
 
@@ -118,6 +120,7 @@ flutter:
       - assets/Limpieza.jpg
       - assets/NeumaticaForm.jpg
       - assets/appLogo.png
+      
       
   #   - images/a_dot_ham.jpeg
 

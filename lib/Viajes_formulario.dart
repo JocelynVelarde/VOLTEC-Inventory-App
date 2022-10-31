@@ -53,12 +53,13 @@ class _run_8 extends State<run_8> {
     }
   }
 
-  // Method to show snackbar with 'message'.
+  // mostrar el mensaje de snackbar pro ya no funciona esa funcion es scaffold messenger
   _showSnackbar(String message) {
     final snackBar = SnackBar(content: Text(message));
     // ignore: deprecated_member_use
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
     //_scaffoldKey.currentState!.showSnackBar(snackBar);
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override

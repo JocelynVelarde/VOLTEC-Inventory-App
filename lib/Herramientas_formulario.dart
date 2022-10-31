@@ -23,6 +23,7 @@ class _run extends State<run> {
   TextEditingController mobileNoController = TextEditingController();
   TextEditingController feedbackController = TextEditingController();
   TextEditingController comprarController = TextEditingController();
+  TextEditingController pruebaController = TextEditingController();
   void _submitForm() {
     // Validate returns true if the form is valid, or false
     // otherwise.
@@ -33,7 +34,8 @@ class _run extends State<run> {
           emailController.text,
           mobileNoController.text,
           feedbackController.text,
-          comprarController.text);
+          comprarController.text,
+          pruebaController.text);
 
       FormController formController = FormController();
 
@@ -58,8 +60,9 @@ class _run extends State<run> {
   _showSnackbar(String message) {
     final snackBar = SnackBar(content: Text(message));
     // ignore: deprecated_member_use
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
     //_scaffoldKey.currentState!.showSnackBar(snackBar);
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override

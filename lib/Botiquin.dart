@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'Botiquin_controller.dart';
 
+//un widget que no requiere un estado mutable
 class FeedbackListScreen_4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,9 +21,11 @@ class FeedbackListScreen_4 extends StatelessWidget {
   }
 }
 
+//un widget que tiene un estado mutable
 class FeedbackListPage_4 extends StatefulWidget {
   const FeedbackListPage_4({Key? key, required this.title}) : super(key: key);
 
+//signo de interrogación, a veces puede ser nulo
   final String? title;
 
   @override
@@ -30,12 +33,13 @@ class FeedbackListPage_4 extends StatefulWidget {
   _FeedbackListPageState_4 createState() => _FeedbackListPageState_4();
 }
 
+//crea una clase de tipo feedbacklist
 class _FeedbackListPageState_4 extends State<FeedbackListPage_4> {
   // ignore: deprecated_member_use, prefer_collection_literals
+//coleccion de lista de materiales de feedback form
   List<FeedbackForm_4> feedbackItems = <FeedbackForm_4>[];
 
-  // Method to Submit Feedback and save it in Google Sheets
-
+//metodo para mandar informacion y guardarla en el google sheets
   @override
   void initState() {
     super.initState();
@@ -47,6 +51,7 @@ class _FeedbackListPageState_4 extends State<FeedbackListPage_4> {
     });
   }
 
+//UI de la pagina
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,8 +60,8 @@ class _FeedbackListPageState_4 extends State<FeedbackListPage_4> {
           title: const Text("Inventario Botiquin"),
           leading: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const MyGridScreen()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const MyGridScreen()));
             },
             child: const Icon(
               Icons.arrow_back, // add custom icons also
@@ -68,6 +73,7 @@ class _FeedbackListPageState_4 extends State<FeedbackListPage_4> {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
+                        //run 4 es la pagina del formulario lol pq use ese nombre
                         MaterialPageRoute(builder: (context) => const run_4()));
                   },
                   child: const Icon(

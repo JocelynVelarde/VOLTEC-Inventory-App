@@ -4,18 +4,19 @@ import 'package:http/http.dart' as http;
 
 import 'Botiquin_form.dart';
 
-/// FormController is a class which does work of saving FeedbackForm in Google Sheets using
-/// HTTP GET request on Google App Script Web URL and parses response and sends result callback.
+/// el proposito del controlller form es que guarde todo la informacion de la app hacia el google sheets usando ->
+/// el llamado de http get de google app script url usa parsing para la repuesta y manda un callback
 class FormController {
-  // Google App Script Web URL.
+  //web url del google app script.
   static const String URL =
       "https://script.google.com/macros/s/AKfycbxigNcdxeByjy9A93uHhII6RSRUdg1SpxBvcrObYowS6g2ANBQLdaj1D7F2H-OwY0BY/exec";
 
-  // Success Status Message
+  // mensaje de yai si jalo
   static const STATUS_SUCCESS = "SUCCESS";
 
-  /// Async function which saves feedback, parses [feedbackForm] parameters
-  /// and sends HTTP GET request on [URL]. On successful response, [callback] is called.
+  /// async function que retorna informacion de tipo futuro, guarda el feedback y hace parsing en los parametros del feebackform
+  /// y manda un http ger request en la url
+  /// cuando esto jala entonces el callback es llamado
   void submitForm(
       FeedbackForm_4 feedbackForm_4, void Function(String?) callback) async {
     try {

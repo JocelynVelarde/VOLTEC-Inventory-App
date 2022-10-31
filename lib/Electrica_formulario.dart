@@ -57,7 +57,8 @@ class _run_2 extends State<run_2> {
   _showSnackbar(String message) {
     final snackBar = SnackBar(content: Text(message));
     // ignore: deprecated_member_use
-    _scaffoldKey.currentState!.showSnackBar(snackBar);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    //_scaffoldKey.currentState!.showSnackBar(snackBar);
   }
 
   @override
@@ -275,7 +276,7 @@ class _run_2 extends State<run_2> {
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40)),
-                        primary: const Color.fromARGB(255, 30, 34, 79),
+                        backgroundColor: const Color.fromARGB(255, 30, 34, 79),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 75, vertical: 20),
                         textStyle: const TextStyle(
@@ -297,7 +298,7 @@ class _run_2 extends State<run_2> {
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40)),
-                        primary: const Color.fromARGB(255, 30, 34, 79),
+                        backgroundColor: const Color.fromARGB(255, 30, 34, 79),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 40, vertical: 20),
                         textStyle: const TextStyle(

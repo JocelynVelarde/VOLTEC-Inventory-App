@@ -202,7 +202,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.white,
+            color: Color.fromARGB(255, 255, 255, 255),
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(

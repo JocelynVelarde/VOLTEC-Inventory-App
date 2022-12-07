@@ -18,7 +18,7 @@ class FormController {
   static const STATUS_SUCCESS = "SUCCESS";
 
   /// async function que retorna informacion de tipo futuro, guarda el feedback y hace parsing en los parametros del feebackform
-  /// y manda un http ger request en la url
+  /// y manda un http get request en la url
   /// cuando esto jala entonces el callback es llamado
   void submitForm(
       FeedbackForm_4 feedbackForm_4, void Function(String?) callback) async {

@@ -18,24 +18,22 @@ class _run extends State<run> {
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  TextEditingController nameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController mobileNoController = TextEditingController();
-  TextEditingController feedbackController = TextEditingController();
-  TextEditingController comprarController = TextEditingController();
-  TextEditingController pruebaController = TextEditingController();
+  TextEditingController claveController = TextEditingController();
+  TextEditingController nombreController = TextEditingController();
+  TextEditingController cantidadController = TextEditingController();
+  TextEditingController imagenController = TextEditingController();
+
   void _submitForm() {
     // Validate returns true if the form is valid, or false
     // otherwise.
     if (_formKey.currentState!.validate()) {
       // If the form is valid, proceed.
       FeedbackForm feedbackForm = FeedbackForm(
-          nameController.text,
-          emailController.text,
-          mobileNoController.text,
-          feedbackController.text,
-          comprarController.text,
-          pruebaController.text);
+        claveController.text,
+        nombreController.text,
+        cantidadController.text,
+        imagenController.text,
+      );
 
       FormController formController = FormController();
 
@@ -108,7 +106,7 @@ class _run extends State<run> {
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ),
-                            controller: emailController,
+                            controller: nombreController,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Ingresa un nombre de herramienta valido';
@@ -141,7 +139,7 @@ class _run extends State<run> {
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ),
-                            controller: nameController,
+                            controller: claveController,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Ingresa una clave valida';
@@ -174,7 +172,7 @@ class _run extends State<run> {
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ),
-                            controller: mobileNoController,
+                            controller: cantidadController,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Ingresa un numero';
@@ -202,7 +200,7 @@ class _run extends State<run> {
                             ),
                           ),
                           const SizedBox(height: 10),
-                          TextFormField(
+                          /*TextFormField(
                             style: const TextStyle(
                               fontSize: 20,
                               color: Colors.black,
@@ -235,14 +233,14 @@ class _run extends State<run> {
                               fillColor: Colors.white, filled: true,
                             ),
                           ),
-                          const SizedBox(height: 10),
+                          const SizedBox(height: 10),*/
                           TextFormField(
                             style: const TextStyle(
                               fontSize: 20,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ),
-                            controller: feedbackController,
+                            controller: imagenController,
                             validator: (value) {
                               if (value!.isEmpty) {
                                 return 'Sube una link para la foto';

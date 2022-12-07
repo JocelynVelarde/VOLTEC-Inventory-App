@@ -1,32 +1,31 @@
 /// FeedbackForm is a data class which stores data fields of Feedback.
 class FeedbackForm {
-  String name;
-  String email;
-  String mobileNo;
-  String feedback;
-  String comprar;
-  String prueba;
+  String clave;
+  String nombre;
+  String cantidad;
+  String imagen;
 
-  FeedbackForm(this.name, this.email, this.mobileNo, this.feedback,
-      this.comprar, this.prueba);
+  FeedbackForm(
+    this.clave,
+    this.nombre,
+    this.cantidad,
+    this.imagen,
+  );
 
   factory FeedbackForm.fromJson(dynamic json) {
     return FeedbackForm(
-        "${json['name']}",
-        "${json['email']}",
-        "${json['mobileNo']}",
-        "${json['feedback']}",
-        "${json['comprar']}",
-        "${json['prueba']}");
+      "${json['clave']}",
+      "${json['nombre']}",
+      "${json['cantidad']}",
+      "${json['imagen']}",
+    );
   }
 
   // Method to make GET parameters.
   Map toJson() => {
-        'name': name,
-        'email': email,
-        'mobileNo': mobileNo,
-        'feedback': feedback,
-        'comprar': comprar,
-        'prueba': prueba
+        'name': clave,
+        'email': nombre,
+        'mobileNo': cantidad,
+        'feedback': imagen,
       };
 }

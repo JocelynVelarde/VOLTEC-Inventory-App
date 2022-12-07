@@ -298,10 +298,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     // calling our firestore
     // calling our user model
     // sedning these values
-
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     User? user = _auth.currentUser!;
-
     UserModel userModel = UserModel();
 
     // writing all the values
@@ -309,13 +307,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     userModel.uid = user.uid;
     userModel.firstName = firstNameEditingController.text;
     userModel.secondName = secondNameEditingController.text;
-
     await firebaseFirestore
         .collection("users")
         .doc(user.uid)
         .set(userModel.toMap());
     Fluttertoast.showToast(msg: "La cuenta fue creada exitosamente :) ");
-
     Navigator.pushAndRemoveUntil(
         (context),
         MaterialPageRoute(builder: (context) => const MyGridScreen()),

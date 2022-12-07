@@ -43,7 +43,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
   hidden_drawer_menu: ^3.0.1
-  video_player: ^2.2.19
   http_parser: ^4.0.0-nullsafety
   flutter_signin_button: ^2.0.0
   firebase_auth: ^3.6.1

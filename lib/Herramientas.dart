@@ -106,7 +106,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                   Widget _buildPopupDialog(BuildContext context) {
                     return AlertDialog(
                       // ignore: unnecessary_string_interpolations
-                      title: Text("${feedbackItems[index].email}",
+                      title: Text("${feedbackItems[index].nombre}",
                           style: const TextStyle(fontWeight: FontWeight.bold)),
                       content: new Column(
                         mainAxisSize: MainAxisSize.min,
@@ -114,15 +114,14 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                         children: <Widget>[
                           Image.network(
                             // ignore: unnecessary_string_interpolations
-                            '${feedbackItems[index].feedback}',
+                            '${feedbackItems[index].imagen}',
                             height: 200,
                             width: 200,
                             alignment: const Alignment(0.0, 0.0),
                             fit: BoxFit.cover,
                           ),
-                          Text("Clave: ${feedbackItems[index].name}"),
-                          Text("Cantidad: ${feedbackItems[index].mobileNo}"),
-                          Text("Comprar: ${feedbackItems[index].comprar}")
+                          Text("Clave: ${feedbackItems[index].clave}"),
+                          Text("Cantidad: ${feedbackItems[index].cantidad}"),
                         ],
                       ),
                       actions: <Widget>[
@@ -153,7 +152,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                                 BlendMode.srcOver),
                             image: NetworkImage(
                                 // ignore: unnecessary_string_interpolations
-                                "${feedbackItems[index].feedback}"),
+                                "${feedbackItems[index].imagen}"),
                             fit: BoxFit.cover),
                       ),
                       child: Stack(children: [
@@ -164,7 +163,7 @@ class _FeedbackListPageState extends State<FeedbackListPage> {
                           color: Colors.black.withOpacity(0.6),
                           child: Text(
                             // ignore: unnecessary_string_interpolations
-                            "${feedbackItems[index].prueba}",
+                            "${feedbackItems[index].nombre}",
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                               color: Colors.white,

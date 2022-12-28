@@ -1,6 +1,6 @@
 import 'package:app_la_buena/MyGridScreen.dart';
 import 'package:app_la_buena/homescreen.dart';
-import 'package:app_la_buena/login.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -175,7 +175,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           filled: true,
           prefixIcon: const Icon(Icons.vpn_key),
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Confirmar Contraseña",
+          hintText: "Confirsmar Contraseña",
           border: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.blue, width: 2.0),
             borderRadius: BorderRadius.circular(10),

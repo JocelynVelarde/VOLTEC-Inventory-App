@@ -1,9 +1,10 @@
-import 'package:app_la_buena/login.dart';
 import 'package:app_la_buena/userModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'login.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -66,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   )),
               const SizedBox(
                 height: 15,
-              ),
+              ), //ho
               ActionChip(
                   label: const Text("Logout"),
                   onPressed: () {

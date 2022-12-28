@@ -1,16 +1,11 @@
-// ignore: file_names
-import 'package:app_la_buena/ElectricaNeumatica.dart';
-import 'package:app_la_buena/Lego.dart';
-import 'package:app_la_buena/Mecanica.dart';
-import 'package:app_la_buena/Refacciones.dart';
-import 'package:app_la_buena/login.dart';
+import 'package:app_la_buena/frontend/InventarioUI.dart';
 import 'package:app_la_buena/userModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:vertical_card_pager/vertical_card_pager.dart';
 
-import 'Herramientas.dart';
-import 'Viajes.dart';
+import 'login.dart';
 
 class MyGridScreen extends StatefulWidget {
   const MyGridScreen({Key? key}) : super(key: key);
@@ -39,300 +34,192 @@ class _MyGridScreenState extends State<MyGridScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              UserAccountsDrawerHeader(
-                accountName: Text(
-                  "${loggedInUser.firstName} ${loggedInUser.secondName}",
-                  style: TextStyle(color: Colors.white),
-                ),
-                accountEmail: Text(
-                  "${loggedInUser.email}",
-                  style: TextStyle(color: Colors.white),
-                ),
-                currentAccountPicture: CircleAvatar(
-                  child: ClipOval(
-                    child: Image.asset(
-                      'assets/Logo_voltec.png',
-                      fit: BoxFit.cover,
-                      width: 90,
-                      height: 90,
-                    ),
-                  ),
-                ),
-                decoration: const BoxDecoration(
-                  color: Color(0xff1e224f),
-                  /* image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage('assets/Viajes.JPEG')),
-                      https://i.imgur.com/m4siIDU.jpg */
-                ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text('Home'),
-                // ignore: avoid_returning_null_for_void
-                onTap: () => null,
-              ),
-              ListTile(
-                leading: const Icon(Icons.login),
-                title: const Text('Login'),
-                // ignore: avoid_returning_null_for_void
-                onTap: () => null,
-              ),
-              ListTile(
-                leading: const Icon(Icons.share),
-                title: const Text('Screen'),
-                // ignore: avoid_returning_null_for_void
-                onTap: () => null,
-              ),
-              const Divider(),
-              ActionChip(
-                  label: const Text("Logout"),
-                  onPressed: () {
-                    logout(context);
-                  }),
-            ],
+    final List<String> titles = [
+      "HERRAMIENTAS",
+      "REFACCIONES",
+      "VIAJES",
+      "BOTIQUIN",
+      "MECANICA",
+      "LEGO",
+    ];
+
+    final List<Widget> images = [
+      Container(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          image: DecorationImage(
+            image: AssetImage('assets/herramientaA.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
-        appBar: AppBar(
-          title: const Text("VOLTEC App Inventario"),
-          actions: [
-            IconButton(
-                icon: const Icon(Icons.account_box_rounded),
+      ),
+      Container(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          image: DecorationImage(
+            image: AssetImage('assets/electricaA.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      Container(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          image: DecorationImage(
+            image: AssetImage('assets/viajeA.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      Container(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          image: DecorationImage(
+            image: AssetImage('assets/botiquinA.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      Container(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          image: DecorationImage(
+            image: AssetImage('assets/mecanicaA.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      Container(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          image: DecorationImage(
+            image: AssetImage('assets/LegoPiezas.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: IconButton(
+          alignment: Alignment.bottomRight,
+          onPressed: () {
+            print("Hola");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => InventarioUI(
+                  title: 'Lego',
+                ),
+              ),
+            );
+          },
+          icon: const Icon(Icons.send),
+        ),
+      ),
+    ];
+
+    return Scaffold(
+      drawer: Drawer(
+        backgroundColor: const Color(0xff1e224f),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text(
+                "${loggedInUser.firstName} ${loggedInUser.secondName}",
+                style: TextStyle(color: Colors.white),
+              ),
+              accountEmail: Text(
+                "${loggedInUser.email}",
+                style: TextStyle(color: Colors.white),
+              ),
+              currentAccountPicture: CircleAvatar(
+                child: ClipOval(
+                  child: Image.asset(
+                    'assets/Logo_voltec.png',
+                    fit: BoxFit.cover,
+                    width: 90,
+                    height: 90,
+                  ),
+                ),
+              ),
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 23, 26, 59),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home, color: Colors.white),
+              title: const Text(
+                'Home',
+                style: TextStyle(color: Colors.white),
+              ),
+
+              // ignore: avoid_returning_null_for_void
+              onTap: () => null,
+            ),
+            ListTile(
+              leading: const Icon(Icons.login, color: Colors.white),
+              title: const Text(
+                'Login',
+                style: TextStyle(color: Colors.white),
+              ),
+              // ignore: avoid_returning_null_for_void
+              onTap: () => null,
+            ),
+            ListTile(
+              leading: const Icon(Icons.view_in_ar, color: Colors.white),
+              title: const Text(
+                '3D Model Viewer',
+                style: TextStyle(color: Colors.white),
+              ),
+              // ignore: avoid_returning_null_for_void
+              onTap: () => null,
+            ),
+            const Divider(),
+            ActionChip(
+                backgroundColor: Colors.white,
+                label: const Text(
+                  "Logout",
+                ),
                 onPressed: () {
-                  //Navigator.pop(context);
+                  logout(context);
                 }),
           ],
-          backgroundColor: const Color.fromARGB(255, 0, 173, 238),
         ),
-        body: Stack(
-          children: [
-            Container(
+      ),
+      appBar: AppBar(
+        title: const Text("VOLTEC App Inventario"),
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.volunteer_activism),
+              iconSize: 30,
+              onPressed: () {
+                //Navigator.pop(context);
+              }),
+        ],
+        backgroundColor: const Color(0xff1e224f),
+      ),
+      body: SafeArea(
+          child: Column(
+        children: <Widget>[
+          Expanded(
+            child: Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-              colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.6), BlendMode.srcOver),
-              image: const AssetImage(
-                "assets/Fondo.JPG",
-              ),
-              fit: BoxFit.cover,
-            ))),
-            Center(
-                child: GridView.extent(
-              primary: false,
-              padding: const EdgeInsets.all(16),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              maxCrossAxisExtent: 200.0,
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FeedbackListScreen()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                        top: 140, bottom: 0, left: 0, right: 0),
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: const AssetImage(
-                            "assets/Herramientas.jpeg",
-                          ),
-                          fit: BoxFit.cover),
-                    ),
-                    child: Stack(children: [
-                      Container(
-                        width: 194,
-                        height: 25,
-                        color: Colors.white.withOpacity(0.6),
-                        child: const Text(
-                          "Herramientas",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        ),
-                      )
-                    ]),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Refacciones()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                        top: 140, bottom: 0, left: 0, right: 0),
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: const AssetImage("assets/Refacciones.JPG"),
-                          fit: BoxFit.cover),
-                    ),
-                    child: Stack(children: [
-                      Container(
-                        width: 194,
-                        height: 25,
-                        color: Colors.white.withOpacity(0.6),
-                        child: const Text(
-                          "Consumibles",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        ),
-                      )
-                    ]),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FeedbackListScreen_1()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                        top: 140, bottom: 0, left: 0, right: 0),
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: const AssetImage("assets/Mecanica.jpg"),
-                          fit: BoxFit.cover),
-                    ),
-                    child: Stack(children: [
-                      Container(
-                        width: 194,
-                        height: 25,
-                        color: Colors.white.withOpacity(0.6),
-                        child: const Text(
-                          "Mecanica",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        ),
-                      )
-                    ]),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const ElecNum()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                        top: 140, bottom: 0, left: 0, right: 0),
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: const AssetImage("assets/Electrica.jpg"),
-                          fit: BoxFit.cover),
-                    ),
-                    child: Stack(children: [
-                      Container(
-                        width: 194,
-                        height: 25,
-                        color: Colors.white.withOpacity(0.6),
-                        child: const Text(
-                          "Componentes",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        ),
-                      )
-                    ]),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const Lego()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                        top: 140, bottom: 0, left: 0, right: 0),
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: const AssetImage("assets/LegoPiezas.jpg"),
-                          fit: BoxFit.cover),
-                    ),
-                    child: Stack(children: [
-                      Container(
-                        width: 194,
-                        height: 25,
-                        color: Colors.white.withOpacity(0.6),
-                        child: const Text(
-                          "Lego Mindstorms",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        ),
-                      )
-                    ]),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FeedbackListScreen_8()));
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.only(
-                        top: 140, bottom: 0, left: 0, right: 0),
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(14.0)),
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.blueGrey.withOpacity(0.04),
-                              BlendMode.srcOver),
-                          image: const AssetImage("assets/Viajes.JPG"),
-                          fit: BoxFit.cover),
-                    ),
-                    child: Stack(children: [
-                      Container(
-                        width: 194,
-                        height: 25,
-                        color: Colors.white.withOpacity(0.6),
-                        child: const Text(
-                          "Viajes",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w500),
-                        ),
-                      )
-                    ]),
-                  ),
-                ),
-              ],
-            )),
-          ],
-        ));
+                        image: AssetImage("assets/gradiente.jpg"),
+                        colorFilter: ColorFilter.mode(
+                            Colors.black.withOpacity(0.7), BlendMode.srcOver),
+                        fit: BoxFit.cover)),
+                child: VerticalCardPager(
+                  textStyle: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                  titles: titles,
+                  images: images,
+                  onPageChanged: (page) {},
+                  align: ALIGN.CENTER,
+                  onSelectedItem: (index) {},
+                )),
+          ),
+        ],
+      )),
+    );
   }
 
   Future<void> logout(BuildContext context) async {

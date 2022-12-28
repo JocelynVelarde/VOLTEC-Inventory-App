@@ -1,25 +1,26 @@
+// ignore: file_names
 import 'package:app_la_buena/backend/Controlador.dart';
 import 'package:flutter/material.dart';
 
 import '../backend/Herramienta.dart';
 
+// ignore: must_be_immutable
 class InventarioUI extends StatefulWidget {
   InventarioUI({Key? key, required this.title}) : super(key: key);
 
   final String title;
-  late Controlador controlador = new Controlador();
+  late Controlador controlador = Controlador();
 
   @override
   State<InventarioUI> createState() => _InventarioUIState();
 }
 
 class _InventarioUIState extends State<InventarioUI> {
-  // Method to Submit Feedback and save it in Google Shee
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff1e224f),
+        backgroundColor: const Color(0xff1e224f),
         title: Text(widget.title),
         leading: GestureDetector(
           onTap: () {
@@ -56,6 +57,7 @@ class _InventarioUIState extends State<InventarioUI> {
               itemBuilder: (context, index) {
                 //se crea una variable por cada indice de el google sheets con todos los paramentros de herramienta
                 final herramienta = snapshot.data![index];
+                // ignore: no_leading_underscores_for_local_identifiers
                 Widget _buildPopupDialog(BuildContext context) {
                   return AlertDialog(
                     shape: RoundedRectangleBorder(
@@ -77,7 +79,7 @@ class _InventarioUIState extends State<InventarioUI> {
                             ),
                           ),
                         ),
-                        Padding(padding: EdgeInsets.only(top: 15.0)),
+                        const Padding(padding: EdgeInsets.only(top: 15.0)),
                         Text("Clave: ${herramienta.clave}",
                             style: const TextStyle(color: Colors.white)),
                         Text("Cantidad: ${herramienta.cantidad.toString()}",

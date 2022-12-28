@@ -37,14 +37,13 @@ class Controlador {
 //crear el metodo init para inicializar las hojas de calculo
   Future<void> init() async {
     spreadsheet = await gSheets.spreadsheet(spreadSheetId);
-    worksheetHerramientas =
-        (await spreadsheet.worksheetByTitle('Herramientas'))!;
-    worksheetRefacciones = (await spreadsheet.worksheetByTitle('Refacciones'))!;
-    worksheetMecanica = (await spreadsheet.worksheetByTitle('Mecanica'))!;
-    worksheetViajes = (await spreadsheet.worksheetByTitle('Viajes'))!;
-    worksheetBotiquin = (await spreadsheet.worksheetByTitle('Botiquin'))!;
-    worksheetEventos = (await spreadsheet.worksheetByTitle('Eventos'))!;
-    worksheetLego = (await spreadsheet.worksheetByTitle('Lego'))!;
+    worksheetHerramientas = (spreadsheet.worksheetByTitle('Herramientas'))!;
+    worksheetRefacciones = (spreadsheet.worksheetByTitle('Refacciones'))!;
+    worksheetMecanica = (spreadsheet.worksheetByTitle('Mecanica'))!;
+    worksheetViajes = (spreadsheet.worksheetByTitle('Viajes'))!;
+    worksheetBotiquin = (spreadsheet.worksheetByTitle('Botiquin'))!;
+    worksheetEventos = (spreadsheet.worksheetByTitle('Eventos'))!;
+    worksheetLego = (spreadsheet.worksheetByTitle('Lego'))!;
   }
 
   //metodo getAll para obtener todos los registros de la hoja de calculo

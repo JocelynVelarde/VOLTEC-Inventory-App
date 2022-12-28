@@ -1,5 +1,4 @@
-import 'package:app_la_buena/MyGridScreen.dart';
-import 'package:app_la_buena/users/homescreen.dart';
+import 'package:app_la_buena/HomePage.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -59,7 +58,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Nombre",
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue, width: 2.0),
+            borderSide: const BorderSide(color: Colors.blue, width: 2.0),
             borderRadius: BorderRadius.circular(10),
           ),
         ));
@@ -86,7 +85,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Apellido",
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue, width: 2.0),
+            borderSide: const BorderSide(color: Colors.blue, width: 2.0),
             borderRadius: BorderRadius.circular(10),
           ),
         ));
@@ -118,7 +117,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Correo",
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue, width: 2.0),
+            borderSide: const BorderSide(color: Colors.blue, width: 2.0),
             borderRadius: BorderRadius.circular(10),
           ),
         ));
@@ -149,7 +148,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Contraseña",
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue, width: 2.0),
+            borderSide: const BorderSide(color: Colors.blue, width: 2.0),
             borderRadius: BorderRadius.circular(10),
           ),
         ));
@@ -177,7 +176,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Confirsmar Contraseña",
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue, width: 2.0),
+            borderSide: const BorderSide(color: Colors.blue, width: 2.0),
             borderRadius: BorderRadius.circular(10),
           ),
         ));
@@ -202,7 +201,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Color(0x1e224f),
+      backgroundColor: const Color(0x1e224f),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -217,7 +216,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Color.fromARGB(0, 255, 0, 204),
+            color: const Color.fromARGB(0, 255, 0, 204),
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(

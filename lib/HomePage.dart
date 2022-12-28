@@ -121,11 +121,11 @@ class _MyGridScreenState extends State<MyGridScreen> {
             UserAccountsDrawerHeader(
               accountName: Text(
                 "${loggedInUser.firstName} ${loggedInUser.secondName}",
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
               accountEmail: Text(
                 "${loggedInUser.email}",
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
               currentAccountPicture: CircleAvatar(
                 child: ClipOval(
@@ -200,12 +200,12 @@ class _MyGridScreenState extends State<MyGridScreen> {
             child: Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("assets/gradiente.jpg"),
+                        image: const AssetImage("assets/gradiente.jpg"),
                         colorFilter: ColorFilter.mode(
                             Colors.black.withOpacity(0.7), BlendMode.srcOver),
                         fit: BoxFit.cover)),
                 child: VerticalCardPager(
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                   titles: titles,
                   images: images,

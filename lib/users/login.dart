@@ -1,5 +1,5 @@
-import 'package:app_la_buena/MyGridScreen.dart';
-import 'package:app_la_buena/users/homescreen.dart';
+import 'package:app_la_buena/HomePage.dart';
+
 import 'package:app_la_buena/users/registration.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +10,7 @@ class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginScreenState createState() => _LoginScreenState();
 }
 
@@ -56,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Correo",
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue, width: 2.0),
+            borderSide: const BorderSide(color: Colors.blue, width: 2.0),
             borderRadius: BorderRadius.circular(10),
           ),
         ));
@@ -87,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Contraseña",
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue, width: 2.0),
+            borderSide: const BorderSide(color: Colors.blue, width: 2.0),
             borderRadius: BorderRadius.circular(10),
           ),
         ));
@@ -111,11 +112,11 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(0, 255, 0, 204),
+      backgroundColor: const Color.fromARGB(0, 255, 0, 204),
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Color.fromARGB(0, 255, 0, 204),
+            color: const Color.fromARGB(0, 255, 0, 204),
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(

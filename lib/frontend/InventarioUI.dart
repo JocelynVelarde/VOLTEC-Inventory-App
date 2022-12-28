@@ -50,7 +50,13 @@ class _InventarioUIState extends State<InventarioUI> {
           future: widget.controlador.getAll(widget.title),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return const CircularProgressIndicator();
+              return const SizedBox(
+                height: double.infinity / 2,
+                child: Center(
+                  child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white)),
+                ),
+              );
             }
             return ListView.builder(
               itemCount: snapshot.data!.length,

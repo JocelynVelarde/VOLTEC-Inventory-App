@@ -1,6 +1,5 @@
-// ignore: file_names
-import 'package:app_la_buena/backend/Controlador.dart';
 import 'package:app_la_buena/frontend/InventarioUI.dart';
+import 'package:app_la_buena/modelViewer/viewer.dart';
 import 'package:app_la_buena/users/userModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,15 +8,15 @@ import 'package:vertical_card_pager/vertical_card_pager.dart';
 
 import 'users/login.dart';
 
-class MyGridScreen extends StatefulWidget {
-  const MyGridScreen({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
-  _MyGridScreenState createState() => _MyGridScreenState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyGridScreenState extends State<MyGridScreen> {
+class _HomePageState extends State<HomePage> {
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 
@@ -147,9 +146,12 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 'Home',
                 style: TextStyle(color: Colors.white),
               ),
-
-              // ignore: avoid_returning_null_for_void
-              onTap: () => null,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
             ),
             ListTile(
               leading: const Icon(Icons.login, color: Colors.white),
@@ -167,7 +169,12 @@ class _MyGridScreenState extends State<MyGridScreen> {
                 style: TextStyle(color: Colors.white),
               ),
               // ignore: avoid_returning_null_for_void
-              onTap: () => null,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Viewer()),
+                );
+              },
             ),
             const Divider(),
             ActionChip(
@@ -206,7 +213,9 @@ class _MyGridScreenState extends State<MyGridScreen> {
                         fit: BoxFit.cover)),
                 child: VerticalCardPager(
                   textStyle: const TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                   titles: titles,
                   images: images,
                   onPageChanged: (page) {},

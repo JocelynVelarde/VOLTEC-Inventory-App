@@ -174,7 +174,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           filled: true,
           prefixIcon: const Icon(Icons.vpn_key),
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Confirsmar Contraseña",
+          hintText: "Confirmar Contraseña",
           border: OutlineInputBorder(
             borderSide: const BorderSide(color: Colors.blue, width: 2.0),
             borderRadius: BorderRadius.circular(10),
@@ -313,7 +313,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     Fluttertoast.showToast(msg: "La cuenta fue creada exitosamente :) ");
     Navigator.pushAndRemoveUntil(
         (context),
-        MaterialPageRoute(builder: (context) => const MyGridScreen()),
+        MaterialPageRoute(builder: (context) => const HomePage()),
         (route) => false);
   }
 }

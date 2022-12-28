@@ -1,5 +1,5 @@
 import 'package:app_la_buena/MyGridScreen.dart';
-import 'package:app_la_buena/homescreen.dart';
+import 'package:app_la_buena/users/homescreen.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

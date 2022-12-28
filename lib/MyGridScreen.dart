@@ -1,11 +1,11 @@
 import 'package:app_la_buena/frontend/InventarioUI.dart';
-import 'package:app_la_buena/userModel.dart';
+import 'package:app_la_buena/users/userModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
 
-import 'login.dart';
+import 'users/login.dart';
 
 class MyGridScreen extends StatefulWidget {
   const MyGridScreen({Key? key}) : super(key: key);

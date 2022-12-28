@@ -1,6 +1,6 @@
 import 'package:app_la_buena/MyGridScreen.dart';
-import 'package:app_la_buena/homescreen.dart';
-import 'package:app_la_buena/registration.dart';
+import 'package:app_la_buena/users/homescreen.dart';
+import 'package:app_la_buena/users/registration.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';

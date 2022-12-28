@@ -1,4 +1,4 @@
-import 'package:app_la_buena/userModel.dart';
+/*import 'package:app_la_buena/users/userModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -86,4 +86,4 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const LoginScreen()));
   }
-}
+}*/

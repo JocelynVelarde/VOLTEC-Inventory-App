@@ -6,9 +6,10 @@ import '../backend/Herramienta.dart';
 
 // ignore: must_be_immutable
 class InventarioUI extends StatefulWidget {
-  InventarioUI({Key? key, required this.title}) : super(key: key);
+  InventarioUI({required this.title});
 
   final String title;
+
   late Controlador controlador = Controlador();
 
   @override
@@ -18,6 +19,7 @@ class InventarioUI extends StatefulWidget {
 class _InventarioUIState extends State<InventarioUI> {
   @override
   Widget build(BuildContext context) {
+    print(widget.title);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff1e224f),
@@ -104,27 +106,28 @@ class _InventarioUIState extends State<InventarioUI> {
                 }
 
                 return GestureDetector(
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) =>
-                              _buildPopupDialog(context));
-                    },
-                    child: Card(
-                      color: Colors.black.withOpacity(0.3),
-                      child: ListTile(
-                        title: Text(herramienta.nombre,
-                            style: const TextStyle(color: Colors.white)),
-                        subtitle: Text(herramienta.clave,
-                            style: const TextStyle(color: Colors.white)),
-                        trailing: Text(herramienta.cantidad.toString(),
-                            style: const TextStyle(color: Colors.white)),
-                        leading: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                          herramienta.imagen,
-                        )),
-                      ),
-                    ));
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) =>
+                            _buildPopupDialog(context));
+                  },
+                  child: Card(
+                    color: Colors.black.withOpacity(0.3),
+                    child: ListTile(
+                      title: Text(herramienta.nombre,
+                          style: const TextStyle(color: Colors.white)),
+                      subtitle: Text(herramienta.clave,
+                          style: const TextStyle(color: Colors.white)),
+                      trailing: Text(herramienta.cantidad.toString(),
+                          style: const TextStyle(color: Colors.white)),
+                      leading: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                        herramienta.imagen,
+                      )),
+                    ),
+                  ),
+                );
               },
             );
           },

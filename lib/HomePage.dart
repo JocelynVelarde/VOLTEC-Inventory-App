@@ -36,12 +36,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final List<String> titles = [
-      "HERRAMIENTAS",
-      "REFACCIONES",
-      "VIAJES",
-      "BOTIQUIN",
-      "MECANICA",
-      "LEGO",
+      "Herramientas",
+      "Refacciones",
+      "Viajes",
+      "Botiquin",
+      "Mecanica",
+      "Lego",
     ];
 
     final List<Widget> images = [
@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyle(color: Colors.white),
               ),
               // ignore: avoid_returning_null_for_void
-              onTap: () => null,
+              onTap: () => const LoginScreen(),
             ),
             ListTile(
               leading: const Icon(Icons.view_in_ar, color: Colors.white),
@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => InventarioUI(
-                                  title: titles[index],
+                                  title: "Botiquin",
                                 )));
                   },
                 )),

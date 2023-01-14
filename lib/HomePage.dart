@@ -194,12 +194,13 @@ class _HomePageState extends State<HomePage> {
         title: const Text("VOLTEC App Inventario"),
         actions: [
           IconButton(
-              icon: const Icon(Icons.volunteer_activism),
+              icon: const Icon(Icons.bug_report),
               iconSize: 30,
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BugReportForm()),
+                  MaterialPageRoute(
+                      builder: (context) => const BugReportForm()),
                 );
               }),
         ],

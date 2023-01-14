@@ -24,8 +24,7 @@ class _ViewerState extends State<Viewer> {
       ),
       body: ModelViewer(
         backgroundColor: Colors.black,
-        src:
-            'https://sketchfab.com/3d-models/joystick-bea744ca5a03497d81a9e767ad89d297?utm_medium=embed&utm_campaign=share-popup&utm_content=bea744ca5a03497d81a9e767ad89d297',
+        src: 'assets/tool.glb',
         alt: "A 3D model of a star destroyer",
         autoPlay: true,
         autoRotate: true,

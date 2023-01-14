@@ -17,6 +17,15 @@ class _BugReportFormState extends State<BugReportForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text('Bug Report'),
+        leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
+      ),
       body: Stack(children: <Widget>[
         Container(
           decoration: const BoxDecoration(
@@ -29,7 +38,7 @@ class _BugReportFormState extends State<BugReportForm> {
         Center(
           child: Padding(
             padding: const EdgeInsets.only(
-              top: 150,
+              top: 0,
               left: 20,
               right: 20,
             ),
@@ -51,16 +60,16 @@ class _BugReportFormState extends State<BugReportForm> {
                         child: TextFormField(
                           controller: nameController,
                           decoration: const InputDecoration(
-                              labelText: 'Your name',
+                              labelText: 'Nombre',
                               labelStyle:
-                                  TextStyle(color: Colors.white, fontSize: 25),
+                                  TextStyle(color: Colors.white, fontSize: 20),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide.none),
                               focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide.none)),
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return 'Please enter your name';
+                              return 'Porfavor ingresa tu nombre';
                             }
                             return null;
                           },
@@ -80,18 +89,18 @@ class _BugReportFormState extends State<BugReportForm> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextFormField(
-                          controller: nameController,
+                          controller: emailController,
                           decoration: const InputDecoration(
-                              labelText: 'Your name',
+                              labelText: 'Email',
                               labelStyle:
-                                  TextStyle(color: Colors.white, fontSize: 25),
+                                  TextStyle(color: Colors.white, fontSize: 20),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide.none),
                               focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide.none)),
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return 'Please enter your name';
+                              return 'Porfavor ingresa tu correo';
                             }
                             return null;
                           },
@@ -111,18 +120,18 @@ class _BugReportFormState extends State<BugReportForm> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextFormField(
-                          controller: nameController,
+                          controller: descriptionController,
                           decoration: const InputDecoration(
-                              labelText: 'Your name',
+                              labelText: 'Cuentanos el bug',
                               labelStyle:
-                                  TextStyle(color: Colors.white, fontSize: 25),
+                                  TextStyle(color: Colors.white, fontSize: 18),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide.none),
                               focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide.none)),
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return 'Please enter your name';
+                              return 'Porfavor ingresa una descripción';
                             }
                             return null;
                           },
@@ -131,14 +140,25 @@ class _BugReportFormState extends State<BugReportForm> {
                         ),
                       ),
                     ),
-                    ElevatedButton(
-                      child: const Text("Submit"),
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          // Handle form submission
-                        }
-                      },
-                    ),
+                    RawMaterialButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 8),
+                      onPressed: () {},
+                      fillColor: Colors.black,
+                      elevation: 5,
+                      highlightElevation: 3,
+                      disabledElevation: 0,
+                      highlightColor: Colors.pink[50],
+                      materialTapTargetSize: MaterialTapTargetSize.padded,
+                      animationDuration: const Duration(milliseconds: 100),
+                      child: const Icon(
+                        Icons.send,
+                        size: 30,
+                        color: Colors.white,
+                      ),
+                    )
                   ],
                 ),
               ),

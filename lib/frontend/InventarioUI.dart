@@ -19,7 +19,6 @@ class InventarioUI extends StatefulWidget {
 class _InventarioUIState extends State<InventarioUI> {
   @override
   Widget build(BuildContext context) {
-    print(widget.title);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff1e224f),
@@ -51,6 +50,7 @@ class _InventarioUIState extends State<InventarioUI> {
         FutureBuilder<List<Herramienta>?>(
           future: widget.controlador.getAll(widget.title),
           builder: (context, snapshot) {
+            print(snapshot.data);
             if (!snapshot.hasData) {
               return const SizedBox(
                 height: double.infinity / 2,
@@ -64,8 +64,8 @@ class _InventarioUIState extends State<InventarioUI> {
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 //se crea una variable por cada indice de el google sheets con todos los paramentros de herramienta
-                final herramienta = snapshot.data![index];
-                // ignore: no_leading_underscores_for_local_identifiers
+                final herramienta = snapshot.data![
+                    index]; // ignore: no_leading_underscores_for_local_identifiers
                 Widget _buildPopupDialog(BuildContext context) {
                   return AlertDialog(
                     shape: RoundedRectangleBorder(

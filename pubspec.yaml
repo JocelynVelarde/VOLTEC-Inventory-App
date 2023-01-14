@@ -52,6 +52,7 @@ dependencies:
   gsheets: ^0.4.2
   vertical_card_pager: ^1.5.0
   model_viewer_plus: ^1.4.0
+  html: ^0.15.1
   
   
   

@@ -53,6 +53,7 @@ class Controlador {
     await init();
     Worksheet sheet;
 
+    print(worksheet + "HIAAA");
     switch (worksheet) {
       case "Herramientas":
         sheet = worksheetHerramientas;
@@ -79,7 +80,6 @@ class Controlador {
         sheet = worksheetHerramientas;
     }
     final herramienta = (await sheet.values.map.allRows());
-    print(herramienta);
     return herramienta!.map((json) => Herramienta.fromGsheets(json)).toList();
   }
 

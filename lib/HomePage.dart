@@ -1,3 +1,5 @@
+import 'package:app_la_buena/backend/UserFeedback.dart';
+import 'package:app_la_buena/frontend/Formulario.dart';
 import 'package:app_la_buena/frontend/InventarioUI.dart';
 import 'package:app_la_buena/modelViewer/viewer.dart';
 import 'package:app_la_buena/users/userModel.dart';
@@ -195,7 +197,10 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(Icons.volunteer_activism),
               iconSize: 30,
               onPressed: () {
-                //Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyCustomForm()),
+                );
               }),
         ],
         backgroundColor: const Color(0xff1e224f),
@@ -225,7 +230,7 @@ class _HomePageState extends State<HomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => InventarioUI(
-                                  title: "Botiquin",
+                                  title: titles[index],
                                 )));
                   },
                 )),

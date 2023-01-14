@@ -1,69 +1,154 @@
-import 'package:app_la_buena/frontend/Formulario.dart';
-
 import 'package:flutter/material.dart';
 
-// Crea un Widget Form
-class MyCustomForm extends StatefulWidget {
+class BugReportForm extends StatefulWidget {
+  const BugReportForm({Key? key}) : super(key: key);
+
   @override
-  MyCustomFormState createState() {
-    return MyCustomFormState();
-  }
+  // ignore: library_private_types_in_public_api
+  _BugReportFormState createState() => _BugReportFormState();
 }
 
-// Crea una clase State correspondiente. Esta clase contendrá los datos relacionados con
-// el formulario.
-class MyCustomFormState extends State<MyCustomForm> {
-  String message = "Procesando";
-  // Crea una clave global que identificará de manera única el widget Form
-  // y nos permita validar el formulario
-  //
-  // Nota: Esto es un GlobalKey<FormState>, no un GlobalKey<MyCustomFormState>!
+class _BugReportFormState extends State<BugReportForm> {
   final _formKey = GlobalKey<FormState>();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final descriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    // Crea un widget Form usando el _formKey que creamos anteriormente
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          TextFormField(
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'Please enter some text';
-              }
-            },
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                // devolverá true si el formulario es válido, o falso si
-                // el formulario no es válido.
-                if (_formKey.currentState!.validate()) {
-                  showSnackbar(String message) {
-                    final snackBar = SnackBar(content: Text(message));
-                    // ignore: deprecated_member_use
-                    // _scaffoldKey.currentState!.showSnackBar(snackBar);
-                    ScaffoldMessenger.of(context)
-                        .showSnackBar(SnackBar(content: Text(message)));
-                  }
-                  // Si el formulario es válido, queremos mostrar un Snackbar
-
-                }
-              },
-              child: Text('Submit'),
+    return Scaffold(
+      body: Stack(children: <Widget>[
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/gradiente.jpg"),
+              fit: BoxFit.cover,
             ),
           ),
-        ],
-      ),
+        ),
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.only(
+              top: 150,
+              left: 20,
+              right: 20,
+            ),
+            child: SingleChildScrollView(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.4),
+                          borderRadius: BorderRadius.circular(25.0),
+                          border: Border.all(
+                            width: 2.0,
+                          )),
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          controller: nameController,
+                          decoration: const InputDecoration(
+                              labelText: 'Your name',
+                              labelStyle:
+                                  TextStyle(color: Colors.white, fontSize: 25),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none)),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please enter your name';
+                            }
+                            return null;
+                          },
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.4),
+                          borderRadius: BorderRadius.circular(25.0),
+                          border: Border.all(
+                            width: 2.0,
+                          )),
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          controller: nameController,
+                          decoration: const InputDecoration(
+                              labelText: 'Your name',
+                              labelStyle:
+                                  TextStyle(color: Colors.white, fontSize: 25),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none)),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please enter your name';
+                            }
+                            return null;
+                          },
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.4),
+                          borderRadius: BorderRadius.circular(25.0),
+                          border: Border.all(
+                            width: 2.0,
+                          )),
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          controller: nameController,
+                          decoration: const InputDecoration(
+                              labelText: 'Your name',
+                              labelStyle:
+                                  TextStyle(color: Colors.white, fontSize: 25),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none)),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Please enter your name';
+                            }
+                            return null;
+                          },
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    ElevatedButton(
+                      child: const Text("Submit"),
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          // Handle form submission
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        )
+      ]),
     );
   }
 }
-
-
-
 
 
 

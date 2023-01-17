@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 
 class BugReportForm extends StatefulWidget {
   const BugReportForm({Key? key}) : super(key: key);
@@ -13,6 +14,26 @@ class _BugReportFormState extends State<BugReportForm> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final descriptionController = TextEditingController();
+
+  void _submitForm() {
+    final form = _formKey.currentState;
+    if (form!.validate()) {
+      final name = nameController.text;
+      final email = emailController.text;
+      final description = descriptionController.text;
+
+      // Create the file
+      final file = File('bug_reports.txt');
+      // Open the file for writing
+      final sink = file.openWrite();
+// Write the data to the file
+      sink.write('Name: $name\nEmail: $email\nDescription: $description\n\n');
+      // Close the file
+      sink.close();
+      form!.reset();
+      Navigator.pop(context);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +166,7 @@ class _BugReportFormState extends State<BugReportForm> {
                           borderRadius: BorderRadius.circular(30)),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 30, vertical: 8),
-                      onPressed: () {},
+                      onPressed: _submitForm,
                       fillColor: Colors.black,
                       elevation: 5,
                       highlightElevation: 3,

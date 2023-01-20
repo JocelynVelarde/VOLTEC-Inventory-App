@@ -23,14 +23,14 @@ class _BugReportFormState extends State<BugReportForm> {
       final description = descriptionController.text;
 
       // Create the file
-      final file = File('bug_reports.txt');
+      final file = File('bug_report.txt');
       // Open the file for writing
       final sink = file.openWrite();
 // Write the data to the file
       sink.write('Name: $name\nEmail: $email\nDescription: $description\n\n');
       // Close the file
       sink.close();
-      form!.reset();
+      form.reset();
       Navigator.pop(context);
     }
   }

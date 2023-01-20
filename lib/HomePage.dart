@@ -231,7 +231,7 @@ class _HomePageState extends State<HomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => InventarioUI(
-                                  title: titles[index],
+                                  title: "Herramientas",
                                 )));
                   },
                 )),

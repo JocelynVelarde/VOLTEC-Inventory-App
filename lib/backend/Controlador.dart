@@ -53,7 +53,6 @@ class Controlador {
     await init();
     Worksheet sheet;
 
-    print(worksheet + "HIAAA");
     switch (worksheet) {
       case "Herramientas":
         sheet = worksheetHerramientas;

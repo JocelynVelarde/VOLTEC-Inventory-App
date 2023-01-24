@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 
-class BugReportForm extends StatefulWidget {
+class BugForm extends StatefulWidget {
   @override
   _BugReportFormState createState() => _BugReportFormState();
 }
 
-class _BugReportFormState extends State<BugReportForm> {
+class _BugReportFormState extends State<BugForm> {
   final _formKey = GlobalKey<FormState>();
 
   // Variables to store the user's input
@@ -70,7 +70,7 @@ class _BugReportFormState extends State<BugReportForm> {
                       "Affected Module/Feature: $_affectedModule\nBug Description: $_bugDescription\nSteps to Reproduce: $_stepsToReproduce\nAdditional Comments: $_additionalComments\n",
                       mode: FileMode.append);
 
-                  Scaffold.of(context).showSnackBar(SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text("Thank you for submitting the bug report!"),
                   ));
                 }

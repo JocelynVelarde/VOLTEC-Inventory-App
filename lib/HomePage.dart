@@ -1,5 +1,6 @@
 import 'package:app_la_buena/backend/UserFeedback.dart';
-import 'package:app_la_buena/frontend/Formulario.dart';
+import 'package:app_la_buena/frontend/BugReportForm.dart';
+import 'package:app_la_buena/backend/UserFeedback.dart';
 import 'package:app_la_buena/frontend/InventarioUI.dart';
 import 'package:app_la_buena/modelViewer/viewer.dart';
 import 'package:app_la_buena/users/userModel.dart';
@@ -199,8 +200,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const BugReportForm()),
+                  MaterialPageRoute(builder: (context) => BugReportForm()),
                 );
               }),
         ],
@@ -231,7 +231,7 @@ class _HomePageState extends State<HomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => InventarioUI(
-                                  title: "Herramientas",
+                                  title: titles[index],
                                 )));
                   },
                 )),

@@ -50,7 +50,7 @@ class _InventarioUIState extends State<InventarioUI> {
         FutureBuilder<List<Herramienta>?>(
           future: widget.controlador.getAll(widget.title),
           builder: (context, snapshot) {
-            print(snapshot.data);
+            print(widget.title);
             if (!snapshot.hasData) {
               return const SizedBox(
                 height: double.infinity / 2,

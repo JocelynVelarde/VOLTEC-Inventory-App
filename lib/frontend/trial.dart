@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class MyForm extends StatefulWidget {
   @override
@@ -14,58 +15,14 @@ class _MyFormState extends State<MyForm> {
   TextEditingController emailController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
 
-  @override
-  Widget build(BuildContext context) {
-    requestStoragePermission();
-    return Scaffold(
-      body: Form(
-          key: _formKey,
-          child: Column(children: <Widget>[
-            TextFormField(
-              controller: nameController,
-              decoration: InputDecoration(labelText: 'Name'),
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your name';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              controller: emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter your email';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              controller: descriptionController,
-              decoration: InputDecoration(labelText: 'Description'),
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'Please enter a description';
-                }
-                return null;
-              },
-            ),
-            ElevatedButton(
-              onPressed: _submitForm,
-              child: Text('Submit'),
-            )
-          ])),
-    );
-  }
-
   Future<void> writeToFile(
       String name, String email, String description) async {
-    final directory = await getExternalStorageDirectory();
-    final file = File('${directory?.path}/bug_reports.txt');
+    final directory = await getApplicationDocumentsDirectory();
+    final file = File('${directory.path}/bug_reports.txt');
     final sink = file.openWrite(mode: FileMode.append);
 
     sink.write('Name: $name\nEmail: $email\nDescription: $description\n\n');
+    print(file);
     await sink.flush();
     await sink.close();
   }
@@ -87,18 +44,169 @@ class _MyFormState extends State<MyForm> {
       final email = emailController.text;
       final description = descriptionController.text;
 
-      // Create the file object
-      final file = File('assets/bug_reports.txt');
-      print(file);
-
       // Write the data to the file
-      file.writeAsString(
-          'Name: $name\nEmail: $email\nDescription: $description\n\n',
-          mode: FileMode.append);
+
+      writeToFile(name, email, description);
 
       form.reset();
       Navigator.pop(context);
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    requestStoragePermission();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: const Text('Bug Report'),
+        leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
+      ),
+      body: Stack(children: <Widget>[
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/gradiente.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.only(
+              top: 0,
+              left: 20,
+              right: 20,
+            ),
+            child: SingleChildScrollView(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.4),
+                          borderRadius: BorderRadius.circular(25.0),
+                          border: Border.all(
+                            width: 2.0,
+                          )),
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          controller: nameController,
+                          decoration: const InputDecoration(
+                              labelText: 'Nombre',
+                              labelStyle:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none)),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Porfavor ingresa tu nombre';
+                            }
+                            return null;
+                          },
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.4),
+                          borderRadius: BorderRadius.circular(25.0),
+                          border: Border.all(
+                            width: 2.0,
+                          )),
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          controller: emailController,
+                          decoration: const InputDecoration(
+                              labelText: 'Email',
+                              labelStyle:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none)),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Porfavor ingresa tu correo';
+                            }
+                            return null;
+                          },
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.4),
+                          borderRadius: BorderRadius.circular(25.0),
+                          border: Border.all(
+                            width: 2.0,
+                          )),
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextFormField(
+                          controller: descriptionController,
+                          decoration: const InputDecoration(
+                              labelText: 'Cuentanos el bug',
+                              labelStyle:
+                                  TextStyle(color: Colors.white, fontSize: 18),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none)),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Porfavor ingresa una descripción';
+                            }
+                            return null;
+                          },
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    RawMaterialButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 8),
+                      onPressed: _submitForm,
+                      fillColor: Colors.black,
+                      elevation: 5,
+                      highlightElevation: 3,
+                      disabledElevation: 0,
+                      highlightColor: Colors.pink[50],
+                      materialTapTargetSize: MaterialTapTargetSize.padded,
+                      animationDuration: const Duration(milliseconds: 100),
+                      child: const Icon(
+                        Icons.send,
+                        size: 30,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        )
+      ]),
+    );
   }
 
   /*void _submitForm() async {

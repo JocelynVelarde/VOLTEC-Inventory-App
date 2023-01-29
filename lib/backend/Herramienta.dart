@@ -1,3 +1,4 @@
+// ignore: file_names
 class Herramienta {
   String nombre;
   String clave;

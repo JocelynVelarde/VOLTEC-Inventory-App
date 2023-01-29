@@ -1,12 +1,12 @@
 // ignore: file_names
-import 'package:app_la_buena/backend/Controlador.dart';
+import 'package:app_la_buena/backend/controlador.dart';
 import 'package:flutter/material.dart';
 
 import '../backend/Herramienta.dart';
 
 // ignore: must_be_immutable
 class InventarioUI extends StatefulWidget {
-  InventarioUI({required this.title});
+  InventarioUI({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -50,6 +50,7 @@ class _InventarioUIState extends State<InventarioUI> {
         FutureBuilder<List<Herramienta>?>(
           future: widget.controlador.getAll(widget.title),
           builder: (context, snapshot) {
+            // ignore: avoid_print
             print(widget.title);
             if (!snapshot.hasData) {
               return const SizedBox(
@@ -66,6 +67,7 @@ class _InventarioUIState extends State<InventarioUI> {
                 //se crea una variable por cada indice de el google sheets con todos los paramentros de herramienta
                 final herramienta = snapshot.data![
                     index]; // ignore: no_leading_underscores_for_local_identifiers
+                // ignore: no_leading_underscores_for_local_identifiers
                 Widget _buildPopupDialog(BuildContext context) {
                   return AlertDialog(
                     shape: RoundedRectangleBorder(

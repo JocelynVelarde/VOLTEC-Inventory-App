@@ -1,4 +1,4 @@
-import 'package:app_la_buena/HomePage.dart';
+import 'package:app_la_buena/home_page.dart';
 
 import 'package:app_la_buena/users/registration.dart';
 import 'package:flutter/material.dart';
@@ -208,6 +208,7 @@ class _LoginScreenState extends State<LoginScreen> {
             errorMessage = "Un error indefinido ha ocurrido.";
         }
         Fluttertoast.showToast(msg: errorMessage!);
+        // ignore: avoid_print
         print(error.code);
       }
     }

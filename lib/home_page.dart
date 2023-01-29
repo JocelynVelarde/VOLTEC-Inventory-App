@@ -1,9 +1,7 @@
-import 'package:app_la_buena/frontend/BugReportForm.dart';
-
-import 'package:app_la_buena/frontend/InventarioUI.dart';
-import 'package:app_la_buena/frontend/trial.dart';
+import 'package:app_la_buena/frontend/inventario_ui.dart';
+import 'package:app_la_buena/frontend/bug_form.dart';
 import 'package:app_la_buena/modelViewer/viewer.dart';
-import 'package:app_la_buena/users/userModel.dart';
+import 'package:app_la_buena/users/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -93,14 +91,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      /*Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          image: DecorationImage(
-            image: AssetImage('assets/LegoPiezas.jpg'),
-            fit: BoxFit.cover,
-          ),
-        ),*/
+
       Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -175,7 +166,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Viewer()),
+                  MaterialPageRoute(builder: (context) => const Viewer()),
                 );
               },
             ),
@@ -200,7 +191,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyForm()),
+                  MaterialPageRoute(builder: (context) => const BugReportForm()),
                 );
               }),
         ],

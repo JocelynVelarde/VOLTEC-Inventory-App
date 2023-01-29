@@ -1,4 +1,4 @@
-import 'package:app_la_buena/HomePage.dart';
+import 'package:app_la_buena/home_page.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -6,12 +6,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'userModel.dart';
+import 'user_model.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
 
@@ -201,7 +202,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
 
     return Scaffold(
-      backgroundColor: const Color(0x1e224f),
+      backgroundColor: const Color(0x001e224f),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -288,6 +289,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             errorMessage = "Un error indefinido ha ocurrido.";
         }
         Fluttertoast.showToast(msg: errorMessage!);
+        // ignore: avoid_print
         print(error.code);
       }
     }

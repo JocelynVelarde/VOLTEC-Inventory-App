@@ -1,15 +1,19 @@
+
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:flutter/services.dart' show rootBundle;
 
-class MyForm extends StatefulWidget {
+
+class BugReportForm extends StatefulWidget {
+  const BugReportForm({Key? key}) : super(key: key);
+
   @override
-  _MyFormState createState() => _MyFormState();
+  // ignore: library_private_types_in_public_api
+  _BugReportFormState createState() => _BugReportFormState();
 }
 
-class _MyFormState extends State<MyForm> {
+class _BugReportFormState extends State<BugReportForm> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -22,6 +26,7 @@ class _MyFormState extends State<MyForm> {
     final sink = file.openWrite(mode: FileMode.append);
 
     sink.write('Name: $name\nEmail: $email\nDescription: $description\n\n');
+    // ignore: avoid_print
     print(file);
     await sink.flush();
     await sink.close();
@@ -31,8 +36,10 @@ class _MyFormState extends State<MyForm> {
     final status = await Permission.storage.request();
 
     if (status.isGranted) {
+      // ignore: avoid_print
       print("Storage permission granted");
     } else {
+      // ignore: avoid_print
       print("Storage permission denied");
     }
   }

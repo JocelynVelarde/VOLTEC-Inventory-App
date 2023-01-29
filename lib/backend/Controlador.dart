@@ -1,4 +1,4 @@
-//importar paquete gsheets para poder usar la api de google sheets
+
 import 'package:app_la_buena/backend/Herramienta.dart';
 import 'package:gsheets/gsheets.dart';
 

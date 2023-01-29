@@ -129,12 +129,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         controller: passwordEditingController,
         obscureText: true,
         validator: (value) {
-          RegExp regex = RegExp(r'^.{6,}$');
+          //contraseña segura con validacion de 8 caracteres, maysculas minusculas y caracteres especiales
+          RegExp regex = RegExp(
+              r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$');
           if (value!.isEmpty) {
             return ("Contraseña requerida para el login");
           }
           if (!regex.hasMatch(value)) {
-            return ("Ingresa una Contraseña valida(Min. 6 Caracteres)");
+            return ("Ingresa una Contraseña valida(Min. 8 Caracteres, \n Mayusculas, Minusculas \n Caracteres especiales)");
           }
           return null;
         },

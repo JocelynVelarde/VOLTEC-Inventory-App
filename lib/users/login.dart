@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
             return ("Contraseña requerida para login");
           }
           if (!regex.hasMatch(value)) {
-            return ("Ingresa una Contraseña valida(Min. 6 Caracteres)");
+            return ("Ingresa una Contraseña valida");
           }
           return null;
         },
@@ -141,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          const Text("Don't have an account? ",
+                          const Text("Crea tu cuenta ",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 18)),
                           GestureDetector(

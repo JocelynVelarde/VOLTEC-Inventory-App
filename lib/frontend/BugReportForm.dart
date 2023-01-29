@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 
 class BugReportForm extends StatefulWidget {
   const BugReportForm({Key? key}) : super(key: key);
@@ -35,6 +36,7 @@ class _BugReportFormState extends State<BugReportForm> {
           sink.close();
           form.reset();
           Navigator.pop(context);
+          print(file.path);
         });
       } on FileSystemException catch (e) {
         print("Error: ${e.message}");

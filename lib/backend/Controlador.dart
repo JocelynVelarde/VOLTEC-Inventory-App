@@ -1,4 +1,3 @@
-
 import 'package:app_la_buena/backend/Herramienta.dart';
 import 'package:gsheets/gsheets.dart';
 
@@ -82,13 +81,15 @@ class Controlador {
     return herramienta!.map((json) => Herramienta.fromGsheets(json)).toList();
   }
 
-
   Future<void> insertData(Herramienta herramienta, String worksheet) async {
+    await init();
     Worksheet sheet;
+
     //usar la variable workseet para seleccionar la hoja de calculo que se desea consultar
     switch (worksheet) {
       case 'Herramientas':
         sheet = worksheetHerramientas;
+        print("herramin");
         break;
       case 'Refacciones':
         sheet = worksheetRefacciones;
@@ -112,8 +113,8 @@ class Controlador {
         sheet = worksheetHerramientas;
     }
     //recorrer la hoja de calculo con su id correspondiente empezando desde la columna 1
-    await init();
-   final herramientaa = herramienta.toGsheets();
-    await sheet.values.map.appendRow(herramientaa);
+
+    final list = herramienta.toGsheets();
+    await sheet.values.map.appendRow(list);
   }
 }

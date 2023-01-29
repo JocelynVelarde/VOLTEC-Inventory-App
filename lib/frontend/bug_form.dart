@@ -109,7 +109,7 @@ class _BugReportFormState extends State<BugReportForm> {
                           decoration: const InputDecoration(
                               labelText: 'Nombre',
                               labelStyle:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                                  TextStyle(color: Colors.white, fontSize: 18),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide.none),
                               focusedBorder: UnderlineInputBorder(
@@ -131,6 +131,7 @@ class _BugReportFormState extends State<BugReportForm> {
                           borderRadius: BorderRadius.circular(25.0),
                           border: Border.all(
                             width: 2.0,
+                          
                           )),
                       margin: const EdgeInsets.only(bottom: 20),
                       child: Padding(
@@ -140,7 +141,7 @@ class _BugReportFormState extends State<BugReportForm> {
                           decoration: const InputDecoration(
                               labelText: 'Email',
                               labelStyle:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                                  TextStyle(color: Colors.white, fontSize: 18),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide.none),
                               focusedBorder: UnderlineInputBorder(
@@ -157,6 +158,7 @@ class _BugReportFormState extends State<BugReportForm> {
                       ),
                     ),
                     Container(
+                      height: 250,
                       decoration: BoxDecoration(
                           color: Colors.white.withOpacity(0.4),
                           borderRadius: BorderRadius.circular(25.0),
@@ -171,7 +173,7 @@ class _BugReportFormState extends State<BugReportForm> {
                           decoration: const InputDecoration(
                               labelText: 'Cuentanos el bug',
                               labelStyle:
-                                  TextStyle(color: Colors.white, fontSize: 18),
+                                  TextStyle(color: Colors.white,fontSize: 18),
                               enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide.none),
                               focusedBorder: UnderlineInputBorder(

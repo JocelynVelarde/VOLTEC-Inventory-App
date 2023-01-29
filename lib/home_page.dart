@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  HerramientaForm(title: 'Herramientas')),
+                  MaterialPageRoute(builder: (context) =>  const BugReportForm()),
                 );
               }),
         ],

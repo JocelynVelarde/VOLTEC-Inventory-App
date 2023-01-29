@@ -1,14 +1,15 @@
 
+
+
 import 'package:flutter/material.dart';
 
 import '../backend/Controlador.dart';
 import '../backend/Herramienta.dart';
 
 class HerramientaForm extends StatefulWidget {
-  HerramientaForm({Key? key, required this.title}) : super(key: key);
+  const HerramientaForm({Key? key, required this.title}) : super(key: key);
   final String title;
 
-  Controlador controlador = Controlador();
 
   @override
   // ignore: library_private_types_in_public_api
@@ -45,127 +46,163 @@ class _HerramientaFormState extends State<HerramientaForm> {
               right: 20,
             ),
             child: SingleChildScrollView(
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(25.0),
-                          border: Border.all(
-                            width: 2.0,
-                          )),
-                      margin: const EdgeInsets.only(bottom: 20),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextFormField(
-                          controller: herramientaController,
-                          decoration: const InputDecoration(
-                              labelStyle:
-                                  TextStyle(color: Colors.white, fontSize: 20),
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide.none),
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide.none)),
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return 'Porfavor ingresa una herramienta';
-                            }
-                            return null;
-                          },
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 18),
+             
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(25.0),
+                            border: Border.all(
+                              width: 2.0,
+              
+                            )),
+                        margin: const EdgeInsets.only(bottom: 20),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: TextFormField(
+                            controller: herramientaController,
+                            decoration: const InputDecoration(
+                              labelText: "Herramienta",
+                          
+                                labelStyle: 
+                                    TextStyle(color: Colors.white, fontSize: 18),
+                                enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none)),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Porfavor ingresa una herramienta';
+                              }
+                              return null;
+                            },
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 18),
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(25.0),
-                          border: Border.all(
-                            width: 2.0,
-                          )),
-                      margin: const EdgeInsets.only(bottom: 20),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextFormField(
-                          controller: claveController,
-                          decoration: const InputDecoration(
-                              labelText: 'Email',
-                              labelStyle:
-                                  TextStyle(color: Colors.white, fontSize: 20),
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide.none),
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide.none)),
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return 'Porfavor ingresa tu correo';
-                            }
-                            return null;
-                          },
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 18),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(25.0),
+                            border: Border.all(
+                              width: 2.0,
+                            )),
+                        margin: const EdgeInsets.only(bottom: 20),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: TextFormField(
+                            controller: cantidadController,
+                            decoration: const InputDecoration(
+                             labelText: "Cantidad",
+                                labelStyle:
+                                    TextStyle(color: Colors.white, fontSize: 18),
+                                enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none)),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Porfavor ingresa una cantidad';
+                              }
+                              return null;
+                            },
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 18),
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                          borderRadius: BorderRadius.circular(25.0),
-                          border: Border.all(
-                            width: 2.0,
-                          )),
-                      margin: const EdgeInsets.only(bottom: 20),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextFormField(
-                          controller: cantidadController,
-                          decoration: const InputDecoration(
-                              labelText: 'Cuentanos el bug',
-                              labelStyle:
-                                  TextStyle(color: Colors.white, fontSize: 18),
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide.none),
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide.none)),
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return 'Porfavor ingresa una descripción';
-                            }
-                            return null;
-                          },
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 18),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(25.0),
+                            border: Border.all(
+                              width: 2.0,
+                            )),
+                        margin: const EdgeInsets.only(bottom: 20),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: TextFormField(
+                            controller: claveController,
+                            decoration: const InputDecoration(
+                               labelText: "Clave",
+                                labelStyle:
+                                    TextStyle(color: Colors.white, fontSize: 18),
+                                enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none)),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Porfavor ingresa una clave';
+                              }
+                              return null;
+                            },
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 18),
+                          ),
                         ),
                       ),
-                    ),
-                    RawMaterialButton(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 8),
-                      onPressed: _submitForm,
-                      fillColor: Colors.black,
-                      elevation: 5,
-                      highlightElevation: 3,
-                      disabledElevation: 0,
-                      highlightColor: Colors.pink[50],
-                      materialTapTargetSize: MaterialTapTargetSize.padded,
-                      animationDuration: const Duration(milliseconds: 100),
-                      child: const Icon(
-                        Icons.send,
-                        size: 30,
-                        color: Colors.white,
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.4),
+                            borderRadius: BorderRadius.circular(25.0),
+                            border: Border.all(
+                              width: 2.0,
+                            )),
+                        margin: const EdgeInsets.only(bottom: 20),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: TextFormField(
+                            controller: imagenController,
+                            decoration: const InputDecoration(
+                              labelText: "Imagen",
+                                labelStyle:
+                                    TextStyle(color: Colors.white, fontSize: 18),
+                                enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide.none)),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Porfavor ingresa una link hacia la imagen';
+                              }
+                              return null;
+                            },
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 18),
+                          ),
+                        ),
                       ),
-                    )
-                  ],
+                      RawMaterialButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 30, vertical: 8),
+                        onPressed: _submitForm,
+                        fillColor: Colors.black,
+                        elevation: 5,
+                        highlightElevation: 3,
+                        disabledElevation: 0,
+                        highlightColor: Colors.pink[50],
+                        materialTapTargetSize: MaterialTapTargetSize.padded,
+                        animationDuration: const Duration(milliseconds: 100),
+                        child: const Icon(
+                          Icons.send,
+                          size: 30,
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-        )
+        
       ]),
     );
   }
@@ -184,7 +221,7 @@ class _HerramientaFormState extends State<HerramientaForm> {
           clave: claveController.text,
           cantidad: cantidadController.text,
           imagen: imagenController.text);
-      Controlador controlador = Controlador();
+       Controlador controlador = Controlador();
 
       _showSnackBar("Sending infromation");
       controlador.insertData(herramienta, widget.title);
@@ -195,7 +232,7 @@ class _HerramientaFormState extends State<HerramientaForm> {
 
   _showSnackBar(String message) {
     ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text("Data sent")));
+        .showSnackBar(const SnackBar(content: Text("Herramienta enviada al inventario")));
   }
 }
   

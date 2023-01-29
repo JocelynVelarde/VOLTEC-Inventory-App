@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:app_la_buena/backend/controlador.dart';
+import 'package:app_la_buena/frontend/herramienta_form.dart';
 import 'package:flutter/material.dart';
 
 import '../backend/Herramienta.dart';
@@ -23,6 +24,17 @@ class _InventarioUIState extends State<InventarioUI> {
       appBar: AppBar(
         backgroundColor: const Color(0xff1e224f),
         title: Text(widget.title),
+        actions: <Widget>[
+          IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            HerramientaForm(title: widget.title)));
+              }),
+        ],
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);

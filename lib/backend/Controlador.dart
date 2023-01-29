@@ -82,8 +82,8 @@ class Controlador {
     return herramienta!.map((json) => Herramienta.fromGsheets(json)).toList();
   }
 
-  //metodo getById para obtener un registro de la hoja de calculo por su id
-  Future<Herramienta?> getById(int id, String worksheet) async {
+
+  Future<void> insertData(Herramienta herramienta, String worksheet) async {
     Worksheet sheet;
     //usar la variable workseet para seleccionar la hoja de calculo que se desea consultar
     switch (worksheet) {
@@ -113,10 +113,7 @@ class Controlador {
     }
     //recorrer la hoja de calculo con su id correspondiente empezando desde la columna 1
     await init();
-    final map = await sheet.values.map.rowByKey(
-      id,
-      fromColumn: 1,
-    );
-    return map == null ? null : Herramienta.fromGsheets(map);
+   final herramientaa = herramienta.toGsheets();
+    await sheet.values.map.appendRow(herramientaa);
   }
 }

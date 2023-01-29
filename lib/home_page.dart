@@ -1,3 +1,5 @@
+import 'package:app_la_buena/backend/Herramienta.dart';
+import 'package:app_la_buena/frontend/herramienta_form.dart';
 import 'package:app_la_buena/frontend/inventario_ui.dart';
 import 'package:app_la_buena/frontend/bug_form.dart';
 import 'package:app_la_buena/modelViewer/viewer.dart';
@@ -191,7 +193,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const BugReportForm()),
+                  MaterialPageRoute(builder: (context) =>  HerramientaForm(title: 'Herramientas')),
                 );
               }),
         ],

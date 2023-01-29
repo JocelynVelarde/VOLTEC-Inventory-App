@@ -10,7 +10,7 @@ class InventarioUI extends StatefulWidget {
 
   final String title;
 
-  late Controlador controlador = Controlador();
+  Controlador controlador = Controlador();
 
   @override
   State<InventarioUI> createState() => _InventarioUIState();

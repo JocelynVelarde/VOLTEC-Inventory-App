@@ -136,7 +136,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             return ("Contraseña requerida para el login");
           }
           if (!regex.hasMatch(value)) {
-            return ("Ingresa una Contraseña valida(Min. 8 Caracteres, \n Mayusculas, Minusculas \n Caracteres especiales)");
+            return ("Ingresa una Contraseña valida\n-Min. 8 Caracteres\n-Mayusculas\n-Minusculas\n-Caracteres especiales");
           }
           return null;
         },

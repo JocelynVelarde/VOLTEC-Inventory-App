@@ -55,6 +55,7 @@ dependencies:
   model_viewer_plus: ^1.4.0
   html: ^0.15.1
   permission_handler: ^10.2.0
+  flutter_launcher_icons: ^0.11.0
   
   
   
@@ -62,14 +63,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.9.3
   flutter_lints: ^2.0.1
 
 flutter_icons: 
-  android: true
+  android: "rayo"
   ios: true
-  image_path: "assets/Logo_voltec.png"
-  adaptive_icon_foreground: "assets/appLogo.png"
+  image_path: "assets/rayo.jpg"
+
 
   flutter_native_splash: ^2.0.5
 

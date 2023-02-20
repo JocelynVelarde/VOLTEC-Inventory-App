@@ -36,12 +36,13 @@ class _InventarioUIState extends State<InventarioUI> {
               }),
         ],
         leading: GestureDetector(
-          onTap: () {
+          onDoubleTap: () {
             Navigator.pop(context);
           },
           child: const Icon(
             Icons.arrow_back,
           ),
+          onTap: () => Navigator.pop(context),
         ),
       ),
       body: Center(

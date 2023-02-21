@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:753489550550:android:eec96681e683673d3bfd77",
         "android_client_info": {
-          "package_name": "com.example.app_la_buena"
+          "package_name": "com.voltec.inventory"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "753489550550-frbm331ck5ce0q9ionj4d4v46tdok62i.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.app_la_buena",
+            "package_name": "com.voltec.inventory",
             "certificate_hash": "8dffb500439edd384750ca72afb21e2c2564e634"
           }
         },

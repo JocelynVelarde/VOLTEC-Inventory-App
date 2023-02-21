@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>427332457667-39ho8hsi2iehefdje9cvf5ikqc9eq076.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.427332457667-39ho8hsi2iehefdje9cvf5ikqc9eq076</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>427332457667-tehdhsucg57vgaqa126reheg0c27p3dm.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDOMjrbLl0-ny1DFb7A31tWa7kIfXV50Lo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>427332457667</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.voltec.inventory</string>
+	<key>PROJECT_ID</key>
+	<string>voltecinventory</string>
+	<key>STORAGE_BUCKET</key>
+	<string>voltecinventory.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:427332457667:ios:0a15ccdd2b67cb2afdfe76</string>
+</dict>
+</plist>

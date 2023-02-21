@@ -1,4 +1,4 @@
-package com.example.app_la_buena
+package com.voltec.inventory
 
 import io.flutter.embedding.android.FlutterActivity
 

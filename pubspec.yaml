@@ -36,6 +36,7 @@ dependencies:
   shared_preferences: ^2.0.15
   provider: ^6.0.3
   path_provider: ^2.0.12
+  table_calendar: ^3.0.0
 
 
 

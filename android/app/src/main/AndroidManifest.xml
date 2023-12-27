@@ -1,9 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app_la_buena">
    <application
-        android:label="Inventario VOLTEC"
+        android:label="Voltec Inventory"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:usesCleartextTraffic="true"
+        android:icon="@mipmap/rayo">
+        
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

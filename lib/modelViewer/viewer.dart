@@ -22,10 +22,10 @@ class _ViewerState extends State<Viewer> {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
       ),
-      body: ModelViewer(
+      body: const ModelViewer(
         backgroundColor: Colors.black,
         src: 'assets/tool.glb',
-        alt: "A 3D model of a star destroyer",
+        alt: "3D model specific tool",
         autoPlay: true,
         autoRotate: true,
         cameraControls: true,
